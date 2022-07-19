@@ -5,6 +5,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    screens: {
+      "3xl": "2560px"
+    },
     extend: {
       colors: {
         "background-dark": "#1f2335",
