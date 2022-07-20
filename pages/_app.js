@@ -3,25 +3,26 @@ import React, {useState} from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faBitcoin } from "@fortawesome/free-brands-svg-icons"
 import LinuxModal from "../components/Modals/Linux.js"
+import Link from "next/link"
 
 function MyApp({ Component, pageProps }) {
   const [LinuxModalOpen, setLinuxModalOpen] = useState(false)
 
   return (
-  <div className="bg-background-dark h-screen w-screen">
-    <div className="flex w-screen py-8 justify-center">
-      <h1 className="text-3xl text-blue font-bold">Dante's Blog</h1>
+  <div className="bg-background-dark pb-[10vh] min-h-screen w-screen">
+    <div className="flex w-screen h-[10vh] items-center justify-center">
+      <Link href="/"><a className="text-3xl text-blue font-bold">Dante's Blog</a></Link>
     </div>
 
     <div className="flex w-screen justify-center">
-      <div className="flex justify-center border-4 border-foreground-dark h-[80vh] w-[80vw]">
+      <div className="flex justify-center border-4 border-foreground-dark h-content min-h-[80vh] w-[80vw]">
         <div className="flex flex-col h-full w-full">
           <div className="py-2 h-content">
             <nav className="flex justify-center flex-row">
               <ul className="flex text-cyan font-semibold text-lg space-x-[1vw]">
                 <li >
                   <button className="hover:text-red1" onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
-                  {LinuxModalOpen && <LinuxModal />}
+                  {LinuxModalOpen && <LinuxModal setLinuxModalOpen={setLinuxModalOpen} />}
                 </li>
                 <li className="hover:text-red1">Crypto</li>
               </ul>
