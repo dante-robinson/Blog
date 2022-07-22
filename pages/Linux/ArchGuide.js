@@ -2,25 +2,25 @@ import React from "react"
 
 export default function ArchGuide() {
   return (
-    <div className="text-foreground text-sm justify-center py-4 px-[2vw] space-y-[1vh]">
+    <div className="text-foreground text-sm py-[2vh] px-[2vw] space-y-[1vh]">
       <h1 className="flex text-2xl font-bold justify-center">Arch Linux Install Guide</h1>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
       <div className="text-cyan">
-      <a className="hover:underline" href="#format">Formating the Drive</a><br />
-      <a className="hover:underline" href="#btrfs">BTRFS Subvolumes and Mounting</a><br />
-      <a className="hover:underline" hred="#ext4">EXT4 Mounting</a><br />
-      <a className="hover:underline" href="#xfs">XFS Mounting</a><br />
-      <a className="hover:underline" href="#fstab">Mounting Boot and setting up FSTAB</a><br />
-      <a className="hover:underline" href="#timezone">Setting Timezone and Locales</a><br />
-      <a className="hover:underline" href="#hosts">Setting up localhost and hosts</a><br />
-      <a className="hover:underline" href="#gpu">Installing GPU Driver</a><br />
-      <a className="hover:underline" href="#initramfs">Initramfs Setup</a><br />
-      <a className="hover:underline" href="#user">Creating the user</a><br />
-      <a className="hover:underline" href="#systemd">Enabling systemd Startups</a><br />
-      <a className="hover:underline" href="#desktop">Installing a Desktop</a><br />
-      <a className="hover:underline" href="#extra">Extra Junk</a>
+        <a className="hover:underline" href="#format">Formating the Drive</a><br />
+        <a className="hover:underline" href="#btrfs">BTRFS Subvolumes and Mounting</a><br />
+        <a className="hover:underline" hred="#ext4">EXT4 Mounting</a><br />
+        <a className="hover:underline" href="#xfs">XFS Mounting</a><br />
+        <a className="hover:underline" href="#fstab">Mounting Boot and setting up FSTAB</a><br />
+        <a className="hover:underline" href="#timezone">Setting Timezone and Locales</a><br />
+        <a className="hover:underline" href="#hosts">Setting up localhost and hosts</a><br />
+        <a className="hover:underline" href="#gpu">Installing GPU Driver</a><br />
+        <a className="hover:underline" href="#initramfs">Initramfs Setup</a><br />
+        <a className="hover:underline" href="#user">Creating the user</a><br />
+        <a className="hover:underline" href="#systemd">Enabling systemd Startups</a><br />
+        <a className="hover:underline" href="#desktop">Installing a Desktop</a><br />
+        <a className="hover:underline" href="#extra">Extra Junk</a>
       </div>
       
       <p>Welcome to my personal Arch Linux Build Setup this is somewhat of a personal run through of how I have my main system setup but more of an install guide so let’s get started. 
