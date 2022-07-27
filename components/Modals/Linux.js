@@ -8,7 +8,8 @@ export default function Linux({setLinuxModalOpen}) {
         <ul className="text-center text-sm py-2 space-y-1">
           <li>
             <Link href="/Linux/ArchGuide"><a>Arch Linux Install Guide</a></Link><br />
-            <Link href="/Linux/PerformanceGuide"><a>Performance Tweaks Guide</a></Link>
+            <Link href="/Linux/PerformanceGuide"><a>Performance Tweaks Guide</a></Link><br />
+            <Link href="/Linux/SecurityGuide"><a>Linux Secuirty Guide</a></Link>
           </li>
         </ul>
       </div>
