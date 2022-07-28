@@ -1,13 +1,13 @@
-import React from "react"
+import React, { useRef } from "react"
 import Link from "next/link"
 
-export default function Linux({ setLinuxModalOpen }) {
+export default function Linux({ LinuxRef, setLinuxModalOpen }) {
   function OpenLink() {
     setLinuxModalOpen(false);
   }
 
   return (
-    <div className="flex justify-center">
+    <div ref={LinuxRef} className="flex justify-center">
       <div className="absolute border-2 bg-background border-blue w-56 h-content">
         <ul className="text-center text-sm py-[0.5vh] space-y-1">
           <li>
