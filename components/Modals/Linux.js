@@ -1,15 +1,31 @@
 import React from "react"
 import Link from "next/link"
 
-export default function Linux({setLinuxModalOpen}) {
-  return(
+export default function Linux({ setLinuxModalOpen }) {
+  function OpenLink() {
+    setLinuxModalOpen(false);
+  }
+
+  return (
     <div className="flex justify-center">
-      <div className="absolute border-2 bg-background border-blue w-48 h-content">
-        <ul className="text-center text-sm py-2 space-y-1">
+      <div className="absolute border-2 bg-background border-blue w-56 h-content">
+        <ul className="text-center text-sm py-[0.5vh] space-y-1">
           <li>
-            <Link href="/Linux/ArchGuide"><a>Arch Linux Install Guide</a></Link><br />
-            <Link href="/Linux/PerformanceGuide"><a>Performance Tweaks Guide</a></Link><br />
-            <Link href="/Linux/SecurityGuide"><a>Linux Secuirty Guide</a></Link>
+            <Link href="/Linux/ArchGuide">
+              <button onClick={OpenLink}>
+                <a>Arch Linux Install Guide</a>
+              </button>
+            </Link><br />
+            <Link href="/Linux/PerformanceGuide">
+              <button onClick={OpenLink}>
+                <a>Performance Tweaks Guide</a>
+              </button>
+            </Link><br />
+            <Link href="/Linux/SecurityGuide">
+              <button onClick={OpenLink}>
+                <a>Linux Security Guide</a>
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
