@@ -3,6 +3,8 @@ import React from "react"
 export default function SecurityGuide() {
   return (
     <div className="text-foreground text-sm py-[2vh] px-[2vw] space-y-[1vh]">
+      <p className="flex justify-end"> Feb 13, 2021</p>
+
       <h1 className="flex text-2xl font-bold justify-center">Linux Security Guide</h1>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
