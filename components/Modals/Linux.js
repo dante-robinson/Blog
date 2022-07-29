@@ -1,4 +1,3 @@
-import React, { useRef } from "react"
 import Link from "next/link"
 
 export default function Linux({ LinuxRef, setLinuxModalOpen }) {

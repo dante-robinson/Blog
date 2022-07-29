@@ -1,11 +1,16 @@
-import React from "react"
+import Head from "next/head"
 
-export default function ArchGuide() {
+export default function ArchGuide({ title }) {
   return (
     <div className="text-foreground text-sm py-[2vh] px-[2vw] space-y-[1vh]">
+      <Head>
+        <title>{title ? title : "Arch Linux Install Guide"}</title>
+        <meta name="description" content="Arch Linux Install Guide" />
+      </Head>
+
       <p className="flex justify-end">Oct 30, 2021</p>
 
-      <h1 className="flex text-2xl font-bold justify-center">Arch Linux Install Guide</h1>
+      <h2 className="flex text-2xl font-bold justify-center">Arch Linux Install Guide</h2>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
@@ -33,7 +38,11 @@ export default function ArchGuide() {
       <p>To make this guide less complex I have not added any encryption or LVM instructions if you are looking for that please check out this guide - <a className="text-red hover:underline" href="https://www.coded-with-love.com/blog/install-arch-linux-encrypted/">
         https://www.coded-with-love.com/blog/install-arch-linux-encrypted/</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Formatting the Drive <a id="format"></a></h2>
+      <p>You can find the raw version of this guide on github here
+        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef">https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef</a>
+      </p>
+
+      <h3 className="flex text-lg justify-center font-semibold">Formatting the Drive <a id="format"></a></h3>
 
       <p>First of all you should understand how Linux reads drives already if you run the command</p>
 
@@ -147,7 +156,7 @@ export default function ArchGuide() {
 
       <p>on your partition you want for swap most likely the x will be 3 in this case but your mileage may vary. If you are making a swapfile I will show you how to make that in my Arch Tweaks gist.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">BTRFS Subvolumes and Mounting <a id="btrfs"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">BTRFS Subvolumes and Mounting <a id="btrfs"></a></h3>
 
       <p>Alright if your running btrfs then you will need to follow these steps before continuing to create your snapshots, if your running XFS or EXT4 skip this Section.</p>
 
@@ -259,7 +268,7 @@ export default function ArchGuide() {
 
       <p>XFS has its own performance tweaks outside of the fstab I link to more info about at the end of the guide</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">EXT4 Mounting <a id="ext4"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">EXT4 Mounting <a id="ext4"></a></h3>
 
       <p>You will need to mount your partitions to the /mnt Directory by running</p>
 
@@ -289,7 +298,7 @@ export default function ArchGuide() {
 
       <p><a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Ext4#Turning_barriers_off">https://wiki.archlinux.org/title/Ext4#Turning_barriers_off</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold">XFS Mounting <a id="xfs"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">XFS Mounting <a id="xfs"></a></h3>
 
       <p>Very simple to mount partitions no extra options just run</p>
 
@@ -359,7 +368,7 @@ export default function ArchGuide() {
 
       <p>you basically want to remove the entire entry.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Setting Timezone and Locales <a id="timezone"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Setting Timezone and Locales <a id="timezone"></a></h3>
 
       <p>Now we can move into the mounted system by running</p>
 
@@ -423,7 +432,7 @@ export default function ArchGuide() {
       <p>with whatever language you have in my case it looks like this. The echo command basically means insert this text into the file, you can also run nano /etc/locale.conf and
         add LANG=en_US.UTF-8 (or whatever language your using) if you would prefer to do it that way instead.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Setting up localhost and hosts <a id="hosts"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Setting up localhost and hosts <a id="hosts"></a></h3>
 
       <p>We are almost done a basic Arch Linux install now and just need to do a few more things for now we need to setup the hostname of the Computer and edit our hosts file
         to be able to properly connect to the Internet. We can set our host name using the echo command again or using nano on the file and adding your hostname there, this can
@@ -478,7 +487,7 @@ export default function ArchGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing GPU Driver <a id="gpu"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing GPU Driver <a id="gpu"></a></h3>
 
       <p>First we need to configure the pacman configuration file by running</p>
 
@@ -561,7 +570,7 @@ export default function ArchGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Initramfs Setup <a id="initramfs"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Initramfs Setup <a id="initramfs"></a></h3>
 
       <p>Now we need to edit our initial ram disk by running</p>
 
@@ -629,7 +638,7 @@ export default function ArchGuide() {
 
       <p>and then run the grub-mkconfig command again exactly how its written above.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Creating the user <a id="user"></a></h2>blockquote
+      <h3 className="flex text-lg justify-center font-semibold">Creating the user <a id="user"></a></h3>blockquote
 
       <p>Pretty much at the end now finishing touches before we have a basic install, next up is setting the root account password we can do that by running</p>
 
@@ -685,7 +694,7 @@ export default function ArchGuide() {
 
       <p>and remove the comment in front of it in this case the # symbol make sure to leave the % or the system will break. Then we can do Control + X press y to save and then enter.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Enabling systemd Startups <a id="systemd"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Enabling systemd Startups <a id="systemd"></a></h3>
 
       <p>Now we can enable systemd to auto start certain items on boot not everything is a systemd enabled item but keep the command in mind as you may need it to enable certain
         programs in the future. We will run the following commands</p>
@@ -700,7 +709,7 @@ export default function ArchGuide() {
 
       <p>This is going to enable internet bluetooth and printing services.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing a Desktop <a id="desktop"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing a Desktop <a id="desktop"></a></h3>
 
       <p>Now we can move on to the final step and that's installing the Desktop Environment (DE), there's lots to chose from and Arch allows you to pretty much run any of them easily I
         will cover a few.I personally run XFCE as I like to keep my system lightweight and don’t care for many effects or built in software. Here are a few links to view some different DE’s.<br />
@@ -807,15 +816,15 @@ export default function ArchGuide() {
 
       <p>XFS Performance Tweaks - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/XFS#Performance">https://wiki.archlinux.org/title/XFS#Performance</a></p>
 
-      <h2>Extra Junk <a id="extra"></a></h2>
+      <h3>Extra Junk <a id="extra"></a></h3>
 
       <p><s>Personally I have tried LXQt in the past I like it but the UI is just not good enough for me to switch from XFCE Full time. I hope to change over in the future but the
         difference in ram usage is minimal like 100-150MB on my system compared to XFCE.</s> I have switched over to SwayWM now which runs lighter than both and works well for my needs,
         I wouldn't recommend it for a novice but if you are interested you check it out <a> here </a>. For those that think “Ram is
         supposed to be used so it doesn’t matter” your right and I would rather my system resources going to the applications I use and not the Desktop.</p>
 
-      <p>You can find my Linux Performance Tweaks guide here - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa">https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa</a></p>
-      <p>If your looking to add more Security to your system check my Security Guide here - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca">https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca</a></p>
+      <p>You can find my Linux Performance Tweaks guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/PerformanceGuide">https://danterobinson.dev/Linux/PerformanceGuide</a></p>
+      <p>If your looking to add more Security to your system check my Security Guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">https://danterobinson.dev/Linux/SecurityGuide</a></p>
     </div>
   )
 }

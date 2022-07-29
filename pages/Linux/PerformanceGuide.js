@@ -1,11 +1,16 @@
-import React from "react"
+import Head from "next/head"
 
-export default function PerformanceGuide() {
+export default function PerformanceGuide({ title }) {
   return (
     <div className="text-sm text-foreground py-[2vh] px-[2vw] space-y-[1vh]">
+      <Head>
+        <title>{title ? title : "Linux Performance Tweaks"}</title>
+        <meta name="description" content="Linux Performance Guide" />
+      </Head>
+
       <p className="flex justify-end">Oct 30, 2021</p>
 
-      <h1 className="flex text-2xl font-bold justify-center">Linux Performance Tweaks</h1>
+      <h2 className="flex text-2xl font-bold justify-center">Linux Performance Tweaks</h2>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
@@ -26,14 +31,17 @@ export default function PerformanceGuide() {
 
       <p>Welcome to my Linux Performance Tweaks Guide, this is a personal collection of tweaks and settings that I do to a fresh Install on my system to get it running the way I like it to.
         I won’t be covering things such as microcodes in this guide as they are covered in my Arch Linux install guide already and this guide will be focusing on the next steps directly from there.
-        You can find my install guide here - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef">https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef</a></p>
+        You can find my install guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/ArchGuide">https://danterobinson.dev/Linux/ArchGuide</a></p>
 
       <p>This guide was originally designed as a collection of tweaks for Arch Linux but has since been expanded into multiple guides. This guides new role is Performance Tweaks however there are still
         some Arch Linux specific modifications that will be noted in the header of that section.</p>
 
+      <p>If you are interested in the raw version of the guide you can find that on github here
+        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa">https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa</a></p>
+
       <p>If you are interested in my Linux Security Guide you can find that here
-        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca">
-          https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca
+        - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">
+          https://danterobinson.dev/Linux/SecurityGuide
         </a>
       </p>
 
@@ -41,7 +49,7 @@ export default function PerformanceGuide() {
         I see no need for this the users are on the same system as you so why not set them as system wide settings? To each there own I have listed both methods where it applies if you choose to do
         it one way over the other.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Reflector Mirrors (Arch Based Only)<a id="reflector-mirrors"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Reflector Mirrors (Arch Based Only)<a id="reflector-mirrors"></a></h3>
 
       <p>Lets start with getting your mirror configured this will make sure you are downloading packages from locations closest to you so you achieve the best download speed. In my Arch Install
         Guide we have already installed the reflector package we need and just need to set up reflector and enable the systemd service. If you haven't installed reflector you can do so for your
@@ -65,7 +73,7 @@ export default function PerformanceGuide() {
 
       <p>and that’s it now it will refresh your mirrors every bootup. If you are really tight on resources and don’t travel much or have a desktop you can skip running the service as the mirrors aren’t going to change much.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Configure pacman (Arch Based Only) <a id="configure-pacman"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Configure pacman (Arch Based Only) <a id="configure-pacman"></a></h3>
 
       <p>Now we can configure the pacman configuration file to enable parallel downloads by running</p>
 
@@ -97,7 +105,7 @@ export default function PerformanceGuide() {
       <p>to update the repos and check for updates. Due note that some of these repos are from unsigned parties so add them at your own safety risk. I switch a lot of my drivers over to git versions
         however won’t be covering that in this guide as I don’t recommend others doing to so as some updates can cause issues that you will need to fix.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Makepkg Tweaks <a id="makepkg"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Makepkg Tweaks <a id="makepkg"></a></h3>
 
       <p>Although we haven’t really have to build anything on our own system yet in this guide we will need to and it would be nice if we could use the full processing power of our system for those
         tasks as they can take awhile especially the kernel. First we need to know how many cpu threads you have on your system we can check this by running</p>
@@ -207,7 +215,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing Yay (Arch Based Only) <a id="yay"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing Yay (Arch Based Only) <a id="yay"></a></h3>
 
       <p>I use yay over the other options such as yaourt and paru. Yay is just easier for me to use I find and doesn’t ask me to review PKGBUILD Files like paru which just gets annoying in my
         opinion. For those that don’t know what yay, yaourt or paru are these are called AUR Helpers they are similar to pacman and help you connect directly to the AUR. First we are going to use
@@ -253,7 +261,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing Pamac (Arch Based Only) <a id="pamac"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing Pamac (Arch Based Only) <a id="pamac"></a></h3>
 
       <p>This might be a little bit different than how some other people in the Arch Community do it however I see no need for Flatpak or Snap package support so I install a version that doesn’t
         have that support built in. I will cover both versions but I recommend the first one.</p>
@@ -280,7 +288,7 @@ export default function PerformanceGuide() {
         adjust the parallel downloads and udner Advanced tab you can enable downgrade in case packlages break your system in the future and you need to roll back. If you downloaded the Flatpak and Snap
         Supported version make sure you go to those extra tabs in the settings and enable them also.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Performance Tweaks <a id="performance"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Performance Tweaks <a id="performance"></a></h3>
 
       <p>These are overall system tweaks some of which are used in the Garuda Linux Distro to increase gaming performance the first thing we are gonna do is download all the needed packages with</p>
 
@@ -495,7 +503,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing sound drivers and Improving Sound Quality <a id="sound"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing sound drivers and Improving Sound Quality <a id="sound"></a></h3>
 
       <p>In my install guide all I did was show you a basic Arch Install with a desktop but didn’t provide any sound to your system so we can add that now here so those with sound already you
         can skip this. We can install the packages for sound by running this command</p>
@@ -651,7 +659,7 @@ export default function PerformanceGuide() {
         </a>
       </p>
 
-      <h2 className="flex text-lg justify-center font-semibold">Installing Fonts <a id="fonts"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Installing Fonts <a id="fonts"></a></h3>
 
       <p>These are just extra fonts for some apps that manually set there own and also includes apple-fonts which gives you the SF Pro Fonts.</p>
 
@@ -661,7 +669,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Setting I/O Schedulers <a id="io"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Setting I/O Schedulers <a id="io"></a></h3>
 
       <p>Linux can get very slow during I/O intense applications however this can be improved by setting schedulers. NVMe Drives do not really benefit from this however we can create a config that
         allows us to automatically set NVMe Drives to none and set any SATA drives to run on BFQ we can do this by running</p>
@@ -693,7 +701,7 @@ export default function PerformanceGuide() {
       <p>If you would like to run something like mq-deadline on your NVMe Drives by default then on the second line at the end in quotations where it says “none” replace none with mq-deadline and
         keep the quotations around it then we can save this file by pressing Control + X then y and enter.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold">initramfs tweaks (Arch Based Only) <a id="initramfs"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">initramfs tweaks (Arch Based Only) <a id="initramfs"></a></h3>
 
       <p>Your going to want to make sure everything we need is properly loading up in the initial boot stages of our system and we can do this with a very simple tool called hwdetect you can install this by running</p>
 
@@ -770,7 +778,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Laptop Battery Improvement <a id="laptop"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Laptop Battery Improvement <a id="laptop"></a></h3>
 
       <p>You can increase you battery life by adding the tlp package</p>
 
@@ -820,7 +828,7 @@ export default function PerformanceGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold">Fusuma Touchpad Gestures <a id="touchpad"></a></h2>
+      <h3 className="flex text-lg justify-center font-semibold">Fusuma Touchpad Gestures <a id="touchpad"></a></h3>
 
       <p>This will improve the default gestures and you can get these by running</p>
 

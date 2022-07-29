@@ -1,11 +1,16 @@
-import React from "react"
+import Head from "next/head"
 
-export default function SecurityGuide() {
+export default function SecurityGuide({ title }) {
   return (
     <div className="text-foreground text-sm py-[2vh] px-[2vw] space-y-[1vh]">
-      <p className="flex justify-end"> Feb 13, 2021</p>
+      <Head>
+        <title>{title ? title : "Linux Security Guide"}</title>
+        <meta name="description" content="Linux Security Guide" />
+      </Head>
 
-      <h1 className="flex text-2xl font-bold justify-center">Linux Security Guide</h1>
+      <p className="flex justify-end"> Feb 13, 2022</p>
+
+      <h2 className="flex text-2xl font-bold justify-center">Linux Security Guide</h2>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
@@ -23,7 +28,10 @@ export default function SecurityGuide() {
         <a className="hover:underline" href="#best">Best Practices</a>
       </div>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a id="sysctl">Sysctl</a></h2>
+      <p>if you are interested in the raw version of this guide it can be found on github here
+        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca">https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca</a></p>
+
+      <h3 className="flex text-lg justify-center font-semibold"><a id="sysctl">Sysctl</a></h3>
 
       <p>We are going to start with some sysctl configuration. These are basically tunable kernel settings that can be set temporarily or hardcoded which is what we are going to do here by adding the commands to .conf files.</p>
 
@@ -371,7 +379,7 @@ export default function SecurityGuide() {
         kernel keys. You can also check out GRSecurity for extra patches however they do cost money you can check out there page here
         - <a className="text-red hover:underline" href="https://grsecurity.net/">https://grsecurity.net/</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a id="bootloader">Bootloader Parameters</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a id="bootloader">Bootloader Parameters</a></h3>
 
       <p>Now we will move into the Bootloader parameters I would recommend using GRUB as your bootloader however either GRUB, Syslinux or systemd-boot will work for these.</p>
 
@@ -611,7 +619,7 @@ export default function SecurityGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="mac">Mandatory Access Control (MAC)</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="mac">Mandatory Access Control (MAC)</a></h3>
 
       <p>The MAC system gives tighter control over what a program has access to. This means we can prevent our browser from having access to our entire home directory or another application that
         may only need access to 1 specific folder. This will prevent any exploits from attacking outside of that specific directory the application is aloud to access.</p>
@@ -636,7 +644,7 @@ export default function SecurityGuide() {
       <p><b>Targeted</b> - <a className="text-red hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement</a><br />
         <b>MLS</b> - <a className="text-red hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="sandboxing">Sandboxing</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="sandboxing">Sandboxing</a></h3>
 
       <p>A Sandbox allows us to run programs in an isolated environment that has no, or limited access to the rest of our system.</p>
 
@@ -684,7 +692,7 @@ export default function SecurityGuide() {
 
       <p>You can learn more about running Xephyr on your system here - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Xephyr#Execution">https://wiki.archlinux.org/title/Xephyr#Execution</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="root">Root Tweaks</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="root">Root Tweaks</a></h3>
 
       <p>First we are going to run</p>
 
@@ -809,7 +817,7 @@ export default function SecurityGuide() {
         </p>
       </blockquote>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="extra">Extra Tweaks</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="extra">Extra Tweaks</a></h3>
 
       <p>We can start the extras by running</p>
 
@@ -1009,7 +1017,7 @@ export default function SecurityGuide() {
 
       <p>make sure there's no # in front of it either.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="blacklist">Blacklisting</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="blacklist">Blacklisting</a></h3>
 
       <h4 className="text-lg font-semibold">Network Protocols</h4>
 
@@ -1075,7 +1083,7 @@ export default function SecurityGuide() {
 
       <p>Now by all means if you need some of these like HFS for reading macOS drives then remove that line.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="fstab">FSTAB</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="fstab">FSTAB</a></h3>
 
       <p>Please make sure you actually have all these partitions before setting these If you have only some of them then only set some of them.</p>
 
@@ -1106,7 +1114,7 @@ export default function SecurityGuide() {
         <b>noexec</b> - Do not allow execution of any binaries on the filesystem.<br />
         <b>nodev</b> - Do not interpret devices on the file system.</p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="lock-bootloader">Password Locking Bootloader</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="lock-bootloader">Password Locking Bootloader</a></h3>
 
       <p>We are going to cover Password Locking any changes to the bootloader. You can set this up to prevent editing menu entries and the command line meaning an attacker won't be able to change the
         bootloader options we set earlier if they cracked through the encryption they will then require this password to do that so this password should be different than your Primary Partition encrypted
@@ -1222,7 +1230,7 @@ export default function SecurityGuide() {
       <p>This will disable all further editing to the Bootloader parameters we set earlier. systemd-boot does not officially support password protecting the kernel parameters however you can
         use this community tool to add a password if you would like - <a className="text-red hover:underline" href="https://github.com/kitsunyan/systemd-boot-password">https://github.com/kitsunyan/systemd-boot-password</a></p>
 
-      <h2 className="flex text-lg justify-center font-semibold"><a name="lynis">Lynis</a></h2>
+      <h3 className="flex text-lg justify-center font-semibold"><a name="lynis">Lynis</a></h3>
 
       <p>For those unfamiliar lynis is an enterprise application for macOS, Linux and BSD based systems. You can read more about it here -
         <a className="text-red hover:underline" href="https://cisofy.com/">https://cisofy.com/</a></p>

@@ -1,13 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Home from "../components/Home.js"
 
 export default function HomePage() {
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Dante's Blog</title>
-        <meta name="description" content="Home Page" />
+        <meta content="Home Page" />
       </Head>
 
       <Home />

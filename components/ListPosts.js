@@ -8,18 +8,18 @@ export default function ListPosts() {
   return (
     <div className="space-y-[1.4vh]">
       <div className="border-2 border-blue h-[20vh] mx-[1vw] overflow-hidden">
-        <Link href="/Linux/ArchGuide">
-          <a><ArchGuide /></a>
+        <Link href="/Linux/SecurityGuide">
+          <a><SecurityGuide title={"Dante's Blog"} /></a>
         </Link>
       </div>
       <div className="border-2 border-blue h-[20vh] mx-[1vw] overflow-hidden">
         <Link href="/Linux/PerformanceGuide">
-          <a><PerformanceGuide /></a>
+          <a><PerformanceGuide title={"Dante's Blog"} /></a>
         </Link>
       </div>
       <div className="border-2 border-blue h-[20vh] mx-[1vw] overflow-hidden">
-        <Link href="/Linux/SecurityGuide">
-          <a><SecurityGuide /></a>
+        <Link href="/Linux/ArchGuide">
+          <a><ArchGuide title={"Dante's Blog"} /></a>
         </Link>
       </div >
     </div >

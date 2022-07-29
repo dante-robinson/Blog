@@ -1,5 +1,5 @@
 import "../styles/global.css"
-import React, { useState, useRef } from "react"
+import { useState, useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faBitcoin } from "@fortawesome/free-brands-svg-icons"
 import LinuxModal from "../components/Modals/Linux.js"
@@ -9,8 +9,9 @@ import OnClickOutside from "../components/OnClickOutside.js"
 function MyApp({ Component, pageProps }) {
   const [LinuxModalOpen, setLinuxModalOpen] = useState(false)
   const LinuxRef = useRef()
+  const LinuxButtonRef = useRef()
 
-  OnClickOutside(LinuxRef, () => setLinuxModalOpen(false))
+  OnClickOutside(LinuxRef, LinuxButtonRef, () => setLinuxModalOpen(false))
 
   return (
     <div className="bg-background-dark pb-[10vh] min-h-screen w-screen">
@@ -25,7 +26,7 @@ function MyApp({ Component, pageProps }) {
               <nav className="flex justify-center flex-row">
                 <ul className="flex text-cyan font-semibold text-lg space-x-[1vw]">
                   <li >
-                    <button className="hover:text-red1" onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
+                    <button className="hover:text-red1" ref={LinuxButtonRef} onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
                     {LinuxModalOpen && <LinuxModal LinuxRef={LinuxRef} setLinuxModalOpen={setLinuxModalOpen} />}
                   </li>
                   <li className="hover:text-red1">Crypto</li>
