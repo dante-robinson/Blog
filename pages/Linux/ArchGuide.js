@@ -373,10 +373,10 @@ export default function ArchGuide({ title }) {
       <p>and then you should see some sort of editor and you want to make sure there's not option that looks similar to this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="text-xs sm:text-sm break-all font-semibold">
-          /dev/nvme0n1p2 UUID=8ghj7n71-25k1-1h64-h592-ab7j285gsh42 <br />
+        <p className="text-xs sm:text-sm break-all overflow-x-scroll font-semibold">
+          /dev/nvme0n1p2 UUID=xxxxx<br />
           <br />
-          LABEL=ROOT              /               btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,subvol=/@,subvol=@
+          <pre>LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,subvol=/@,subvol=@</pre>
         </p>
       </blockquote>
 

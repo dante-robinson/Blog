@@ -429,7 +429,7 @@ export default function SecurityGuide({ title }) {
       <p>AppArmor - <a className="text-red break-all hover:underline" href="https://www.apparmor.com/">https://www.apparmor.com/</a></p>
 
       <p>For App Armor you should just need to install the apparmor package for Arch that would be</p>
-
+      https://www.danterobinson.dev/
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
         <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S apparmor
@@ -1098,7 +1098,7 @@ export default function SecurityGuide({ title }) {
       <p>Your going to want to find each of your drives mount and in the options line it may not say defaults but your just going to want to add the following after what you have</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="text-xs sm:text-sm overflow-y-scroll font-semibold">
+        <p className="text-xs sm:text-sm overflow-x-scroll font-semibold">
           <pre>UUID=xxxx     /          ext4    defaults                           0 1</pre>
           <pre>UUID=xxxx     /tmp       ext4    defaults,nosuid,noexec,nodev       0 1</pre>
           <pre>UUID=xxxx     /home      ext4    defaults,nosuid,nodev              0 1</pre>
