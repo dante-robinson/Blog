@@ -31,16 +31,16 @@ export default function PerformanceGuide({ title }) {
 
       <p>Welcome to my Linux Performance Tweaks Guide, this is a personal collection of tweaks and settings that I do to a fresh Install on my system to get it running the way I like it to.
         I won’t be covering things such as microcodes in this guide as they are covered in my Arch Linux install guide already and this guide will be focusing on the next steps directly from there.
-        You can find my install guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/ArchGuide">https://danterobinson.dev/Linux/ArchGuide</a></p>
+        You can find my install guide here - <a className="text-red break-all hover:underline" href="https://danterobinson.dev/Linux/ArchGuide">https://danterobinson.dev/Linux/ArchGuide</a></p>
 
       <p>This guide was originally designed as a collection of tweaks for Arch Linux but has since been expanded into multiple guides. This guides new role is Performance Tweaks however there are still
         some Arch Linux specific modifications that will be noted in the header of that section.</p>
 
       <p>If you are interested in the raw version of the guide you can find that on github here
-        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa">https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa</a></p>
+        - <a className="text-red break-all hover:underline" href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa">https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa</a></p>
 
       <p>If you are interested in my Linux Security Guide you can find that here
-        - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">
+        - <a className="text-red break-all hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">
           https://danterobinson.dev/Linux/SecurityGuide
         </a>
       </p>
@@ -58,7 +58,7 @@ export default function PerformanceGuide({ title }) {
       <p>First run this command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo reflector -c CountryName --sort rate --save /etc/pacman.d/mirrorlist
         </p>
       </blockquote>
@@ -66,7 +66,7 @@ export default function PerformanceGuide({ title }) {
       <p>Change the CountryName to your Country Name inside quotes '' and it should give you just mirrors for your country. Next we will enable the systemd service by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo systemctl enable reflector.timer
         </p>
       </blockquote>
@@ -78,7 +78,7 @@ export default function PerformanceGuide({ title }) {
       <p>Now we can configure the pacman configuration file to enable parallel downloads by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/pacman.conf
         </p>
       </blockquote>
@@ -88,7 +88,7 @@ export default function PerformanceGuide({ title }) {
         instead of compiling them ourselves. I like to add the following repo as it offers pre compiled AUR packages</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           [chaotic-aur]<br />
           Include = /etc/pacman.d/chaotic-mirrorlist
         </p>
@@ -97,7 +97,7 @@ export default function PerformanceGuide({ title }) {
       <p>Then we can do Control + X then press y to save and enter after that run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -Syyu
         </p>
       </blockquote>
@@ -111,7 +111,7 @@ export default function PerformanceGuide({ title }) {
         tasks as they can take awhile especially the kernel. First we need to know how many cpu threads you have on your system we can check this by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nproc
         </p>
       </blockquote>
@@ -119,7 +119,7 @@ export default function PerformanceGuide({ title }) {
       <p>keep the number it tells you in mind we will need that for later now we can edit the makepkg file by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/makepkg.conf
         </p>
       </blockquote>
@@ -127,8 +127,9 @@ export default function PerformanceGuide({ title }) {
       <p>or make it a user only setting by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo cp /etc/makepkg.conf ~/.makepkg.conf<br />
+          <br />
           sudo nano ~/.makepkg.conf
         </p>
       </blockquote>
@@ -137,7 +138,7 @@ export default function PerformanceGuide({ title }) {
         (remove # infront if there is one) and and change -march and -mtune to native so it looks like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           -march=native -mtune=native
         </p>
       </blockquote>
@@ -146,7 +147,7 @@ export default function PerformanceGuide({ title }) {
         within the same quotations and uncomment the line (remove the # in front of RUSTFLAGS) so it looks like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           RUSTFLAGS="-C opt-level=2 -C target-cpu=native"
         </p>
       </blockquote>
@@ -155,7 +156,7 @@ export default function PerformanceGuide({ title }) {
         threads on you have on your system so on my 5950X it looks like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           MAKEFLAGS="-j32"
         </p>
       </blockquote>
@@ -164,7 +165,7 @@ export default function PerformanceGuide({ title }) {
         the next section uncomment BUILDDIR and make sure it goes to /tmp/makepkg like so</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BUILDDIR=/tmp/makepkg
         </p>
       </blockquote>
@@ -172,7 +173,7 @@ export default function PerformanceGuide({ title }) {
       <p>now scroll all the way down to “COMPRESSION DEFAULTS” and we need to change a few things starting with the first line COMPRESSGZ replace gzip with the word pigz like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           COMPRESSGZ=(pigz -c -f -n)
         </p>
       </blockquote>
@@ -182,7 +183,7 @@ export default function PerformanceGuide({ title }) {
       <p>Now lets move down to the next line COMPRESSBZ2 this is another simple change all we need to do is add a p in front of bzip2 so it reads pbzip2 like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           COMPRESSBZ2=(pbzip2 -c -f)
         </p>
       </blockquote>
@@ -191,7 +192,7 @@ export default function PerformanceGuide({ title }) {
         COMPRESSXZ and after -z but before the final – you want to add --threads=0 like so</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           COMPRESSXZ=(xz -c -z --threads=0 -)
         </p>
       </blockquote>
@@ -201,7 +202,7 @@ export default function PerformanceGuide({ title }) {
       <p>For the last Compression method COMPRESSZST we are going to also add --threads=0 after -q and before the final – like so</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           COMPRESSZST=(zstd -c -z -q --threads=0 -)
         </p>
       </blockquote>
@@ -210,7 +211,7 @@ export default function PerformanceGuide({ title }) {
         and packaging your items but will cause you to have slightly larger file sizes. It should look like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           PKGEXT='.pkg.tar'
         </p>
       </blockquote>
@@ -222,7 +223,7 @@ export default function PerformanceGuide({ title }) {
         git which you should have already from my install guide if not just run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S git
         </p>
       </blockquote>
@@ -230,7 +231,7 @@ export default function PerformanceGuide({ title }) {
       <p>and then we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           git clone https://aur.archlinux.org/yay.git
         </p>
       </blockquote>
@@ -239,8 +240,9 @@ export default function PerformanceGuide({ title }) {
         Now we can move into the folder and make the package by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cd yay<br />
+          <br />
           makepkg -si
         </p>
       </blockquote>
@@ -248,7 +250,7 @@ export default function PerformanceGuide({ title }) {
       <p>This will install yay for us and may install go along the way that's about it now we can go back to our home fodler by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cd ../
         </p>
       </blockquote>
@@ -256,7 +258,7 @@ export default function PerformanceGuide({ title }) {
       and then we can delete the folder by running
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo rm -R yay
         </p>
       </blockquote>
@@ -269,7 +271,7 @@ export default function PerformanceGuide({ title }) {
       <p>To install Pamac without Flatpak or Snap Support run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S pamac-aur-git
         </p>
       </blockquote>
@@ -277,7 +279,7 @@ export default function PerformanceGuide({ title }) {
       <p>or install Pamac with Flatpak and Snap support run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S pamac-all-git
         </p>
       </blockquote>
@@ -295,14 +297,14 @@ export default function PerformanceGuide({ title }) {
       <p><b>Arch Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S ananicy-cpp irqbalance memavaild nohang preload prelockd uresourced
         </p>
       </blockquote>
       <p><b>Debian Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install nohang preload
         </p>
       </blockquote>
@@ -310,14 +312,14 @@ export default function PerformanceGuide({ title }) {
       <p><b>Gentoo Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           emerge -av app-admin/ananicy sys-apps/irqbalance sys-apps/preload
         </p>
       </blockquote>
 
       <p><b>RedHat Based</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yum install irqbalance nohang prelockd uresourced
         </p>
       </blockquote>
@@ -325,31 +327,38 @@ export default function PerformanceGuide({ title }) {
       <p><b>Void Linux</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo xbps-install -Su irqbalance preload
         </p>
       </blockquote>
 
       <p>Now explaining what each of these do is just going to make this list of tweaks insanely so instead what I'm going to do is provide the link below for each</p>
-      <p><b>ananicy-cpp</b> - <a className="text-red hover:underline" href="https://gitlab.com/ananicy-cpp/ananicy-cpp">https://gitlab.com/ananicy-cpp/ananicy-cpp</a><br />
-        <b>irqbalance</b> - <a className="text-red hover:underline" href="https://github.com/Irqbalance/irqbalance">https://github.com/Irqbalance/irqbalance</a><br />
-        <b>memavaild</b> - <a className="text-red hover:underline" href="https://github.com/hakavlad/memavaild">https://github.com/hakavlad/memavaild</a><br />
-        <b>nohang</b> - <a className="text-red hover:underline" href="https://github.com/hakavlad/nohang">https://github.com/hakavlad/nohang</a><br />
-        <b>preload</b> - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Preload">https://wiki.archlinux.org/title/Preload</a><br />
-        <b>prelockd</b> - <a className="text-red hover:underline" href="https://github.com/hakavlad/prelockd">https://github.com/hakavlad/prelockd</a><br />
-        <b>uresourced</b> - <a className="text-red hover:underline" href="https://gitlab.freedesktop.org/benzea/uresourced">https://gitlab.freedesktop.org/benzea/uresourced</a></p>
+      <p><b>ananicy-cpp</b> - <a className="text-red break-all hover:underline" href="https://gitlab.com/ananicy-cpp/ananicy-cpp">https://gitlab.com/ananicy-cpp/ananicy-cpp</a><br />
+        <b>irqbalance</b> - <a className="text-red break-all hover:underline" href="https://github.com/Irqbalance/irqbalance">https://github.com/Irqbalance/irqbalance</a><br />
+        <b>memavaild</b> - <a className="text-red break-all hover:underline" href="https://github.com/hakavlad/memavaild">https://github.com/hakavlad/memavaild</a><br />
+        <b>nohang</b> - <a className="text-red break-all hover:underline" href="https://github.com/hakavlad/nohang">https://github.com/hakavlad/nohang</a><br />
+        <b>preload</b> - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Preload">https://wiki.archlinux.org/title/Preload</a><br />
+        <b>prelockd</b> - <a className="text-red break-all hover:underline" href="https://github.com/hakavlad/prelockd">https://github.com/hakavlad/prelockd</a><br />
+        <b>uresourced</b> - <a className="text-red break-all hover:underline" href="https://gitlab.freedesktop.org/benzea/uresourced">https://gitlab.freedesktop.org/benzea/uresourced</a></p>
 
       <p>Next we will enable these processes to startup at runtime using systemd and we can do that by running these commands</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo systemctl disable systemd-oomd<br />
+          <br />
           sudo systemctl enable ananicy-cpp<br />
+          <br />
           sudo systemctl enable irqbalance<br />
+          <br />
           sudo systemctl enable memavaild<br />
+          <br />
           sudo systemctl enable nohang<br />
+          <br />
           sudo systemctl enable preload<br />
+          <br />
           sudo systemctl enable prelockd<br />
+          <br />
           sudo systemctl enable uresourced
         </p>
       </blockquote>
@@ -363,7 +372,7 @@ export default function PerformanceGuide({ title }) {
       <p>Next we can run this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sed -i 's|zram_checking_enabled = False|zram_checking_enabled = True|g' /etc/nohang/nohang.conf
         </p>
       </blockquote>
@@ -374,7 +383,7 @@ export default function PerformanceGuide({ title }) {
         you maybe skip all of these. We are starting with the cpu governor</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/tmpfiles.d/cpu-governor.conf
         </p>
       </blockquote>
@@ -382,7 +391,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           w /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor - - - - performance
         </p>
       </blockquote>
@@ -390,7 +399,7 @@ export default function PerformanceGuide({ title }) {
       <p>Then like everything else in this guide with nano use Control + X to save and exit. Now we can set energy preferences to performance by opening</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/tmpfiles.d/energy_performance_preference.conf
         </p>
       </blockquote>
@@ -398,7 +407,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           w /sys/devices/system/cpu/cpufreq/policy*/energy_performance_preference - - - - performance
         </p>
       </blockquote>
@@ -406,7 +415,7 @@ export default function PerformanceGuide({ title }) {
       <p>next pcie devices such as gpus</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/tmpfiles.d/pcie_aspm_performance.conf
         </p>
       </blockquote>
@@ -414,7 +423,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           w /sys/module/pcie_aspm/parameters/policy - - - - performance
         </p>
       </blockquote>
@@ -422,7 +431,7 @@ export default function PerformanceGuide({ title }) {
       <p>next is another device power management setting</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/tmpfiles.d/power_dpm_state.conf
         </p>
       </blockquote>
@@ -430,7 +439,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           w /sys/class/drm/card0/device/power_dpm_state - - - - performance
         </p>
       </blockquote>
@@ -438,7 +447,7 @@ export default function PerformanceGuide({ title }) {
       <p>If you have a newer AMD GPU then you can also open this file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/udev/rules.d/30-amdgpu-pm.rules
         </p>
       </blockquote>
@@ -446,7 +455,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="amdgpu", ATTR{"{device/power_dpm_state}"}="performance"
         </p>
       </blockquote>
@@ -454,7 +463,7 @@ export default function PerformanceGuide({ title }) {
       <p>If your running an older AMD GPU such as 300 series or older then you may be running on the radeon driver and you can open this instead</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/udev/rules.d/30-radeon-pm.rules
         </p>
       </blockquote>
@@ -462,7 +471,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           KERNEL=="card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{"device/power_dpm_state"}="performance"
         </p>
       </blockquote>
@@ -471,7 +480,7 @@ export default function PerformanceGuide({ title }) {
         I still do in case I need to connect to a SATA Drive though. We need to first run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/udev/rules.d/50-sata.rules
         </p>
       </blockquote>
@@ -479,7 +488,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           # SATA Active Link Power Management<br />
           ACTION=="add", SUBSYSTEM=="scsi_host", KERNEL=="host*", ATTR{"link_power_management_policy"}="max_performance"
         </p>
@@ -490,7 +499,7 @@ export default function PerformanceGuide({ title }) {
         If you use SSDs since they are using a flash NAND this is less of an issue unless your drives are overheating or something first we can open the file with</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /usr/lib/udev/rules.d/69-hdparm.rules
         </p>
       </blockquote>
@@ -498,7 +507,7 @@ export default function PerformanceGuide({ title }) {
       <p>and paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           ACTION=="add|change", KERNEL=="sd[a-z]", ATTR{"queue/rotational"}=="1", RUN+="/usr/bin/hdparm -B 254 -S 0 /dev/%k"
         </p>
       </blockquote>
@@ -511,7 +520,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Arch Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S pipewire-pulse pipewire-jack lib32-pipewire-jack alsa-plugins alsa-firmware sof-firmware alsa-card-profiles
         </p>
       </blockquote>
@@ -519,7 +528,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Debian Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p classname="font-semibold">
+        <p classname="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install alsa-firmware-loaders pulseaudio pulseaudio-module-jack jackd2
         </p>
       </blockquote>
@@ -527,7 +536,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Gentoo Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           emerge -av dev-haskell/alsa-core media-plugins/alsa-plugins media-libs/alsa-lib sys-firmware/alsa-firmware media-sound/pulseaudio
         </p>
       </blockquote>
@@ -535,7 +544,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>RedHat Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yum install alsa-firmware pipewire-alsa alsa-sof-firmware pipewire-plugin-jack pipewire
         </p>
       </blockquote>
@@ -543,7 +552,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Void Linux</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo xbps-install -Su libpulseaudio-pipewire libpulseaudio-pipewire-32bit pipewire-alsa pipewire-alsa-32bit libjack-pipewire libjack-pipewire-32bit pipewire pipewire-32bit alsa-plugins alsa-firmware jack jack_capture
         </p>
       </blockquote>
@@ -553,7 +562,7 @@ export default function PerformanceGuide({ title }) {
         cpus unless your running a dual core maybe. First we need to find out what byte order your cpu has and we can check that by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           lscpu | grep 'Byte Order'
         </p>
       </blockquote>
@@ -561,7 +570,7 @@ export default function PerformanceGuide({ title }) {
       <p>Remember if it is Little Endian or Big Endian for later on. I like to edit the global system config by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/pulse/daemon.conf
         </p>
       </blockquote>
@@ -569,8 +578,9 @@ export default function PerformanceGuide({ title }) {
       <p>however you can also make a user specific config by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cp /etc/pulse/daemon.conf ~/.config/pulse/daemon.conf<br />
+          <br />
           nano ~/.config/pulse/daemon.conf
         </p>
       </blockquote>
@@ -579,7 +589,7 @@ export default function PerformanceGuide({ title }) {
         Im going to list in order the specific lines the need a comment removed and also the changes you need to make to some of the values and I will explain the changes after.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           daemonize = no<br />
           cpu-limit = no<br />
           high-priority = yes<br />
@@ -605,7 +615,7 @@ export default function PerformanceGuide({ title }) {
         it, below I can linked to more Sample rates if you have a higher end audio recording setup. If your having high latency play around with the default fragment and size msec settings.</p>
 
       <p>Audio Sampling Rates
-        - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling">
+        - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling">
           https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling
         </a>
       </p>
@@ -613,7 +623,7 @@ export default function PerformanceGuide({ title }) {
       <p>Moving onto the ALSA Config now we can again edit the Global system config by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/asound.conf
         </p>
       </blockquote>
@@ -621,7 +631,7 @@ export default function PerformanceGuide({ title }) {
       <p>or make a user specific config by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cp /etc/asound.conf ~/.asoundrc<br />
           nano ~/.asoundrc
         </p>
@@ -631,7 +641,7 @@ export default function PerformanceGuide({ title }) {
         “Use PulseAudio by default” and remove everything down to the final closing {"}"}. And replace it with the following</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           # Use PulseAudio plugin hw<br />
           <br />
           pcm.!default {"{"} <br />
@@ -642,19 +652,19 @@ export default function PerformanceGuide({ title }) {
       </blockquote>
 
       <p>If your into Audio production also check out the app cadence which can provide some system checks for you
-        - <a className="text-red hover:underline" href="https://kx.studio/Applications:Cadence">
+        - <a className="text-red break-all hover:underline" href="https://kx.studio/Applications:Cadence">
           https://kx.studio/Applications:Cadence
         </a>
       </p>
 
       <p>Also don’t forget to switch to a realtime kernel for low latency. If your new to Audio Production on Linux and don’t know exactly what to use check out this page
-        - <a className="text-red hover:underline" href="https://jackaudio.org/applications/">
+        - <a className="text-red break-all hover:underline" href="https://jackaudio.org/applications/">
           https://jackaudio.org/applications/
         </a>
       </p>
 
       <p>Read more about upmixing/downmixing here
-        - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling">
+        - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling">
           https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling
         </a>
       </p>
@@ -664,7 +674,7 @@ export default function PerformanceGuide({ title }) {
       <p>These are just extra fonts for some apps that manually set there own and also includes apple-fonts which gives you the SF Pro Fonts.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S noto-fonts noto-fonts-cjk ttf-dejavu ttf-liberation ttf-opensans apple-fonts
         </p>
       </blockquote>
@@ -675,7 +685,7 @@ export default function PerformanceGuide({ title }) {
         allows us to automatically set NVMe Drives to none and set any SATA drives to run on BFQ we can do this by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/udev/rules.d/60-ioschedulers.rules
         </p>
       </blockquote>
@@ -683,7 +693,7 @@ export default function PerformanceGuide({ title }) {
       <p>Once this new file is open just paste the following</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           # set scheduler for NVMe<br />
           <br />
           ACTION=="add|change", KERNEL=="nvme[0-9]\*", ATTR{"queue/scheduler"}="none"<br />
@@ -706,7 +716,7 @@ export default function PerformanceGuide({ title }) {
       <p>Your going to want to make sure everything we need is properly loading up in the initial boot stages of our system and we can do this with a very simple tool called hwdetect you can install this by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S hwdetect
         </p>
       </blockquote>
@@ -714,7 +724,7 @@ export default function PerformanceGuide({ title }) {
       <p>and then run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo hwdetect --filesystem
         </p>
       </blockquote>
@@ -722,7 +732,7 @@ export default function PerformanceGuide({ title }) {
       <p>we are going to want to add the missing MODULES to our mkinitcpio file by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/mkinitcpio.conf
         </p>
       </blockquote>
@@ -732,7 +742,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>BTRFS (Single Device)</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BINARIES="fsck fsck.btrfs btrfsck"
         </p>
       </blockquote>
@@ -740,7 +750,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>BTRFS (Multi Device)</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BINARIES="fsck fsck.btrfs btrfs btrfsck"
         </p>
       </blockquote>
@@ -748,7 +758,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>EXT4</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BINARIES="fsck fsck.ext[2|3|4] e2fsck"
         </p>
       </blockquote>
@@ -756,7 +766,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>XFS</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BINARIES="fsck fsck.xfs xfs_repair"
         </p>
       </blockquote>
@@ -764,7 +774,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>VFAT (FAT32) Usually Bootloaders</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           BINARIES="fsck fsck.vfat dosfsck"
         </p>
       </blockquote>
@@ -773,7 +783,7 @@ export default function PerformanceGuide({ title }) {
         to save the file and exit. Lastly we just need to reconfigure the kernel by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo mkinitcpio -P
         </p>
       </blockquote>
@@ -785,7 +795,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Arch Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S tlp
         </p>
       </blockquote>
@@ -793,18 +803,18 @@ export default function PerformanceGuide({ title }) {
       <p><b>Debian Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install tlp
         </p>
       </blockquote>
 
-      <b>Gentoo Based</b> - <a className="text-red hover:underline" href="https://github.com/dywisor/tlp-portage/blob/maint/README.rst">https://github.com/dywisor/tlp-portage/blob/maint/README.rst</a><br />
-      <b>RedHat Based</b> - <a className="text-red hover:underline" href="https://access.redhat.com/discussions/4903881">https://access.redhat.com/discussions/4903881</a><br />
+      <b>Gentoo Based</b> - <a className="text-red break-all hover:underline" href="https://github.com/dywisor/tlp-portage/blob/maint/README.rst">https://github.com/dywisor/tlp-portage/blob/maint/README.rst</a><br />
+      <b>RedHat Based</b> - <a className="text-red break-all hover:underline" href="https://access.redhat.com/discussions/4903881">https://access.redhat.com/discussions/4903881</a><br />
 
       <p><b>Void Linux</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo xbps-install -Su tlp
         </p>
       </blockquote>
@@ -812,18 +822,18 @@ export default function PerformanceGuide({ title }) {
       <p>and enabling the systemd process like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           systemctl enable tlp.service –now
         </p>
       </blockquote>
 
       <p>This may decrease performance a bit so feel free to remove the package if it slows your system down to much. If you would like to dial in your tlp settings such as limiting
-        clock speeds on battery you can check out this guide - <a className="text-red hover:underline" href="https://linrunner.de/tlp/settings/index.html">https://linrunner.de/tlp/settings/index.html</a></p>
+        clock speeds on battery you can check out this guide - <a className="text-red break-all hover:underline" href="https://linrunner.de/tlp/settings/index.html">https://linrunner.de/tlp/settings/index.html</a></p>
 
       <p>You can open the config file by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/tlp.conf
         </p>
       </blockquote>
@@ -833,7 +843,7 @@ export default function PerformanceGuide({ title }) {
       <p>This will improve the default gestures and you can get these by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yay -S ruby-fusuma libinput ruby
         </p>
       </blockquote>
@@ -841,7 +851,7 @@ export default function PerformanceGuide({ title }) {
       <p>then we need to our user to the input group by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo gpasswd -a \$USER input
         </p>
       </blockquote>
@@ -849,7 +859,7 @@ export default function PerformanceGuide({ title }) {
       <p>where \$USER is your username then we can install a gem for fusuma by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo gem install fusuma
         </p>
       </blockquote>

@@ -29,7 +29,7 @@ export default function SecurityGuide({ title }) {
       </div>
 
       <p>if you are interested in the raw version of this guide it can be found on github here
-        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca">https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca</a></p>
+        - <a className="text-red break-all hover:underline" href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca">https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold"><a id="sysctl">Sysctl</a></h3>
 
@@ -38,7 +38,7 @@ export default function SecurityGuide({ title }) {
       <p>First things first we want to delete the default set sysctl configuration we can do that by running this command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo rm /usr/lib/sysctl.d/50-default.conf
         </p>
       </blockquote>
@@ -46,7 +46,7 @@ export default function SecurityGuide({ title }) {
       <p>In the <b>/etc/sysctl.d</b> directory we are going to create a file named <b>kptr_restrict.conf</b> which we can do by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo touch /etc/sysctl.d/kptr_restrict.conf
         </p>
       </blockquote>
@@ -54,7 +54,7 @@ export default function SecurityGuide({ title }) {
       <p>however for the sake of keeping this guide somewhat shorter and a lot quicker to implement I am going to be using nano to create the file and save it in the directory. So we can open the file by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/kptr_restrict.conf
         </p>
       </blockquote>
@@ -62,7 +62,7 @@ export default function SecurityGuide({ title }) {
       <p>and then inside the file we are going to paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.kptr_restrict=2
         </p>
       </blockquote>
@@ -73,7 +73,7 @@ export default function SecurityGuide({ title }) {
       <p>I also mentioned earlier you can set these temporarily I'm not gonna state this for all of the sysctl changes but you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sysctl -w kernel.kptr_restrict=2
         </p>
       </blockquote>
@@ -86,7 +86,7 @@ export default function SecurityGuide({ title }) {
       <p>Now we can run nano again to create <b>dmesg_restrict.conf</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/dmesg_restrict.conf
         </p>
       </blockquote>
@@ -94,7 +94,7 @@ export default function SecurityGuide({ title }) {
       <p>and inside we can paste</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.dmesg_restrict=1
         </p>
       </blockquote>
@@ -104,7 +104,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>ldisc_autoload.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/ldisc_autoload.conf
         </p>
       </blockquote>
@@ -112,7 +112,7 @@ export default function SecurityGuide({ title }) {
       <p>and inside we can add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           dev.tty.ldisc_autoload=0
         </p>
       </blockquote>
@@ -122,7 +122,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>protected_fifos</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/protected_fifos.conf
         </p>
       </blockquote>
@@ -130,7 +130,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           fs.protected_fifos=2
         </p>
       </blockquote>
@@ -140,7 +140,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>protected_regular.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/protected_regular.conf
         </p>
       </blockquote>
@@ -148,7 +148,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           fs.protected_regular=2
         </p>
       </blockquote>
@@ -158,7 +158,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>protected_hardlinks.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/protected_hardlinks.conf
         </p>
       </blockquote>
@@ -166,7 +166,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           fs.protected_hardlinks=1
         </p>
       </blockquote>
@@ -176,7 +176,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>protected_symlinks.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/protected_symlinks.conf
         </p>
       </blockquote>
@@ -184,7 +184,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           fs.protected_symlinks=1
         </p>
       </blockquote>
@@ -194,7 +194,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>suid_dumpable.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/suid_dumpable.conf
         </p>
       </blockquote>
@@ -202,7 +202,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           fs.suid_dumpable=0
         </p>
       </blockquote>
@@ -212,7 +212,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>core_uses_pid.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/core_uses_pid.conf
         </p>
       </blockquote>
@@ -220,7 +220,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.core_uses_pid=1
         </p>
       </blockquote>
@@ -230,7 +230,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>ctrl-alt-del.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/ctrl-alt-del.conf
         </p>
       </blockquote>
@@ -238,7 +238,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.ctrl-alt-del=0
         </p>
       </blockquote>
@@ -248,7 +248,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>modules_disabled.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/perf_event_paranoid.conf
         </p>
       </blockquote>
@@ -256,7 +256,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.perf_event_paranoid=3
         </p>
       </blockquote>
@@ -266,7 +266,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>randomize_va_space.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/randomize_va_space.conf
         </p>
       </blockquote>
@@ -274,7 +274,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.randomize_va_space=2
         </p>
       </blockquote>
@@ -284,7 +284,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>unprivileged_bpf_disabled.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/unprivileged_bpf_disabled.conf
         </p>
       </blockquote>
@@ -292,7 +292,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.unprivileged_bpf_disabled=1
         </p>
       </blockquote>
@@ -302,7 +302,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>ptrace_scope.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/ptrace_scope.conf
         </p>
       </blockquote>
@@ -310,7 +310,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.yama.ptrace_scope=2
         </p>
       </blockquote>
@@ -321,7 +321,7 @@ export default function SecurityGuide({ title }) {
       <p>Next create the <b>kexec.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/kexec.conf
         </p>
       </blockquote>
@@ -329,7 +329,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.kexec_load_disabled=1
         </p>
       </blockquote>
@@ -339,7 +339,7 @@ export default function SecurityGuide({ title }) {
       <p>Next add the <b>sysrq.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/sysrq.conf
         </p>
       </blockquote>
@@ -347,7 +347,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.sysrq=0
         </p>
       </blockquote>
@@ -357,7 +357,7 @@ export default function SecurityGuide({ title }) {
       <p>next create the <b>unprivileged_users_clone.conf</b> file</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/unprivileged_users_clone.conf
         </p>
       </blockquote>
@@ -365,7 +365,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.unprivileged_userns_clone=0
         </p>
       </blockquote>
@@ -377,7 +377,7 @@ export default function SecurityGuide({ title }) {
         in running to secure your kernel even further you can read your official documentation from your distro. For most it will just require downloading linux-hardened and linux-hardened-headers
         and then if you use GRUB you will need to rebuild it with grub-mkconfig. If you wanted to take your security even further you can compile your kernel from source which will give you unique
         kernel keys. You can also check out GRSecurity for extra patches however they do cost money you can check out there page here
-        - <a className="text-red hover:underline" href="https://grsecurity.net/">https://grsecurity.net/</a></p>
+        - <a className="text-red break-all hover:underline" href="https://grsecurity.net/">https://grsecurity.net/</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold"><a id="bootloader">Bootloader Parameters</a></h3>
 
@@ -386,7 +386,7 @@ export default function SecurityGuide({ title }) {
       <p>If you are using <b>GRUB</b> you edit your boot parameters running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/default/grub
         </p>
       </blockquote>
@@ -396,7 +396,7 @@ export default function SecurityGuide({ title }) {
       <p>If you are using <b>Syslinux</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /boot/syslinux/syslinux.cfg
         </p>
       </blockquote>
@@ -406,7 +406,7 @@ export default function SecurityGuide({ title }) {
       <p>If you are using <b>Systemd-boot</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /boot/loader/entries/arch.conf
         </p>
       </blockquote>
@@ -415,7 +415,7 @@ export default function SecurityGuide({ title }) {
         If on another distro it probably won't be called arch.conf you can do</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           ls /boot/loader/entries/
         </p>
       </blockquote>
@@ -426,12 +426,12 @@ export default function SecurityGuide({ title }) {
 
       <h4 className="text-lg font-semibold">AppArmor</h4>
 
-      <p>AppArmor - <a className="text-red hover:underline" href="https://www.apparmor.com/">https://www.apparmor.com/</a></p>
+      <p>AppArmor - <a className="text-red break-all hover:underline" href="https://www.apparmor.com/">https://www.apparmor.com/</a></p>
 
       <p>For App Armor you should just need to install the apparmor package for Arch that would be</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S apparmor
         </p>
       </blockquote>
@@ -439,7 +439,7 @@ export default function SecurityGuide({ title }) {
       <p>and enable the service with</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo systemctl enable apparmor.service
         </p>
       </blockquote>
@@ -447,7 +447,7 @@ export default function SecurityGuide({ title }) {
       <p>on Debian based Distros (Ubuntu, Mint, Kali, etc)</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install apparmor apparmor-utils auditd
         </p>
       </blockquote>
@@ -455,7 +455,7 @@ export default function SecurityGuide({ title }) {
       <p>on SUSE based distros (OpenSUSE, idk anymore...)</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           zypper install libapparmor apparmor-profiles apparmor-utils apparmor-parser yast2-apparmor
         </p>
       </blockquote>
@@ -463,7 +463,7 @@ export default function SecurityGuide({ title }) {
       <p>for Void Linux</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo xbps-install apparmor
         </p>
       </blockquote>
@@ -473,7 +473,7 @@ export default function SecurityGuide({ title }) {
       <p>You can then enable AppArmor by adding</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           apparmor=1 security=apparmor
         </p>
       </blockquote>
@@ -484,18 +484,18 @@ export default function SecurityGuide({ title }) {
 
       <p>If your going the SELinux route you can follow the guides below. I would recommend going this route.</p>
 
-      <p><b>Arch</b> - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/SELinux ">https://wiki.archlinux.org/title/SELinux</a><br />
-        <b>Debian</b> - <a className="text-red hover:underline" href="https://wiki.debian.org/SELinux/Setup">https://wiki.debian.org/SELinux/Setup</a><br />
-        <b>Fedora</b> - <a className="text-red hover:underline" href="https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes">https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes</a><br />
-        <b>Gentoo</b> - <a className="text-red hover:underline" href="https://wiki.gentoo.org/wiki/SELinux/Installation">https://wiki.gentoo.org/wiki/SELinux/Installation</a><br />
-        <b>Mint</b> - <a className="text-red hover:underline" href="https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610">https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610</a><br />
-        <b>RedHat</b> - <a className="text-red hover:underline" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux</a><br />
-        <b>Ubuntu</b> - <a className="text-red hover:underline" href="https://wiki.ubuntu.com/SELinux">https://wiki.ubuntu.com/SELinux</a><br /></p>
+      <p><b>Arch</b> - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/SELinux ">https://wiki.archlinux.org/title/SELinux</a><br />
+        <b>Debian</b> - <a className="text-red break-all hover:underline" href="https://wiki.debian.org/SELinux/Setup">https://wiki.debian.org/SELinux/Setup</a><br />
+        <b>Fedora</b> - <a className="text-red break-all hover:underline" href="https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes">https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes</a><br />
+        <b>Gentoo</b> - <a className="text-red break-all hover:underline" href="https://wiki.gentoo.org/wiki/SELinux/Installation">https://wiki.gentoo.org/wiki/SELinux/Installation</a><br />
+        <b>Mint</b> - <a className="text-red break-all hover:underline" href="https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610">https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610</a><br />
+        <b>RedHat</b> - <a className="text-red break-all hover:underline" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux">https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux</a><br />
+        <b>Ubuntu</b> - <a className="text-red break-all hover:underline" href="https://wiki.ubuntu.com/SELinux">https://wiki.ubuntu.com/SELinux</a><br /></p>
 
       <p>Next we are going to add the other Bootloader parameters starting with the</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           slab_nomerge
         </p>
       </blockquote>
@@ -507,19 +507,19 @@ export default function SecurityGuide({ title }) {
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           slub_debug=FZ
         </p>
       </blockquote>
 
       <p>This will enable sanity checks (F) and redzoning (Z). Sanity checks make sure that the memory has been overwritten correctly. Redzoning adds extra areas around slabs that detect when
         a slab is overwritten past its real size, which can help detect overflows. If you are interested in other parameters that can be used you can read the linux kernel docs found here
-        - <a className="text-red hover:underline" href="https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst">https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst</a></p>
+        - <a className="text-red break-all hover:underline" href="https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst">https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst</a></p>
 
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           init_on_alloc=1 init_on_free=1
         </p>
       </blockquote>
@@ -529,7 +529,7 @@ export default function SecurityGuide({ title }) {
       <p>Next add this if you use ECC Ram (Xeon, EPYC, Power9, etc)</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mce=0
         </p>
       </blockquote>
@@ -539,42 +539,42 @@ export default function SecurityGuide({ title }) {
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pti=on
         </p>
       </blockquote>
 
       <p>This enables Kernel Page Table Isolation which mitigates Meltdown and prevents some KASLR bypasses. For those unfamiliar with the Meltdown exploit you can read more about it here
-        - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)</a></p>
+        - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)">https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)</a></p>
 
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mds=full,nosmt
         </p>
       </blockquote>
 
       <p>This will enable all mitigations for the MDS vulnerability and disable SMT. Disabling hyperthreading may have a significant performance gain as you will lose half of your threads.
         If you do not wish to disable hyperthreading just remove the <b>,nosmt</b> part of the line. By not disabling hyperthreading you may be at risk of getting a Spectre attack which you
-        can read about here - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)</a></p>
+        can read about here - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)">https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)</a></p>
 
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           module.sig_enforce=1
         </p>
       </blockquote>
 
       <p>This forces the kernel to only load modules signed with a valid key which increases security as it makes it harder to load malicious kernel modules. This prevents all out-of-tree
         kernel modules from being loaded. Some modules such as virtualbox wireguard and nvidia drivers may not load and will require a dkms module as a workaround. You can learn more about
-        DKMS Modules here - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support">https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support</a></p>
+        DKMS Modules here - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support">https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support</a></p>
 
       <p>Next add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           oops=panic
         </p>
       </blockquote>
@@ -588,13 +588,13 @@ export default function SecurityGuide({ title }) {
       <p>Next we want to one of the following lines to the end of our Bootloader configuration options.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           amd-iommu=on
         </p>
       </blockquote>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           intel-iommu=on
         </p>
       </blockquote>
@@ -604,7 +604,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we can add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           lockdown=confidentiality
         </p>
       </blockquote>
@@ -614,7 +614,7 @@ export default function SecurityGuide({ title }) {
       <p>After you have applied these parameters we can move on, if you are using GRUB just run the command below to reconfigure GRUB.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo grub-mkconfig -o /boot/grub/grub.cfg
         </p>
       </blockquote>
@@ -627,7 +627,7 @@ export default function SecurityGuide({ title }) {
       <p>If you selected to use AppArmor over SELinux as your MAC you can create create profiles by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           aa-genprof /usr/bin/(program)
         </p>
       </blockquote>
@@ -636,13 +636,13 @@ export default function SecurityGuide({ title }) {
         access to and will add them to the profile. You can then check the profile manually to make sure everything is correct as it probably won't cover everything the application will do.</p>
 
       <p>If you want to take it even further. You can setup a system-wide AppArmor policy by using an initramfs hook to confine systemd. You can find out more about that here
-        - <a className="text-red hover:underline" href="https://gitlab.com/apparmor/apparmor/-/wikis">https://gitlab.com/apparmor/apparmor/-/wikis/FullSystemPolicy</a></p>
+        - <a className="text-red break-all hover:underline" href="https://gitlab.com/apparmor/apparmor/-/wikis">https://gitlab.com/apparmor/apparmor/-/wikis/FullSystemPolicy</a></p>
 
       <p>If you chose the SELinux route their's 2 ways of setting it up the first is targeted policy which is the most common use case and Multi-Level-Security (MLS). The configuration should
         be located at <b>/etc/selinux/config</b>. You can use one of the following documentation to set SELinux up how you would like.</p>
 
-      <p><b>Targeted</b> - <a className="text-red hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement</a><br />
-        <b>MLS</b> - <a className="text-red hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md</a></p>
+      <p><b>Targeted</b> - <a className="text-red break-all hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement</a><br />
+        <b>MLS</b> - <a className="text-red break-all hover:underline" href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md">https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold"><a name="sandboxing">Sandboxing</a></h3>
 
@@ -661,7 +661,7 @@ export default function SecurityGuide({ title }) {
       <p><b>Arch Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo pacman -S xorg-server-xephyr
         </p>
       </blockquote>
@@ -669,7 +669,7 @@ export default function SecurityGuide({ title }) {
       <p><b>Debian Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install xserver-xephyr
         </p>
       </blockquote>
@@ -677,7 +677,7 @@ export default function SecurityGuide({ title }) {
       <p><b>Gentoo Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           emerge -av x11-base/xorg-server
         </p>
       </blockquote>
@@ -685,19 +685,19 @@ export default function SecurityGuide({ title }) {
       <p><b>RedHat Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           yum install xorg-x11-server-xephyr
         </p>
       </blockquote>
 
-      <p>You can learn more about running Xephyr on your system here - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Xephyr#Execution">https://wiki.archlinux.org/title/Xephyr#Execution</a></p>
+      <p>You can learn more about running Xephyr on your system here - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Xephyr#Execution">https://wiki.archlinux.org/title/Xephyr#Execution</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold"><a name="root">Root Tweaks</a></h3>
 
       <p>First we are going to run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/securetty
         </p>
       </blockquote>
@@ -707,7 +707,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/pam.d/su
         </p>
       </blockquote>
@@ -715,7 +715,7 @@ export default function SecurityGuide({ title }) {
       <p>and</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/pam.d/su-l
         </p>
       </blockquote>
@@ -723,7 +723,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           auth required pam_wheel.so use_uid
         </p>
       </blockquote>
@@ -733,7 +733,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/ssh/sshd_config
         </p>
       </blockquote>
@@ -741,7 +741,7 @@ export default function SecurityGuide({ title }) {
       <p>and under the Authentication: area you should see the line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           PermitRootLogin no
         </p>
       </blockquote>
@@ -751,7 +751,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/pam.d/passwd
         </p>
       </blockquote>
@@ -759,7 +759,7 @@ export default function SecurityGuide({ title }) {
       <p>and comment out all the lines which means make sure there is a # in front of each line. Then at the bottom add this line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           password required pam_unix.so sha512 shadow nullok rounds=65536
         </p>
       </blockquote>
@@ -769,7 +769,7 @@ export default function SecurityGuide({ title }) {
         rounds you can change the 65536 to a number you prefer. You will need to rehash your passwords after applying this setting. You can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           passwd
         </p>
       </blockquote>
@@ -777,7 +777,7 @@ export default function SecurityGuide({ title }) {
       <p>to change your root passwd and you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           passwd user
         </p>
       </blockquote>
@@ -788,7 +788,7 @@ export default function SecurityGuide({ title }) {
         issue by forcing Xorg to be run by the user by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/X11/Xwrapper.config
         </p>
       </blockquote>
@@ -796,7 +796,7 @@ export default function SecurityGuide({ title }) {
       <p>and then adding the line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           needs_root_rights = no
         </p>
       </blockquote>
@@ -804,7 +804,7 @@ export default function SecurityGuide({ title }) {
       <p>we can check what's running as root and make sure Xorg isn't there by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo ps -U root -u root u
         </p>
       </blockquote>
@@ -812,7 +812,7 @@ export default function SecurityGuide({ title }) {
       <p>If you would like to lock out the root login access completely you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           passwd -l root
         </p>
       </blockquote>
@@ -822,31 +822,31 @@ export default function SecurityGuide({ title }) {
       <p>We can start the extras by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/profile
         </p>
       </blockquote>
 
       <p>and then in the first couple lines you should see the umask line. By default it is set 022 which is not very secure. This allows every user read access across the entire system for
         newly created files. We want to change line to 0077 which will make it so the files can only be read by the owner. If you would like to understand what the numbers mean you can read this
-        post here - <a className="text-red hover:underline" href="https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html">https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html</a></p>
+        post here - <a className="text-red break-all hover:underline" href="https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html">https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html</a></p>
 
       <p>USBs can be dangerous it should go without saying if you find one you shouldn't plug it into your system. If you have never seen a USBKill you can check there page here
-        - <a className="text-red hover:underline" href="https://usbkill.com/">https://usbkill.com/</a> you can see a video off some tests with it here -
-        <a className="text-red hover:underline" href="https://www.youtube.com/watch?v=I6bRoSK39io">https://www.youtube.com/watch?v=I6bRoSK39io</a> this is just 1 example. Another deadly example can be seen in this thread
-        - <a className="text-red hover:underline" href="https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device">
+        - <a className="text-red break-all hover:underline" href="https://usbkill.com/">https://usbkill.com/</a> you can see a video off some tests with it here -
+        <a className="text-red break-all hover:underline" href="https://www.youtube.com/watch?v=I6bRoSK39io">https://www.youtube.com/watch?v=I6bRoSK39io</a> this is just 1 example. Another deadly example can be seen in this thread
+        - <a className="text-red break-all hover:underline" href="https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device">
           https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device</a> where an sh script can be run as soon as the device is plugged in gaining
         direct access of the system.</p>
 
       <p>You can install USBGuard and set up a configuration file to help with this but for something like a USBKill it will send power to the USB once its plugged in you would have to disable
         the ports in your BIOS to prevent something like that. Besides disabling in the BIOS as not every System will have that option, you can also add-on the word <b>nousb</b> at the end of the
         boot parameters covered earlier to prevent USBs from being read this won't block power to the device though so a USBKill attack is still possible. You can read more about USBGuard here
-        - <a className="text-red hover:underline" href="https://usbguard.github.io/documentation/configuration.html">https://usbguard.github.io/documentation/configuration.html</a></p>
+        - <a className="text-red break-all hover:underline" href="https://usbguard.github.io/documentation/configuration.html">https://usbguard.github.io/documentation/configuration.html</a></p>
 
       <p>If your running the linux-hardened kernel you can also add this sysctl configuration setting by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/deny_new_usb
         </p>
       </blockquote>
@@ -854,7 +854,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.deny_new_usb=1
         </p>
       </blockquote>
@@ -871,7 +871,7 @@ export default function SecurityGuide({ title }) {
       <p>To set these changes we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/modprobe.d/blacklist-dma.conf
         </p>
       </blockquote>
@@ -879,7 +879,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           install firewire-core /bin/true<br />
           install thunderbolt /bin/true
         </p>
@@ -892,7 +892,7 @@ export default function SecurityGuide({ title }) {
       <p>Next thing we want to take care of is our Core Dumps. We are going to start with our sysctl by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/sysctl.d/coredump.conf
         </p>
       </blockquote>
@@ -900,7 +900,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           kernel.core_pattern=|/bin/false
         </p>
       </blockquote>
@@ -908,7 +908,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we will disable our systemd coredumps if your running a different init system like runit then you can skip this.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/systemd/coredump.conf.d/custom.conf
         </p>
       </blockquote>
@@ -916,7 +916,7 @@ export default function SecurityGuide({ title }) {
       <p>if the directory doesn't exist it will show a message at the bottom of the nano editor and won't let you save you will need to exit and run this command first.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo mkdir /etc/systemd/coredump.conf.d/
         </p>
       </blockquote>
@@ -924,8 +924,8 @@ export default function SecurityGuide({ title }) {
       <p>Then you can create the file and add this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
-          [Coredump]
+        <p className="text-xs sm:text-sm break-all font-semibold">
+          [Coredump]<br />
           Storage=none
         </p>
       </blockquote>
@@ -935,7 +935,7 @@ export default function SecurityGuide({ title }) {
       <p>We can disable this dump by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/security/limits.conf
         </p>
       </blockquote>
@@ -943,7 +943,7 @@ export default function SecurityGuide({ title }) {
       <p>in this file we can hold the down arrow to move to the bottom of the file above the line that says <b>#End of file</b> we will add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           * hard core 0
         </p>
       </blockquote>
@@ -953,7 +953,7 @@ export default function SecurityGuide({ title }) {
       <p>Next we can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="text-lg font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo timedatectl set-ntp 0
         </p>
       </blockquote>
@@ -961,21 +961,21 @@ export default function SecurityGuide({ title }) {
       <p>and then run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo systemctl disable systemd-timesyncd.service
         </p>
       </blockquote>
 
       <p>This will disable NTP (Network Time Protocol). If your time becomes messed up makes sure its correct in the BIOS and you can use timedatectl to manually set your time.
         By disabling this we resist tracking as the time set on the computer is not an active telling of our location since its manually set. NTP also allows for the possibility of having
-        a replay attacks which you can read more about here - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/Replay_attack">https://en.wikipedia.org/wiki/Replay_attack</a></p>
+        a replay attacks which you can read more about here - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/Replay_attack">https://en.wikipedia.org/wiki/Replay_attack</a></p>
 
       <h4 className="text-lg font-semibold">Editing files as root (vi and nano)</h4>
 
       <p>It is unrecommended to run ordinary text editors as root because many text editors can do more than edit text files and this can be exploited. You can try this by opening vi as root by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo vi
         </p>
       </blockquote>
@@ -986,7 +986,7 @@ export default function SecurityGuide({ title }) {
         original file as the root user. This way, the actual editor doesn't run as root. To use sudoedit run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudoedit /path/to/file
         </p>
       </blockquote>
@@ -994,7 +994,7 @@ export default function SecurityGuide({ title }) {
       <p>By default it will use vi but the default editor can be changed by setting the EDITOR or SUDO_EDITOR environment variable. If you use nano you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           EDITOR=nano sudoedit /path/to/file
         </p>
       </blockquote>
@@ -1002,7 +1002,7 @@ export default function SecurityGuide({ title }) {
       <p>If you use nano we can set that to be the default when sudoedit is run by setting an environment variable. First run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/environment
         </p>
       </blockquote>
@@ -1010,7 +1010,7 @@ export default function SecurityGuide({ title }) {
       <p>scroll down to the bottom and edit or add the lines</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           EDITOR=nano sudoedit /path/to/file
         </p>
       </blockquote>
@@ -1024,7 +1024,7 @@ export default function SecurityGuide({ title }) {
       <p>First thing we are going to want to do for this section is create</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/modprobe.d/uncommon-network-protocols.conf
         </p>
       </blockquote>
@@ -1032,7 +1032,7 @@ export default function SecurityGuide({ title }) {
       <p>and inside this file we want to put</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           install dccp /bin/true<br />
           install sctp /bin/true<br />
           install rds /bin/true<br />
@@ -1062,7 +1062,7 @@ export default function SecurityGuide({ title }) {
       <p>Lastly we can Blacklist uncommon filesystems. We can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/modprobe.d/uncommon-filesystems.conf
         </p>
       </blockquote>
@@ -1070,7 +1070,7 @@ export default function SecurityGuide({ title }) {
       <p>and inside put</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           install cramfs /bin/true<br />
           install freevxfs /bin/true<br />
           install jffs2 /bin/true<br />
@@ -1090,7 +1090,7 @@ export default function SecurityGuide({ title }) {
       <p>To open your fstab config you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/fstab
         </p>
       </blockquote>
@@ -1098,7 +1098,7 @@ export default function SecurityGuide({ title }) {
       <p>Your going to want to find each of your drives mount and in the options line it may not say defaults but your just going to want to add the following after what you have</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm overflow-y-scroll font-semibold">
           <pre>UUID=xxxx     /          ext4    defaults                           0 1</pre>
           <pre>UUID=xxxx     /tmp       ext4    defaults,nosuid,noexec,nodev       0 1</pre>
           <pre>UUID=xxxx     /home      ext4    defaults,nosuid,nodev              0 1</pre>
@@ -1125,7 +1125,7 @@ export default function SecurityGuide({ title }) {
       <p>We will need 2 terminals open to set this password up. In the first terminal run the command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           grub-mkpasswd-pbkdf2
         </p>
       </blockquote>
@@ -1134,7 +1134,7 @@ export default function SecurityGuide({ title }) {
         grub.pbkdf2.sha512.10000.xxxxxxx</b> we need the <b>grub.pbkdf2.sha512.10000.</b> part and all the numbers and letters after it. Keep this terminal open and in the second terminal run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/grub.d/40_custom
         </p>
       </blockquote>
@@ -1142,7 +1142,7 @@ export default function SecurityGuide({ title }) {
       <p>and at the bottom of the file add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           set superusers="root"<br />
           password_pbkdf2 root xxxxxxx
         </p>
@@ -1155,7 +1155,7 @@ export default function SecurityGuide({ title }) {
         however you can have it password protect it all like executing a menu entry etc. If you want it be setup where its protecting executing a menu and what not just skip this part. We are going to run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /boot/grub/grub.cfg
         </p>
       </blockquote>
@@ -1164,7 +1164,7 @@ export default function SecurityGuide({ title }) {
         enter over and over until you reach this spot. Once here you just want to add <b>--unrestricted</b> after your entries name so as an example</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           menuentry 'Arch Linux' --unrestricted
         </p>
       </blockquote>
@@ -1174,7 +1174,7 @@ export default function SecurityGuide({ title }) {
       <p>Lastly we can rebuild our Bootloader configuration by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo grub-mkconfig -o /boot/grub/grub.cfg
         </p>
       </blockquote>
@@ -1184,7 +1184,7 @@ export default function SecurityGuide({ title }) {
       <p>We need to start by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /boot/syslinux/syslinux.cfg
         </p>
       </blockquote>
@@ -1192,7 +1192,7 @@ export default function SecurityGuide({ title }) {
       <p>and add the line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           MENU MASTER PASSWD (password)
         </p>
       </blockquote>
@@ -1200,21 +1200,21 @@ export default function SecurityGuide({ title }) {
       <p>replace (password) with the password you want to use. If you want to also set a menu password then inside the same file add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           MENU PASSWD (password)
         </p>
       </blockquote>
 
       <p>Again replace (password) with the password you want to use. Another thing to note is that the passwords can either be plaintext or hashed with MD5, SHA-1, SHA-2-256 or SHA-2-512.
         If you would like to use one of these hashing algorithms check out this page -
-        <a className="text-red hover:underline" href="https://emn178.github.io/online-tools/sha256.html">https://emn178.github.io/online-tools/sha256.html</a></p>
+        <a className="text-red break-all hover:underline" href="https://emn178.github.io/online-tools/sha256.html">https://emn178.github.io/online-tools/sha256.html</a></p>
 
       <h4 className="text-lg font-semibold">Systemd-boot</h4>
 
       <p>For Systemd-boot we need to run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /boot/loader/loader.conf
         </p>
       </blockquote>
@@ -1222,18 +1222,18 @@ export default function SecurityGuide({ title }) {
       <p>and add the line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           editor no
         </p>
       </blockquote>
 
       <p>This will disable all further editing to the Bootloader parameters we set earlier. systemd-boot does not officially support password protecting the kernel parameters however you can
-        use this community tool to add a password if you would like - <a className="text-red hover:underline" href="https://github.com/kitsunyan/systemd-boot-password">https://github.com/kitsunyan/systemd-boot-password</a></p>
+        use this community tool to add a password if you would like - <a className="text-red break-all hover:underline" href="https://github.com/kitsunyan/systemd-boot-password">https://github.com/kitsunyan/systemd-boot-password</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold"><a name="lynis">Lynis</a></h3>
 
       <p>For those unfamiliar lynis is an enterprise application for macOS, Linux and BSD based systems. You can read more about it here -
-        <a className="text-red hover:underline" href="https://cisofy.com/">https://cisofy.com/</a></p>
+        <a className="text-red break-all hover:underline" href="https://cisofy.com/">https://cisofy.com/</a></p>
 
       <p>With all of these tweaks so far this should bring you over 65 score and on some distros into the high 70s. Keep in mind this is before any Network settings have been set.
         I am working on coming out with a networking guide next and will share it here.</p>
@@ -1241,7 +1241,7 @@ export default function SecurityGuide({ title }) {
       <p>Most likely you will have systemd errors if your running on a distro with systemd you can check these issues by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           /usr/bin/systemd-analyze security
         </p>
       </blockquote>
@@ -1251,10 +1251,10 @@ export default function SecurityGuide({ title }) {
       <p>If you would further like to increase your lynis score make sure you can install ClamAV, Aide (note there's a special SELinux version if you opted to go that route), RKHunter and
         OpenVAS and make sure you don't just install these... make sure you enable them in your init system.</p>
 
-      <p><b>AIDE</b> - <a className="text-red hover:underline" href="https://aide.github.io/">https://aide.github.io/</a><br />
-        <b>ClamAV</b> - <a className="text-red hover:underline" href="https://www.clamav.net/">https://www.clamav.net/</a><br />
-        <b>RKHunter</b> - <a className="text-red hover:underline" href="https://sourceforge.net/projects/rkhunter/">https://sourceforge.net/projects/rkhunter/</a><br />
-        <b>OpenVAS</b> - <a className="text-red hover:underline" href="https://github.com/greenbone/openvas-scanner">https://github.com/greenbone/openvas-scanner</a></p>
+      <p><b>AIDE</b> - <a className="text-red break-all hover:underline" href="https://aide.github.io/">https://aide.github.io/</a><br />
+        <b>ClamAV</b> - <a className="text-red break-all hover:underline" href="https://www.clamav.net/">https://www.clamav.net/</a><br />
+        <b>RKHunter</b> - <a className="text-red break-all hover:underline" href="https://sourceforge.net/projects/rkhunter/">https://sourceforge.net/projects/rkhunter/</a><br />
+        <b>OpenVAS</b> - <a className="text-red break-all hover:underline" href="https://github.com/greenbone/openvas-scanner">https://github.com/greenbone/openvas-scanner</a></p>
 
       <h2 className="flex text-lg justify-center font-semibold"><a name="best">Best Practices</a></h2>
 
@@ -1269,7 +1269,7 @@ export default function SecurityGuide({ title }) {
       <p>Set your username to "user" if you have multiple users you can name them "user1" and "user2"</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           {"sudo usermod -l user <old-name>"}
         </p>
       </blockquote>
@@ -1277,7 +1277,7 @@ export default function SecurityGuide({ title }) {
       <p>if you are going with multiple users change the word user to the username you want. Then you can the home directory name by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo usermod -d /home/user -m user
         </p>
       </blockquote>
@@ -1294,18 +1294,18 @@ export default function SecurityGuide({ title }) {
 
       <p>As Richard Stallman once said "A smartphone is a computer - it's not built using a computer - the job it does is the job of being a computer. So, everything we say about computers, that the
         software you run should be free - you should insist on that - applies to smart phones just the same. And likewise to those tablets." I would recommend picking up a Google Pixel and looking at the
-        project GrapheneOS which you can find a link to here - <a className="text-red hover:underline" href="https://grapheneos.org/">https://grapheneos.org/</a> If you would like to know why a Google
-        Pixel you can read this article here - <a className="text-red hover:underline" href="https://dt.gl/tweetstorm-grapheneos/">https://dt.gl/tweetstorm-grapheneos/</a></p>
+        project GrapheneOS which you can find a link to here - <a className="text-red break-all hover:underline" href="https://grapheneos.org/">https://grapheneos.org/</a> If you would like to know why a Google
+        Pixel you can read this article here - <a className="text-red break-all hover:underline" href="https://dt.gl/tweetstorm-grapheneos/">https://dt.gl/tweetstorm-grapheneos/</a></p>
 
       <p>If your looking for a laptop with Coreboot support and hardware switches to disable some functions of the device you can check out the Purism Laptop -
-        <a className="text-red hover:underline" href="https://puri.sm/">https://puri.sm/</a> and the Framework laptop (at the time of writing doesn't have Coreboot but is planned)
-        - <a className="text-red hover:underline" href="https://frame.work/">https://frame.work/</a></p>
+        <a className="text-red break-all hover:underline" href="https://puri.sm/">https://puri.sm/</a> and the Framework laptop (at the time of writing doesn't have Coreboot but is planned)
+        - <a className="text-red break-all hover:underline" href="https://frame.work/">https://frame.work/</a></p>
 
       <p>if you don't have one of these devices you can disable your Microphone and webcam through software however hardware switches cutting off the power to the devices is far more secure as it can't be
         tampered with. None the less to disable your webcam run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/modprobe.d/blacklist-webcam.conf
         </p>
       </blockquote>
@@ -1313,7 +1313,7 @@ export default function SecurityGuide({ title }) {
       <p>and add</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           install uvcvideo /bin/true
         </p>
       </blockquote>
@@ -1322,7 +1322,7 @@ export default function SecurityGuide({ title }) {
         ribbon cable connecting that module and seeing if the system will still POST fine. Again if you really wanted to you can run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo ls /proc/asound/modules
         </p>
       </blockquote>
@@ -1330,7 +1330,7 @@ export default function SecurityGuide({ title }) {
       <p>it should give back a name which you can then run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo nano /etc/modprobe.d/blacklist-mic.conf
         </p>
       </blockquote>
@@ -1338,7 +1338,7 @@ export default function SecurityGuide({ title }) {
       <p>and put</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           install (module-name) /bin/true
         </p>
       </blockquote>
@@ -1352,11 +1352,11 @@ export default function SecurityGuide({ title }) {
       <p>You can also check out the company Yubico to pick up a YubiKey here - <a>https://www.yubico.com/ca/works-with-yubikey/catalog/linux/</a> This will allow you to not only have the password for user/root
         but also require the system to have the yubikey plugged into the device to be able to login. They even offer some Keys with fingerprint scanners so they would need the YubiKey and your fingerprint.
         You can also pick up multiple YubiKeys or use the same key to lock access to accounts in some applications such as KeePassXC there is a good thread about this here if you are interested in reading
-        the pros and cons of something like this - <a className="text-red hover:underline" href="https://security.stackexchange.com/questions/201345/is-it-reasonable-to-use-keepassxc-with-yubikey">
+        the pros and cons of something like this - <a className="text-red break-all hover:underline" href="https://security.stackexchange.com/questions/201345/is-it-reasonable-to-use-keepassxc-with-yubikey">
           https://security.stackexchange.com/questions/201345/is-it-reasonable-to-use-keepassxc-with-yubikey</a></p>
 
       <p>If you need to use a Virtual Machine please use virt-manager to setup a KVM or QEMU based virtual machine, Gnome Boxes is another good choice. Virtual box has many issues which you can read about
-        in this thread from whonix - <a className="text-red hover:underline" href="https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F">https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F</a></p>
+        in this thread from whonix - <a className="text-red break-all hover:underline" href="https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F">https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F</a></p>
     </div>
   )
 }

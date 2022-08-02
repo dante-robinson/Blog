@@ -35,11 +35,11 @@ export default function ArchGuide({ title }) {
         learned what I personally like along the way and and making a write up on that as well as some other ways to install I have personally run to give an understanding to anyone reading.
         I have since tried many other Distros over the years such as popOS, Mint, Ubuntu, Debian, Artix, MX, Fedora, Manjaro and Elementary. However I keep coming back to Arch for just the
         sheer amount of packages (AUR) and how easy it is to use (learning curve aside of course). *Switched to Gentoo now as I am wanting more control over my system that Arch won't allow.</p>
-      <p>To make this guide less complex I have not added any encryption or LVM instructions if you are looking for that please check out this guide - <a className="text-red hover:underline" href="https://www.coded-with-love.com/blog/install-arch-linux-encrypted/">
+      <p>To make this guide less complex I have not added any encryption or LVM instructions if you are looking for that please check out this guide - <a className="text-red break-all hover:underline" href="https://www.coded-with-love.com/blog/install-arch-linux-encrypted/">
         https://www.coded-with-love.com/blog/install-arch-linux-encrypted/</a></p>
 
       <p>You can find the raw version of this guide on github here
-        - <a className="text-red hover:underline" href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef">https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef</a>
+        - <a className="text-red break-all hover:underline" href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef">https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef</a>
       </p>
 
       <h3 className="flex text-lg justify-center font-semibold">Formatting the Drive <a id="format"></a></h3>
@@ -47,7 +47,7 @@ export default function ArchGuide({ title }) {
       <p>First of all you should understand how Linux reads drives already if you run the command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           ls /dev
         </p>
       </blockquote>
@@ -56,7 +56,7 @@ export default function ArchGuide({ title }) {
         sda or nvme0n1. If you have multiple drives this is easy to figure out to if your familiar with how partitions are labeled already you should tell which drive you need already if not run </p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cfdisk /dev/sd(x) or cfdisk /dev/nvme0n(x)
         </p>
       </blockquote>
@@ -65,7 +65,7 @@ export default function ArchGuide({ title }) {
         drive until you find the one you need for me its nvme0np1 so I will run </p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cfdisk /dev/nvme0n1
         </p>
       </blockquote>
@@ -84,7 +84,7 @@ export default function ArchGuide({ title }) {
       <p>You can see the new partitions by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           lsblk
         </p>
       </blockquote>
@@ -94,7 +94,7 @@ export default function ArchGuide({ title }) {
       <p>This is pretty simple to do we can encrypt our root partition by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           cryptsetup luksFormat /dev/nvme0n1p2
         </p>
       </blockquote>
@@ -105,7 +105,7 @@ export default function ArchGuide({ title }) {
         my first partition set to be my boot directory so I’m going to format it to FAT32 by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkfs.fat -F32 /dev/nvme0n1p1
         </p>
       </blockquote>
@@ -114,16 +114,16 @@ export default function ArchGuide({ title }) {
         run XFS but have switched over to this for snapshots. If your new I recommend running EXT4 while XFS does tend to be slightly faster in my use case some games like WoW didn't work on it so
         it’s best to just stick to EXT4 here so your not making separate partitions in EXT4 for some games lol. BTRFS doesn’t have this issue in my use so far. If you want to read more I have some links here for each.</p>
 
-      <p><b>BTRFS</b> - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Btrfs">https://wiki.archlinux.org/title/Btrfs</a></p>
+      <p><b>BTRFS</b> - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Btrfs">https://wiki.archlinux.org/title/Btrfs</a></p>
 
-      <p><b>EXT4</b> - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Ext4">https://wiki.archlinux.org/title/Ext4</a></p>
+      <p><b>EXT4</b> - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Ext4">https://wiki.archlinux.org/title/Ext4</a></p>
 
-      <p><b>XFS</b> - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/XFS">https://wiki.archlinux.org/title/XFS</a></p>
+      <p><b>XFS</b> - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/XFS">https://wiki.archlinux.org/title/XFS</a></p>
 
       <p>To format to <b>BTRFS</b> run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkfs.btrfs /dev/nvme0n1p2
         </p>
       </blockquote>
@@ -131,7 +131,7 @@ export default function ArchGuide({ title }) {
       <p>If your going to run <b>XFS</b> or <b>EXT4</b> its pretty similar</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkfs.xfs /dev/nvme0n1p2
         </p>
       </blockquote>
@@ -139,7 +139,7 @@ export default function ArchGuide({ title }) {
       <p>or</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkfs.ext4 /dev/nvme0n1p2
         </p>
       </blockquote>
@@ -148,8 +148,9 @@ export default function ArchGuide({ title }) {
         BTRFS then format your home partition to something else like XFS or EXT4. If you created a swap partition you will need to run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkswap /dev/nvme0n1p(x)<br />
+          <br />
           swapon /dev/nvme0n1p(x)
         </p>
       </blockquote>
@@ -163,7 +164,7 @@ export default function ArchGuide({ title }) {
       <p>First I mount my btrfs partition by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mount /dev/nvme0n1p2 /mnt
         </p>
       </blockquote>
@@ -171,19 +172,23 @@ export default function ArchGuide({ title }) {
       <p>Now we can create the subvolumes on the /mnt directory by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           btrfs su cr /mnt/@<br />
+          <br />
           btrfs su cr /mnt/@var<br />
+          <br />
           btrfs su cr /mnt/@opt<br />
+          <br />
           btrfs su cr /mnt/@tmp<br />
-          btrfs su cr /mnt/@snapshots<br />
+          <br />
+          btrfs su cr /mnt/@snapshots
         </p>
       </blockquote>
 
       <p>if you didn’t create a separate /home partition then run if you did make a separate partition I will get to you later on don’t worry about it for now.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           btrfs su cr /mnt/@home
         </p>
       </blockquote>
@@ -191,7 +196,7 @@ export default function ArchGuide({ title }) {
       <p>Then we can unmount the partition by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           umount /mnt
         </p>
       </blockquote>
@@ -212,12 +217,17 @@ export default function ArchGuide({ title }) {
       <p>So now we need to mount the partition as subvolumes… you can do so by running these commands and we might as well setup the fstab while we are here.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
-          mount -o noatime,commit=120,compress=zstd,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt<br />
-          mkdir /mnt/{"boot,home,var,opt,tmp,snapshots"}<br />
-          mount -o noatime,commit=120,compress=zstd,space_cache=v2,subvol=@opt /dev/nvme0n1p2 /mnt/opt<br />
-          mount -o noatime,commit=120,compress=zstd,space_cache=v2,subvol=@tmp /dev/nvme0n1p2 /mnt/tmp<br />
-          mount -o noatime,commit=120,compress=zstd,space_cache=v2,subvol=@snapshots /dev/nvme0n1p2 /mnt/snapshots<br />
+        <p className="text-xs lg:text-sm break-all font-semibold">
+          mount -o noatime,commit=120,space_cache=v2,subvol=@ /dev/nvme0n1p2 /mnt<br />
+          <br />
+          mkdir /mnt/{"{boot,home,var,opt,tmp,snapshots}"}<br />
+          <br />
+          mount -o noatime,commit=120,space_cache=v2,subvol=@opt /dev/nvme0n1p2 /mnt/opt<br />
+          <br />
+          mount -o noatime,commit=120,space_cache=v2,subvol=@tmp /dev/nvme0n1p2 /mnt/tmp<br />
+          <br />
+          mount -o noatime,commit=120,space_cache=v2,subvol=@snapshots /dev/nvme0n1p2 /mnt/snapshots<br />
+          <br />
           mount -o subvol=@var /dev/nvme0n1p2 /mnt/var<br />
         </p>
       </blockquote>
@@ -225,8 +235,8 @@ export default function ArchGuide({ title }) {
       <p>and then again if you don’t have a /home partition then run this also</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
-          mount -o noatime,commit=120,compress=zstd,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
+        <p className="text-xs sm:text-sm break-all font-semibold">
+          mount -o noatime,commit=120,space_cache=v2,subvol=@home /dev/nvme0n1p2 /mnt/home
         </p>
       </blockquote>
 
@@ -239,7 +249,10 @@ export default function ArchGuide({ title }) {
       <p><b>commit</b> – the time in seconds it takes for the data to be synchronized to storage set at 120 seconds here so if you lose power or crash any data within the
         last 2 minutes will be probably be lost feel free to change this.</p>
 
-      <p><b>compress</b> – I have zstd set as this but you can use whatever compression method you prefer I’m not going to cover them here however.</p>
+      <p><b>compress</b> – by not listing compress this sets my compression to none. You can use whatever compression method you prefer, the better the compression method the less space files will take on
+        the drive leaving more space for other things. However this will affect the drive speeds as you can see in the benchmark here
+        <a className="text-red break-all hover:underline" href="https://www.reddit.com/r/btrfs/comments/hyra46/benchmark_of_btrfs_decompression/">- https://www.reddit.com/r/btrfs/comments/hyra46/benchmark_of_btrfs_decompression/</a><br />
+        If you want to add compression just add ",compress=type" where type is the method you want for example lzo. Make sure you add the comma or the fstab won't work properly.</p>
 
       <p><b>space_cache</b> – I have this set to =v2 you can remove this if you if you prefer to use v1 which can be more stable the devs say but I have had any issues running v2.
         This just lets the kernel know where blocks of free space are on the disk to write data to when a file is created.</p>
@@ -249,7 +262,7 @@ export default function ArchGuide({ title }) {
       <p>If you have a separate /home partition you can now mount that for EXT4 running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mount -o noatime,commit=120 /dev/nvme0n1p(x) /mnt/home
         </p>
       </blockquote>
@@ -261,7 +274,7 @@ export default function ArchGuide({ title }) {
       <p>And for XFS by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mount /dev/nvme0n1p(x) /mnt/home
         </p>
       </blockquote>
@@ -273,7 +286,7 @@ export default function ArchGuide({ title }) {
       <p>You will need to mount your partitions to the /mnt Directory by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mount -o noatime,commit=120 /dev/nvme0n1p(x) /mnt
         </p>
       </blockquote>
@@ -281,7 +294,7 @@ export default function ArchGuide({ title }) {
       <p>and if you have a separate /home directory also run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkdir /mnt/home && mount -o noatime,commit=120 /dev/nvme0n1p(x) /mnt/home
         </p>
       </blockquote>
@@ -296,14 +309,14 @@ export default function ArchGuide({ title }) {
       <p><b>barrier</b> - you can also add barrier=0 if you would that will help performance however you may run into data loss in the case of a power loss if not the entire partition
         becoming corrupted so I left it out here if your on a laptop or on a UPS System maybe consider this. You can read more about this here</p>
 
-      <p><a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Ext4#Turning_barriers_off">https://wiki.archlinux.org/title/Ext4#Turning_barriers_off</a></p>
+      <p><a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Ext4#Turning_barriers_off">https://wiki.archlinux.org/title/Ext4#Turning_barriers_off</a></p>
 
       <h3 className="flex text-lg justify-center font-semibold">XFS Mounting <a id="xfs"></a></h3>
 
       <p>Very simple to mount partitions no extra options just run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mount /dev/nvme0n1p(x) /mnt
         </p>
       </blockquote>
@@ -311,7 +324,7 @@ export default function ArchGuide({ title }) {
       <p>and if you have an separate /home partition also run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkdir /mnt/home && mount /dev/nvme0n1p(x) /mnt/home
         </p>
       </blockquote>
@@ -321,7 +334,7 @@ export default function ArchGuide({ title }) {
       <p>Alright now we just have to mount the boot partition we created earlier to /mnt we can do that by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkdir /mnt/boot && mount /dev/nvme0n1p1 /mnt/boot
         </p>
       </blockquote>
@@ -331,7 +344,7 @@ export default function ArchGuide({ title }) {
       <p>After that we can start to install the basics to the mounted system by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacstrap /mnt base base-devel nano`
         </p>
       </blockquote>
@@ -342,7 +355,7 @@ export default function ArchGuide({ title }) {
       <p>After that finishes we can generate the fstab file for our mounted system by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           {"genfstab -U /mnt >> /mnt/etc/fstab"}
         </p>
       </blockquote>
@@ -352,7 +365,7 @@ export default function ArchGuide({ title }) {
       <p>If your running BTRFS you also want to run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /mnt/etc/fstab
         </p>
       </blockquote>
@@ -360,8 +373,9 @@ export default function ArchGuide({ title }) {
       <p>and then you should see some sort of editor and you want to make sure there's not option that looks similar to this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           /dev/nvme0n1p2 UUID=8ghj7n71-25k1-1h64-h592-ab7j285gsh42 <br />
+          <br />
           LABEL=ROOT              /               btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,subvol=/@,subvol=@
         </p>
       </blockquote>
@@ -373,7 +387,7 @@ export default function ArchGuide({ title }) {
       <p>Now we can move into the mounted system by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           arch-chroot /mnt
         </p>
       </blockquote>
@@ -381,7 +395,7 @@ export default function ArchGuide({ title }) {
       <p>now we need to get our timezone which we can get a list of available timezones by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           timedatectl list-timezones
         </p>
       </blockquote>
@@ -389,7 +403,7 @@ export default function ArchGuide({ title }) {
       <p>then just use your keyboard to move down till you find the timezone closest to you once your done that press Control + C and run this command using that timzone</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
         </p>
       </blockquote>
@@ -397,7 +411,7 @@ export default function ArchGuide({ title }) {
       <p>After that we can sync the clock by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           hwclock --systohc
         </p>
       </blockquote>
@@ -405,7 +419,7 @@ export default function ArchGuide({ title }) {
       <p>Now let’s add a language for our system to use by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /etc/locale.gen
         </p>
       </blockquote>
@@ -416,7 +430,7 @@ export default function ArchGuide({ title }) {
         to use the locale files on the system</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           locale-gen
         </p>
       </blockquote>
@@ -424,7 +438,7 @@ export default function ArchGuide({ title }) {
       <p>and then we want to set the default language by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           {"echo LANG=en_US.UTF-8 >> /etc/locale.conf"}
         </p>
       </blockquote>
@@ -439,7 +453,7 @@ export default function ArchGuide({ title }) {
         be any name you want I just name mine host so the command looks like this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           {"echo host >> /etc/hostname"}
         </p>
       </blockquote>
@@ -447,7 +461,7 @@ export default function ArchGuide({ title }) {
       <p>now we can edit our hosts file to use our hostname by editing the file with nano by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /etc/hosts
         </p>
       </blockquote>
@@ -455,7 +469,7 @@ export default function ArchGuide({ title }) {
       <p>Inside the hosts file under where it says see hosts for details you want to input this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
+        <p className="text-xs sm:text-sm break-all font-semibold space-y-[0.25vh]">
           127.0.0.1       localhost<br />
           ::1             localhost<br />
           127.0.1.1       myhostname.localdomain  myhostname
@@ -466,7 +480,7 @@ export default function ArchGuide({ title }) {
         enter to overwrite the file.Now we need to start install packages like the kernel itself and the bootloader we can install everything we need by running just this one command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -Syyu grub efibootmgr linux linux-firmware linux-headers networkmanager wpa_supplicant network-manager-applet reflector git bluez blueman bluez-utils xdg-utils xdg-user-dirs cups dosfstools e2fsprogs lvm2 foomatic-db-engine foomatic-db
         </p>
       </blockquote>
@@ -474,7 +488,7 @@ export default function ArchGuide({ title }) {
       <p>after that finishes if you are running BTRFS you need to also run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S grub-btrfs btrfs-progs
         </p>
       </blockquote>
@@ -482,7 +496,7 @@ export default function ArchGuide({ title }) {
       <p>If your running XFS you need to also run this</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S xfsprogs
         </p>
       </blockquote>
@@ -492,7 +506,7 @@ export default function ArchGuide({ title }) {
       <p>First we need to configure the pacman configuration file by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /etc/pacman.conf
         </p>
       </blockquote>
@@ -500,7 +514,7 @@ export default function ArchGuide({ title }) {
       <p>Once inside scroll down to find the 2 lines saying</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           #[multilib]<br />
           #Include = /etc/pacman.d/mirrorlist
         </p>
@@ -509,7 +523,7 @@ export default function ArchGuide({ title }) {
       <p>and remove the # symbols in front of each line then press Control + X then enter to save and exit the file. Then run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -Syyu
         </p>
       </blockquote>
@@ -517,32 +531,32 @@ export default function ArchGuide({ title }) {
       <p>to refresh the mirrors. After that’s finished we can start to install our GPU Drivers run the commands specific to your GPU. For the Nvidia Driver I am
         using the Closed Source Nvidia driver instead of the Open Source one from nouveau as it runs games much better. I have linked a performance comparison as
         well if you are interested in looking but In my opinion its no where close to being worth running.<br />
-        <a className="text-red hover:underline" href="https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2">https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2</a></p>
+        <a className="text-red break-all hover:underline" href="https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2">https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2</a></p>
 
       <p><b>INTEL</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel
         </p>
       </blockquote>
 
       <p><b>AMD</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon libva-mesa-driver mesa-vdpau`
         </p>
       </blockquote>
 
       <p><b>NVIDIA</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S nvidia-dkms nvidia-settings nvidia-utils lib32-nvidia-utils`blockquote
         </p>
       </blockquote>
 
       <p><b>NOUVEAU</b> (Open Source Nvidia)</p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S mesa xf86-video-nouveau
         </p>
       </blockquote>
@@ -550,7 +564,7 @@ export default function ArchGuide({ title }) {
       <p>For the nvidia package I went with nvidia-dkms over nvidia you can change this if you would like but let me explain why you should consider running DKMS.
         The standard nvidia driver will work fine with the default linux kernel however if you switch to a realtime kernel or other kernel like zen may not work.
         So its better to have DKMS from the gecko, If you don’t ever plan on running that then just change to nvidia. You can read more about DKMS here
-        - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support">https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support</a>
+        - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support">https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support</a>
         Now let me explain these commands a little bit for those that are new, pacman is your package manager similar to apt-get or dnf. -S basically means download and install
         these packages and -Syyu basically means to update all the repos upgrade any new app versions and download and install these packages you can also run -Syyu without listing any packages.
         You can also run -Sy to just update Repos and -R to remove packages that's a basic run through of pacman. Next we will install the microcode for the CPU so run
@@ -558,14 +572,14 @@ export default function ArchGuide({ title }) {
 
       <p><b>INTEL</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S intel-ucode
         </p>
       </blockquote>
 
       <p><b>AMD</b></p>
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S amd-ucode
         </p>
       </blockquote>
@@ -575,7 +589,7 @@ export default function ArchGuide({ title }) {
       <p>Now we need to edit our initial ram disk by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /etc/mkinitcpio.conf
         </p>
       </blockquote>
@@ -596,7 +610,7 @@ export default function ArchGuide({ title }) {
       <p>After this we need to reset up our kernels to use these modules by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           mkinitcpio -P
         </p>
       </blockquote>
@@ -604,7 +618,7 @@ export default function ArchGuide({ title }) {
       <p>Next we will need to install a Bootloader for a System to load our OS. If you are installing Arch along side another OS you can use this command to be able to read those other Operating Systems.</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S os-prober
         </p>
       </blockquote>
@@ -612,7 +626,7 @@ export default function ArchGuide({ title }) {
       <p>After that we can continue installing our bootloader by running this command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=Arch
         </p>
       </blockquote>
@@ -620,7 +634,7 @@ export default function ArchGuide({ title }) {
       <p>and then run</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           grub-mkconfig -o /boot/grub/grub.cfg
         </p>
       </blockquote>
@@ -631,7 +645,7 @@ export default function ArchGuide({ title }) {
         see those boot options. If you have another OS along the arch install and installed os-prober you can run that now by running </p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           os-prober
         </p>
       </blockquote>
@@ -643,7 +657,7 @@ export default function ArchGuide({ title }) {
       <p>Pretty much at the end now finishing touches before we have a basic install, next up is setting the root account password we can do that by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           passwd
         </p>
       </blockquote>
@@ -651,7 +665,7 @@ export default function ArchGuide({ title }) {
       <p>and then entering a password 2x then we will create a user by running</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           useradd -mG wheel username
         </p>
       </blockquote>
@@ -663,7 +677,7 @@ export default function ArchGuide({ title }) {
       <p>Now with our user created we need to add a passwd for the new user the command is similar to the way we added a password for root by just adding the username to the end like so</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           passwd username
         </p>
       </blockquote>
@@ -671,7 +685,7 @@ export default function ArchGuide({ title }) {
       <p>After that we need to edit our sudoers file to allow users of the wheel group to use the sudo command. We can edit that file by running one of the 2 commands below</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           EDITOR=nano visudo
         </p>
       </blockquote>
@@ -679,7 +693,7 @@ export default function ArchGuide({ title }) {
       <p>or</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           nano /etc/sudoers
         </p>
       </blockquote>
@@ -687,7 +701,7 @@ export default function ArchGuide({ title }) {
       <p>the first option will prevent you from destroying your system if you make a mistake. You need to go down until you see the line</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           %wheel ALL=(ALL) ALL
         </p>
       </blockquote>
@@ -700,7 +714,7 @@ export default function ArchGuide({ title }) {
         programs in the future. We will run the following commands</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           systemctl enable NetworkManager
           systemctl enable bluetooth
           systemctl enable org.cups.cupsd
@@ -713,20 +727,21 @@ export default function ArchGuide({ title }) {
 
       <p>Now we can move on to the final step and that's installing the Desktop Environment (DE), there's lots to chose from and Arch allows you to pretty much run any of them easily I
         will cover a few.I personally run XFCE as I like to keep my system lightweight and don’t care for many effects or built in software. Here are a few links to view some different DE’s.<br />
-        <b>XFCE</b> - <a className="text-red hover:underline" href="https://xfce.org/">https://xfce.org/</a><br />
-        <b>GNOME</b> - <a className="text-red hover:underline" href="https://www.gnome.org/">https://www.gnome.org/</a><br />
-        <b>KDE</b> - <a className="text-red hover:underline" href="https://kde.org/plasma-desktop/">https://kde.org/plasma-desktop/</a><br />
-        <b>LXQt</b> - <a className="text-red hover:underline" href="https://lxqt-project.org/">https://lxqt-project.org/</a><br />
-        <b>Budgie</b> - <a className="text-red hover:underline" href="https://getsol.us/home/">https://getsol.us/home/</a><br />
-        <b>Cinnamon</b> - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)</a><br />
-        <b>MATE</b> - <a className="text-red hover:underline" href="https://en.wikipedia.org/wiki/MATE_(software)">https://en.wikipedia.org/wiki/MATE_(software)</a>
+        <b>XFCE</b> - <a className="text-red break-all hover:underline" href="https://xfce.org/">https://xfce.org/</a><br />
+        <b>GNOME</b> - <a className="text-red break-all hover:underline" href="https://www.gnome.org/">https://www.gnome.org/</a><br />
+        <b>KDE</b> - <a className="text-red break-all hover:underline" href="https://kde.org/plasma-desktop/">https://kde.org/plasma-desktop/</a><br />
+        <b>LXQt</b> - <a className="text-red break-all hover:underline" href="https://lxqt-project.org/">https://lxqt-project.org/</a><br />
+        <b>Budgie</b> - <a className="text-red break-all hover:underline" href="https://getsol.us/home/">https://getsol.us/home/</a><br />
+        <b>Cinnamon</b> - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)">https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)</a><br />
+        <b>MATE</b> - <a className="text-red break-all hover:underline" href="https://en.wikipedia.org/wiki/MATE_(software)">https://en.wikipedia.org/wiki/MATE_(software)</a>
       </p>
 
       <h4 className="flex font-semibold justify-center">To Install XFCE</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold space-y-[0.25vh]">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S xfce4 lightdm-gtk-greeter-settings xorg<br />
+          <br />
           systemctl enable lightdm
         </p>
       </blockquote>
@@ -736,8 +751,9 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install GNOME</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S gnome gdm xorg<br />
+          <br />
           systemctl enable gdm
         </p>
       </blockquote>
@@ -745,8 +761,9 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install KDE Plasma</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S plasma sddm xorg<br />
+          <br />
           systemctl enable sddm
         </p>
       </blockquote>
@@ -754,8 +771,9 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install LXQt</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S lxqt lightdm lightdm-gtk-greeter xorg<br />
+          <br />
           systemctl enable lighdm
         </p>
       </blockquote>
@@ -765,8 +783,9 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install Budgie</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S budgie-desktop lightdm-gtk-greeter-settings xorg gnome-control-center gnome-terminal<br />
+          <br />
           systemctl enable lighdm
         </p>
       </blockquote>
@@ -774,8 +793,9 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install Cinnamon</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S cinnamon gnome-terminal lightdm-gtk-greeter-settings xorg<br />
+          <br />
           systemctl enable lighdm
         </p>
       </blockquote>
@@ -783,20 +803,21 @@ export default function ArchGuide({ title }) {
       <h4 className="flex font-semibold justify-center">To Install MATE</h4>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           pacman -S mate mate-extra ttf-freefont lightdm-gtk-greeter-settings xorg gnome-terminal<br />
+          <br />
           systemctl enable lighdm
         </p>
       </blockquote>
 
       <p>If you noticed each Desktop has a different systemctl enabled packaged these are called Display Managers, not all Managers support every single Environment.
-        You can read about different Display Managers here - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Display_manager#Graphical">https://wiki.archlinux.org/title/Display_manager#Graphical</a> <br />
-        You can also find different Display Environments other than those listed here by checking out this page - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/Desktop_environment#Officially_supported">https://wiki.archlinux.org/title/Desktop_environment#Officially_supported</a></p>
+        You can read about different Display Managers here - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Display_manager#Graphical">https://wiki.archlinux.org/title/Display_manager#Graphical</a> <br />
+        You can also find different Display Environments other than those listed here by checking out this page - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/Desktop_environment#Officially_supported">https://wiki.archlinux.org/title/Desktop_environment#Officially_supported</a></p>
 
       <p>After that you can type exit to leave the chroot and then run the command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           umount -a
         </p>
       </blockquote>
@@ -805,7 +826,7 @@ export default function ArchGuide({ title }) {
         running that as not everything can be unmounted that fine you can then just run the command</p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p className="font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           reboot
         </p>
       </blockquote>
@@ -814,7 +835,7 @@ export default function ArchGuide({ title }) {
         an ISO on it doesn’t need to be the most up to date that way if your system breaks you can load the ISO on the USB and mount the partitions like we did in the beginning
         and then just arch-chroot mnt into your system and edit any files or remove/install anything you need to try and bootup your system successfully.</p>
 
-      <p>XFS Performance Tweaks - <a className="text-red hover:underline" href="https://wiki.archlinux.org/title/XFS#Performance">https://wiki.archlinux.org/title/XFS#Performance</a></p>
+      <p>XFS Performance Tweaks - <a className="text-red break-all hover:underline" href="https://wiki.archlinux.org/title/XFS#Performance">https://wiki.archlinux.org/title/XFS#Performance</a></p>
 
       <h3>Extra Junk <a id="extra"></a></h3>
 
@@ -823,8 +844,8 @@ export default function ArchGuide({ title }) {
         I wouldn't recommend it for a novice but if you are interested you check it out <a> here </a>. For those that think “Ram is
         supposed to be used so it doesn’t matter” your right and I would rather my system resources going to the applications I use and not the Desktop.</p>
 
-      <p>You can find my Linux Performance Tweaks guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/PerformanceGuide">https://danterobinson.dev/Linux/PerformanceGuide</a></p>
-      <p>If your looking to add more Security to your system check my Security Guide here - <a className="text-red hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">https://danterobinson.dev/Linux/SecurityGuide</a></p>
+      <p>You can find my Linux Performance Tweaks guide here - <a className="text-red break-all hover:underline" href="https://danterobinson.dev/Linux/PerformanceGuide">https://danterobinson.dev/Linux/PerformanceGuide</a></p>
+      <p>If your looking to add more Security to your system check my Security Guide here - <a className="text-red break-all hover:underline" href="https://danterobinson.dev/Linux/SecurityGuide">https://danterobinson.dev/Linux/SecurityGuide</a></p>
     </div>
   )
 }
