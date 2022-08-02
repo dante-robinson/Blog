@@ -6,22 +6,22 @@ export default function Linux({ LinuxRef, setLinuxModalOpen }) {
   }
 
   return (
-    <div ref={LinuxRef} className="flex justify-center">
+    <div ref={LinuxRef} className="flex w-full justify-center">
       <div className="absolute border-2 bg-background border-blue w-56 h-content">
-        <ul className="text-center text-sm py-[0.5vh] space-y-1">
+        <ul className="flex text-center justify-center text-sm py-[0.5vh] space-y-[14vh]">
           <li>
             <Link href="/Linux/ArchGuide">
-              <button onClick={OpenLink}>
+              <button className="hover:text-red" onClick={OpenLink}>
                 <a>Arch Linux Install Guide</a>
               </button>
             </Link><br />
             <Link href="/Linux/PerformanceGuide">
-              <button onClick={OpenLink}>
+              <button className="hover:text-red" onClick={OpenLink}>
                 <a>Performance Tweaks Guide</a>
               </button>
             </Link><br />
             <Link href="/Linux/SecurityGuide">
-              <button onClick={OpenLink}>
+              <button className="hover:text-red" onClick={OpenLink}>
                 <a>Linux Security Guide</a>
               </button>
             </Link>

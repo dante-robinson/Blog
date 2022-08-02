@@ -24,12 +24,12 @@ function MyApp({ Component, pageProps }) {
           <div className="flex flex-col h-full w-full">
             <div className="py-2 h-content">
               <nav className="flex justify-center flex-row">
-                <ul className="flex text-cyan font-semibold text-lg space-x-[1vw]">
-                  <li >
-                    <button className="hover:text-red1" ref={LinuxButtonRef} onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
+                <ul className="flex w-full justify-center text-cyan font-semibold text-lg space-x-[2vw] md:space-x-[1vw]">
+                  <li>
+                    <button className="w-full hover:text-red" ref={LinuxButtonRef} onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
                     {LinuxModalOpen && <LinuxModal LinuxRef={LinuxRef} setLinuxModalOpen={setLinuxModalOpen} />}
                   </li>
-                  <li className="hover:text-red1">Crypto</li>
+                  <li className="hover:text-red">Crypto</li>
                 </ul>
               </nav>
             </div>

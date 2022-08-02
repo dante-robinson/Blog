@@ -2,7 +2,7 @@ import Head from "next/head"
 
 export default function ArchGuide({ title }) {
   return (
-    <div className="text-foreground text-sm py-[2vh] px-[2vw] space-y-[1vh]">
+    <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Arch Linux Install Guide"}</title>
         <meta name="description" content="Arch Linux Install Guide" />
@@ -10,14 +10,14 @@ export default function ArchGuide({ title }) {
 
       <p className="flex justify-end">Oct 30, 2021</p>
 
-      <h2 className="flex text-2xl font-bold justify-center">Arch Linux Install Guide</h2>
+      <h2 className="flex text-xl sm:text-2xl font-bold justify-center">Arch Linux Install Guide</h2>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
       <div className="text-cyan">
         <a className="hover:underline" href="#format">Formatting the Drive</a><br />
         <a className="hover:underline" href="#btrfs">BTRFS Subvolumes and Mounting</a><br />
-        <a className="hover:underline" hred="#ext4">EXT4 Mounting</a><br />
+        <a className="hover:underline" href="#ext4">EXT4 Mounting</a><br />
         <a className="hover:underline" href="#xfs">XFS Mounting</a><br />
         <a className="hover:underline" href="#fstab">Mounting Boot and setting up FSTAB</a><br />
         <a className="hover:underline" href="#timezone">Setting Timezone and Locales</a><br />

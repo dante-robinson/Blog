@@ -2,7 +2,7 @@ import Head from "next/head"
 
 export default function PerformanceGuide({ title }) {
   return (
-    <div className="text-sm text-foreground py-[2vh] px-[2vw] space-y-[1vh]">
+    <div className="text-sm text-foreground w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Linux Performance Tweaks"}</title>
         <meta name="description" content="Linux Performance Guide" />
@@ -10,7 +10,7 @@ export default function PerformanceGuide({ title }) {
 
       <p className="flex justify-end">Oct 30, 2021</p>
 
-      <h2 className="flex text-2xl font-bold justify-center">Linux Performance Tweaks</h2>
+      <h2 className="flex text-xl sm:text-2xl font-bold justify-center">Linux Performance Tweaks</h2>
 
       <h3 className="text-lg font-semibold">Table of Contents</h3>
 
