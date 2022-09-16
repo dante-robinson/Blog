@@ -25,6 +25,11 @@ export default function Linux({ LinuxRef, setLinuxModalOpen }) {
                 <a>Linux Security Guide</a>
               </button>
             </Link>
+            <Link href="/Linux/Gentoomusl">
+              <button className="hover:text-red" onClick={OpenLink}>
+                <a>My experience on Gentoo Musl</a>
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
