@@ -528,7 +528,7 @@ export default function PerformanceGuide({ title }) {
       <p><b>Debian Based</b></p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
-        <p classname="text-xs sm:text-sm break-all font-semibold">
+        <p className="text-xs sm:text-sm break-all font-semibold">
           sudo apt-get install alsa-firmware-loaders pulseaudio pulseaudio-module-jack jackd2
         </p>
       </blockquote>

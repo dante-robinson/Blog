@@ -17,7 +17,7 @@ export default function SecurityGuide({ title }) {
       <div className="text-cyan">
         <a className="hover:underline" href="#sysctl">Sysctl</a><br />
         <a className="hover:underline" href="#bootloader">Bootloader</a><br />
-        <a className="hover:underline" href="mac">Mandatory Access Control</a><br />
+        <a className="hover:underline" href="#mac">Mandatory Access Control</a><br />
         <a className="hover:underline" href="#sandboxing">Sandboxing</a><br />
         <a className="hover:underline" href="#root">Root Tweaks</a><br />
         <a className="hover:underline" href="#extra">Extra Tweaks</a><br />
@@ -1360,3 +1360,5 @@ export default function SecurityGuide({ title }) {
     </div>
   )
 }
+
+
