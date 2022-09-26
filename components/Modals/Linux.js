@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Linux({ LinuxRef, setLinuxModalOpen }) {
   function OpenLink() {
@@ -14,12 +14,14 @@ export default function Linux({ LinuxRef, setLinuxModalOpen }) {
               <button className="hover:text-red" onClick={OpenLink}>
                 <a>Arch Linux Install Guide</a>
               </button>
-            </Link><br />
+            </Link>
+            <br />
             <Link href="/Linux/PerformanceGuide">
               <button className="hover:text-red" onClick={OpenLink}>
                 <a>Performance Tweaks Guide</a>
               </button>
-            </Link><br />
+            </Link>
+            <br />
             <Link href="/Linux/SecurityGuide">
               <button className="hover:text-red" onClick={OpenLink}>
                 <a>Linux Security Guide</a>
@@ -30,9 +32,14 @@ export default function Linux({ LinuxRef, setLinuxModalOpen }) {
                 <a>My experience on Gentoo Musl</a>
               </button>
             </Link>
+            <Link href="/Linux/GentooGlibctomusl">
+              <button className="hover:text-red" onClick={OpenLink}>
+                <a>Gentoo Glibc to musl easy</a>
+              </button>
+            </Link>
           </li>
         </ul>
       </div>
     </div>
-  )
+  );
 }
