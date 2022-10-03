@@ -5,7 +5,7 @@ export default function SecurityGuide({ title }) {
     <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Linux Security Guide"}</title>
-        <meta name="description" content="Linux Security Guide" />
+        <meta name="description" content="A guide on hardening Linux Distros does not include network hardening and is mostly based around brute force hardening." />
       </Head>
 
       <p className="flex justify-end"> Feb 13, 2022</p>

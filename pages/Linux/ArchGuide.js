@@ -1,11 +1,11 @@
-import Head from "next/head"
+import Head from "next/head";
 
 export default function ArchGuide({ title }) {
   return (
     <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Arch Linux Install Guide"}</title>
-        <meta name="description" content="Arch Linux Install Guide" />
+        <meta name="description" content="An in depth guide on installing Arch Linux covering EXT4, XFS and BTRFS filesystems. Doesn't include encryption at this time." />
       </Head>
 
       <p className="flex justify-end">Oct 30, 2021</p>

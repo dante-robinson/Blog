@@ -5,7 +5,10 @@ export default function GentooGlibctomusl({ title }) {
     <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Gentoo Glibc to musl"}</title>
-        <meta name="description" content="Gentoo Glibc to musl" />
+        <meta
+          name="description"
+          content="How to switch from a Gentoo Glibc install to musl without losing data."
+        />
       </Head>
 
       <p className="flex justify-end">Sept 26, 2022</p>

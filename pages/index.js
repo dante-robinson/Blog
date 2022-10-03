@@ -1,15 +1,18 @@
-import Head from 'next/head'
-import Home from "../components/Home.js"
+import Head from "next/head";
+import Home from "../components/Home.js";
 
 export default function HomePage() {
   return (
     <div>
       <Head>
         <title>Dante's Blog</title>
-        <meta content="Home Page" />
+        <meta
+          name="description"
+          description="My personal blog where I talk about Linux, Crypto and other thoughts."
+        />
       </Head>
 
       <Home />
     </div>
-  )
-} 
+  );
+}

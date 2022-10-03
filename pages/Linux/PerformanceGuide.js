@@ -2,10 +2,10 @@ import Head from "next/head"
 
 export default function PerformanceGuide({ title }) {
   return (
-    <div className="text-sm text-foreground w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
+    <div className="text-foreground w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
       <Head>
         <title>{title ? title : "Linux Performance Tweaks"}</title>
-        <meta name="description" content="Linux Performance Guide" />
+        <meta name="description" content="Linux Performance tweaks guide for all distros. Contains many Arch Linux and SystemD tweaks that won't work on other distros." />
       </Head>
 
       <p className="flex justify-end">Oct 30, 2021</p>
@@ -866,5 +866,5 @@ export default function PerformanceGuide({ title }) {
 
       <p>Then a reboot and it should be running.</p>
     </div>
-  )
+  );
 }
