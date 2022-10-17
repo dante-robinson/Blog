@@ -48,7 +48,7 @@ function MyApp({ Component, pageProps }) {
             </div>
 
             <div className="text-sm relative my-[0.5vh] h-content w-full">
-              <footer className="flex text-foreground text-sm justify-between">
+              <footer className="flex mx-[1vw] md:mx-[0vw] text-foreground text-sm justify-between">
                 <div>
                   <a
                     href="https://cointr.ee/dante_robinson"
