@@ -32,12 +32,11 @@ export default function XRPXLMScam({ title }) {
         <b>XLM (Stellar)</b> - <a className="text-red break-all hover:underline" href="https://messari.io/asset/stellar/profile/launch-and-initial-token-distribution">https://messari.io/asset/stellar/profile/launch-and-initial-token-distribution</a>
       </p>
 
-      <div className="flex space-x-[1vw] justify-center">
-        <div className="w-[36vw] border-2 border-blue object-contain">
+      <div className="flex flex-col lg:flex-row space-y-[1vh] lg:space-y-[0vh] lg:space-x-[1vw] justify-center">
+        <div className="w-full lg:w-[36vw] border-2 border-blue object-contain">
           <Image src={XRP_Distribution} alt="XRP Distribution" layout="responsive" />
         </div>
-
-        <div className="w-[36vw] border-2 border-blue object-contain">
+        <div className="w-full lg:w-[36vw] border-2 border-blue object-contain">
           <Image src={XLM_Distribution} alt="XLM Distribution" layout="responsive" />
         </div>
       </div>
@@ -91,7 +90,7 @@ export default function XRPXLMScam({ title }) {
       </p>
 
       <div className="flex justify-center">
-        <div className="w-[36vw] border-2 border-blue object-contain">
+        <div className="w-full 2xl:w-[36vw] border-2 border-blue object-contain">
           <Image src={XRPNodes} alt="XRP Nodes over time" layout="responsive" />
         </div>
       </div>
