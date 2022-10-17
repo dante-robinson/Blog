@@ -8,7 +8,7 @@ export default function HomePage() {
         <title>Dante's Blog</title>
         <meta
           name="description"
-          description="My personal blog where I talk about Linux, Crypto and other thoughts."
+          content="My personal blog where I talk about Linux, Crypto and other thoughts."
         />
       </Head>
 
