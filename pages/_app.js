@@ -3,15 +3,21 @@ import { useState, useRef } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faGithub, faBitcoin } from "@fortawesome/free-brands-svg-icons"
 import LinuxModal from "../components/Modals/Linux.js"
+import CryptoModal from "../components/Modals/Crypto.js"
 import Link from "next/link"
-import OnClickOutside from "../components/OnClickOutside.js"
+import OnClickOutsideLinux from "../components/OnClickOutside.js"
+import OnClickOutsideCrypto from "../components/OnClickOutside.js"
 
 function MyApp({ Component, pageProps }) {
   const [LinuxModalOpen, setLinuxModalOpen] = useState(false)
+  const [CryptoModalOpen, setCryptoModalOpen] = useState(false)
   const LinuxRef = useRef()
   const LinuxButtonRef = useRef()
+  const CryptoRef = useRef()
+  const CryptoButtonRef = useRef()
 
-  OnClickOutside(LinuxRef, LinuxButtonRef, () => setLinuxModalOpen(false))
+  OnClickOutsideLinux(LinuxRef, LinuxButtonRef, () => setLinuxModalOpen(false))
+  OnClickOutsideCrypto(CryptoRef, CryptoButtonRef, () => setCryptoModalOpen(false))
 
   return (
     <div className="bg-background-dark pb-[10vh] min-h-screen w-screen">
@@ -29,7 +35,10 @@ function MyApp({ Component, pageProps }) {
                     <button className="w-full hover:text-red" ref={LinuxButtonRef} onClick={() => LinuxModalOpen ? setLinuxModalOpen(false) : setLinuxModalOpen(true)}>Linux</button>
                     {LinuxModalOpen && <LinuxModal LinuxRef={LinuxRef} setLinuxModalOpen={setLinuxModalOpen} />}
                   </li>
-                  <li className="hover:text-red">Crypto</li>
+                  <li>
+                    <button className="w-full hover:text-red" ref={CryptoButtonRef} onClick={() => CryptoModalOpen ? setCryptoModalOpen(false) : setCryptoModalOpen(true)}>Crypto</button>
+                    {CryptoModalOpen && <CryptoModal CryptoRef={CryptoRef} setCryptoModalOpen={setCryptoModalOpen} />}
+                  </li>
                 </ul>
               </nav>
             </div>
