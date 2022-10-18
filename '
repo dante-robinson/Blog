@@ -1,10 +1,11 @@
+import ListPosts from "./ListPosts.js"
 import Link from "next/link"
 
 export default function Home() {
   return (
     <div className="flex flex-col w-[80vw] px-[3vw] sm:px-[1vw] xl:w-full lg:px-[0vw]">
       <div>
-        <p className="text-foreground text-sm text-center py-[1.5vh] px-[1vw]">
+        <p className="text-foreground text-sm text-center py-[1.5vw]">
           Thanks for visiting my Blog. You can find a list of my most recent posts to the right or below depending on your screen size,
           The source code for this blog is fully open-sourced and can be found on my github
           page which can be found in the footer or clicking <a className="text-blue hover:text-red underline" href="https://github.com/dante-robinson/Blog">here</a>.
@@ -13,8 +14,8 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="flex md:flex-row flex-col">
-        <div className="text-foreground h-full text-sm text-center px-[1vw] py-[1.5vh] md:w-[40vw] space-y-[1vh]">
+      <div className="flex flex-row">
+        <div className="text-foreground h-full text-sm text-center px-[1vw] py-[1.5vw] w-[40vw] space-y-[1vh]">
           <h3 className="text-lg font-bold">About Me</h3>
           <p>
             For those interested I am someone who has always been interested in computers and have used practically everything out there from MXM Upgradable
@@ -40,45 +41,43 @@ export default function Home() {
 
           <p>
             I am at altruist at the core and believe in giving back more than we recieve I hope to give back to others with many different guides on this blogs covering a range
-            of topics. I encourage everyone to give back something to those in need, I have linked 2 awesome youtube channels below on this topic.
+            of topics. I encourage everyone to give back something to those in need, I have linked 2 awesome youtube channels below on these topics.
           </p>
 
-          <div className="flex justify-between px-[8vw]">
-            <a className="text-blue hover:text-red" href="https://www.youtube.com/c/BIPhakathi">BIPhakathi</a>
+          <a></a>
 
-            <a className="text-blue hover:text-red" href="https://www.youtube.com/channel/UC6lIbuv_ai9ml_B3IVAgxrw">Goodness in People</a>
-          </div>
+          <a></a>
         </div>
 
-        <div className="text-foreground text-sm text-center py-[1.5vh] justify-center md:w-[40vw] md:space-y-[1vh] space-y-[1.5vh]">
+        <div className="text-foreground text-sm text-center py-[1.5vw] justify-center w-[40vw] space-y-[1vh]">
           <h4 className="text-lg font-bold">Recent Posts</h4>
 
-          <ul className="space-y-[1vh] px-[1vw] lg:pl-[7.5vw] xl:pl-[9.5vw] 2xl:pl-[11vw]">
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
+          <ul className="space-y-[1vh] 2xl:pl-[11vw]">
+            <li className="flex flex-row w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
-                <Link href="/Crypto/XRPXLMScam">
+                <Link href="/Linux/SecurityGuide">
                   <a>XRP & XLM The biggest scams</a>
                 </Link>
               </div>
               <p className="text-foreground">Oct 7, 2022</p>
             </li>
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
+            <li className="flex flex-row w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
-                <Link href="/Linux/GentooGlibctomusl">
+                <Link href="/Linux/SecurityGuide">
                   <a>Switching Gentoo Glibc to musl</a>
                 </Link>
               </div>
               <p className="text-foreground">Sept 26, 2022</p>
             </li>
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
+            <li className="flex flex-row w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
-                <Link href="/Linux/Gentoomusl">
+                <Link href="/Linux/SecurityGuide">
                   <a>My experience using Gentoo Musl</a>
                 </Link>
               </div>
               <p className="text-foreground">Sept 16, 2022</p>
             </li>
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
+            <li className="flex flex-row w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
                 <Link href="/Linux/SecurityGuide">
                   <a>Linux Security Guide</a>
@@ -86,27 +85,23 @@ export default function Home() {
               </div>
               <p className="text-foreground">Feb 13, 2022</p>
             </li>
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
-              <div className="text-blue hover:text-red">
-                <Link href="/Linux/PerformanceGuide">
-                  <a>Linux Performance Tweaks Guide</a>
-                </Link>
-              </div>
+            <li className="flex flex-row text-blue hover:text-red w-[17.5vw] justify-between">
+              <Link href="/Linux/PerformanceGuide">
+                <a>Linux Performance Tweaks Guide</a>
+              </Link>
               <p className="text-foreground">Oct 30, 2021</p>
             </li>
-            <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
-              <div className="text-blue hover:text-red">
-                <Link href="/Linux/ArchGuide">
-                  <a>Arch Linux Install Guide</a>
-                </Link>
-              </div>
+            <li className="flex flex-row text-blue hover:text-red w-[17.5vw] justify-between">
+              <Link href="/Linux/ArchGuide">
+                <a>Arch Linux Install Guide</a>
+              </Link>
               <p className="text-foreground">Oct 30, 2021</p>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="text-foreground text-sm py-[5vh] flex h-full w-full justify-center">
+      <div className="text-foreground text-sm py-[3vw] flex h-full w-full justify-center">
         <p>* All opinions on this blog are my own you are more than welcome to disgree with anything.</p>
       </div>
     </div>

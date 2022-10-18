@@ -33,7 +33,7 @@ export default function Linux({ LinuxRef, setLinuxModalOpen }) {
           <li>
             <Link href="/Linux/Gentoomusl">
               <button className="hover:text-red" onClick={OpenLink}>
-                <a>My experience on Gentoo Musl</a>
+                <a>My experience on Gentoo musl</a>
               </button>
             </Link>
           </li>
