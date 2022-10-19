@@ -2,7 +2,7 @@ import Head from "next/head";
 
 export default function Gentoomusl({ title }) {
   return (
-    <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
+    <div className="space-y-[1vh]">
       <Head>
         <title>{title ? title : "My experience on Gentoo Musl"}</title>
         <meta

@@ -2,7 +2,7 @@ import Head from "next/head"
 
 export default function PerformanceGuide({ title }) {
   return (
-    <div className="text-foreground w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
+    <div className="space-y-[1vh]">
       <Head>
         <title>{title ? title : "Linux Performance Tweaks"}</title>
         <meta name="description" content="Linux Performance tweaks guide for all distros. Contains many Arch Linux and SystemD tweaks that won't work on other distros." />

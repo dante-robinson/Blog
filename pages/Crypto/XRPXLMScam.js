@@ -7,7 +7,7 @@ import XLM_Consensus from "../../images/Crypto/XRPXLMScam/XLM_Consensus.png"
 
 export default function XRPXLMScam({ title }) {
   return (
-    <div className="text-foreground text-sm w-full py-[2vh] px-[3vw] space-y-[1vh] sm:px-[1vw]">
+    <div className="space-y-[1vh]">
       <Head>
         <title>XRP & XLM The biggest scams in Crypto</title>
         <meta name="description" content="A simple blog post covering why the tokens XRP and XLM are a scam and should be avoided." />

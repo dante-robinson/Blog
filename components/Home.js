@@ -2,9 +2,9 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <div className="flex flex-col w-[80vw] px-[3vw] sm:px-[1vw] xl:w-full lg:px-[0vw]">
+    <div className="flex flex-col w-[80vw] px-[3vw]">
       <div>
-        <p className="text-foreground text-sm text-center py-[1.5vh] px-[1vw]">
+        <p className="text-center py-[1.5vh]">
           Thanks for visiting my Blog. You can find a list of my most recent posts to the right or below depending on your screen size,
           The source code for this blog is fully open-sourced and can be found on my github
           page which can be found in the footer or clicking <a className="text-blue hover:text-red underline" href="https://github.com/dante-robinson/Blog">here</a>.
@@ -14,7 +14,7 @@ export default function Home() {
       </div>
 
       <div className="flex md:flex-row flex-col">
-        <div className="text-foreground h-full text-sm text-center px-[1vw] py-[1.5vh] md:w-[40vw] space-y-[1vh]">
+        <div className="h-full text-center py-[1.5vh] md:w-[40vw] space-y-[1vh]">
           <h3 className="text-lg font-bold">About Me</h3>
           <p>
             For those interested I am someone who has always been interested in computers and have used practically everything out there from MXM Upgradable
@@ -50,7 +50,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="text-foreground text-sm text-center py-[1.5vh] justify-center md:w-[40vw] md:space-y-[1vh] space-y-[1.5vh]">
+        <div className="text-center py-[1.5vh] justify-center md:w-[40vw] md:space-y-[1vh] space-y-[1.5vh]">
           <h4 className="text-lg font-bold">Recent Posts</h4>
 
           <ul className="space-y-[1vh] px-[1vw] lg:pl-[7.5vw] xl:pl-[9.5vw] 2xl:pl-[11vw]">
@@ -60,7 +60,7 @@ export default function Home() {
                   <a>XRP & XLM The biggest scams</a>
                 </Link>
               </div>
-              <p className="text-foreground">Oct 7, 2022</p>
+              <p>Oct 7, 2022</p>
             </li>
             <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
@@ -68,7 +68,7 @@ export default function Home() {
                   <a>Switching Gentoo Glibc to musl</a>
                 </Link>
               </div>
-              <p className="text-foreground">Sept 26, 2022</p>
+              <p>Sept 26, 2022</p>
             </li>
             <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
@@ -76,7 +76,7 @@ export default function Home() {
                   <a>My experience using Gentoo Musl</a>
                 </Link>
               </div>
-              <p className="text-foreground">Sept 16, 2022</p>
+              <p>Sept 16, 2022</p>
             </li>
             <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
@@ -84,7 +84,7 @@ export default function Home() {
                   <a>Linux Security Guide</a>
                 </Link>
               </div>
-              <p className="text-foreground">Feb 13, 2022</p>
+              <p>Feb 13, 2022</p>
             </li>
             <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
@@ -92,7 +92,7 @@ export default function Home() {
                   <a>Linux Performance Tweaks Guide</a>
                 </Link>
               </div>
-              <p className="text-foreground">Oct 30, 2021</p>
+              <p>Oct 30, 2021</p>
             </li>
             <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
               <div className="text-blue hover:text-red">
@@ -100,13 +100,13 @@ export default function Home() {
                   <a>Arch Linux Install Guide</a>
                 </Link>
               </div>
-              <p className="text-foreground">Oct 30, 2021</p>
+              <p>Oct 30, 2021</p>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="text-foreground text-sm py-[5vh] flex h-full w-full justify-center">
+      <div className="py-[5vh] flex h-full w-full justify-center">
         <p>* All opinions on this blog are my own you are more than welcome to disgree with anything.</p>
       </div>
     </div>

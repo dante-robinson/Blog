@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
               </nav>
             </div>
 
-            <div className="flex h-full w-full justify-center">
+            <div className="flex h-full w-full justify-center text-foreground text-sm px-[3vw] sm:px-[1vw] py-[2vh]">
               <Component {...pageProps} />
             </div>
 
