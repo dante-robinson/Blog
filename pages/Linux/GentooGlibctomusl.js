@@ -24,7 +24,7 @@ export default function GentooGlibctomusl({ title }) {
         for glibc and 17.0 for musl. The biggest difference between these
         profiles is the way they handle the symlink for libraries. 17.1 will
         place your 32 bit libraries in lib instead of lib32. musl doesn't offer
-        32 bit support and hence doesnt need a lib64 directory so everything is
+        32 bit support and hence doesn't need a lib64 directory so everything is
         placed in the lib directory.
       </p>
 
@@ -75,7 +75,7 @@ export default function GentooGlibctomusl({ title }) {
 
       <p>
         We will need to mount the drive next if you are encrypted you will need
-        to run cryptsetup LuksOpen devicename but I'm sure you already know all
+        to run "cryptsetup LuksOpen devicename" but I'm sure you already know all
         this. We will need to open the compressed stage3 as root so load another
         terminal and run sudo su then launch the default file manager in PopOS
         case you can do this by typing nautilus. Then go to the home directory
@@ -111,7 +111,7 @@ export default function GentooGlibctomusl({ title }) {
       </p>
 
       <p>
-        Be mindful of what you are deleting you can delete alot of things and
+        Be mindful of what you are deleting you can delete a lot of things and
         replace them with musl defaults the main important things you want to
         keep is your <b>/etc/portage</b> folder this is where make.conf and
         package.use are saved and you also want to keep <b>/var/lib/portage</b>{" "}

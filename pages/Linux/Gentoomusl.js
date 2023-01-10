@@ -27,10 +27,10 @@ export default function Gentoomusl({ title }) {
         the package manager to test and fix packages not installing without
         downloading the source code on those distros and manually building it. I
         installed apps like Lutris, Wine, OBS Studio, Kdenlive and Krita.
-        Everything working just fine with GCC, with LLVM/Clang I did encounter
-        alot more issues and needed to mess around alot to get things working
+        Everything working just fine with GCC, with LLVM/Clang I did encounter a
+        lot more issues and needed to mess around a lot to get things working
         but you can still get all those packages working by using the following
-        2 repos. You should also add the gentoo patchset they are using to
+        2 repos. You should also add the gentoo patch set they are using to
         /etc/portage/patches they can help you compile things if you are using
         LLVM/Clang sometimes they make the packages not compile at all and you
         need to remove them no big deal.
@@ -53,7 +53,7 @@ export default function Gentoomusl({ title }) {
           https://github.com/clang-musl-overlay/clang-musl-overlay
         </a>
         <br />
-        <b>Clang Musl Patchset</b> -{" "}
+        <b>Clang Musl Patch set</b> -{" "}
         <a
           className="text-red break-all hover:underline"
           href="https://github.com/clang-musl-overlay/gentoo-patchset"
@@ -80,11 +80,11 @@ export default function Gentoomusl({ title }) {
       </p>
 
       <p>
-        For GCC the process is alot easier you should only need the native
-        Gentoo musl repo however it seems alot of those fixes are pushed to main
-        repo these days and are working fine. If you just program its a great
-        way to lighten your system as there is no 32 Bit ABI Support which will
-        save you on compiling things twice if you are doing this. As to a
+        For GCC the process is a lot easier you should only need the native
+        Gentoo musl repo however it seems a lot of those fixes are pushed to
+        main repo these days and are working fine. If you just program its a
+        great way to lighten your system as there is no 32 Bit ABI Support which
+        will save you on compiling things twice if you are doing this. As to a
         performance increase I would say there is none, however if you are
         looking for that lighter system this is an option to choose. Competition
         is good and supporting musl into mainstream is also good so we don't
@@ -104,15 +104,15 @@ export default function Gentoomusl({ title }) {
       <p>
         So what doesn't work on musl can I replace my gaming setup from glibc to
         musl? Well no because there is no 32 Bit Support. You can run games with
-        Wine 64 bit only through Lutris not alot though you will need to not use
-        system libraries either, Steam however is not open source and thus can't
-        be compiled. Discord is also not open sourced and can't be compiled thus
-        can't work. You however can set up a separate chroot or use some like
-        Conty to set one up for you to play games inside the performance
-        difference is a couple % basically native. We will never get support for
-        musl from Steam or Discord without having people running it creating
-        demand similar to Linux support for games in general without people
-        daily driving Linux.
+        Wine 64 bit only through Lutris not a lot though you will need to not
+        use system libraries either, Steam however is not open source and thus
+        can't be compiled. Discord is also not open sourced and can't be
+        compiled thus can't work. You however can set up a separate chroot or
+        use some like Conty to set one up for you to play games inside the
+        performance difference is a couple % basically native. We will never get
+        support for musl from Steam or Discord without having people running it
+        creating demand similar to Linux support for games in general without
+        people daily driving Linux.
       </p>
 
       <p>
@@ -148,7 +148,7 @@ export default function Gentoomusl({ title }) {
         <b>B)</b> Have to make your own repo to download packages that are not
         currently in other people's repos. This is why I mentioned if you just
         do programming and basic tasks this is a better distro for you as
-        everything will work with a few repos even kdenlive and krita. Making
+        everything will work with a few repos even Kdenlive and Krita. Making
         your own repo will require making package build files using shell. This
         is personally recommended so you can customize what's being installed
         into the packages similar to USE flags in Gentoo.
@@ -160,8 +160,8 @@ export default function Gentoomusl({ title }) {
       </p>
 
       <p>
-        If these are ok comprimises to you I would recommended checking it out
-        otherwise a barebones Gentoo musl setup will be fine for you with
+        If these are ok compromises to you I would recommended checking it out
+        otherwise a bare bones Gentoo musl setup will be fine for you with
         slightly more packages and compiling needed, but you will be able to
         access new released packages manage USE flags easier and not forced to
         run your own repository.
@@ -182,13 +182,13 @@ export default function Gentoomusl({ title }) {
         So even after these minor flaws I would still recommend people switch to
         musl? Yes! Not everyone for sure don't go recommending your grandma's
         first linux install to be on some musl based distro but those who are
-        somewhat familiar with Linux and dont mind spending time here and there
+        somewhat familiar with Linux and don't mind spending time here and there
         figuring things out to get them working I would recommend it runs very
         good. What about Clang/musl? Clang/musl is another beast I've spent
         literal days messing with this to get things working then it will work
-        then mess up again I would say it needs alot more love and care to get
+        then mess up again I would say it needs a lot more love and care to get
         working and wouldn't recommend it for a daily driven system unless you
-        have alot of free time to maintain it. I would recommend compiling all
+        have a lot of free time to maintain it. I would recommend compiling all
         your smaller packages with LLVM/Clang and use GCC for the large ones and
         the ones the small ones that failed using LLVM/Clang by setting Clang
         system wide and using GCC in your package.env for those few packages and
