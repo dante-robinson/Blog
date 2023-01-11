@@ -118,6 +118,14 @@ export default function HomePage() {
             <ul className="space-y-[1vh] px-[1vw] lg:pl-[7.5vw] xl:pl-[9.5vw] 2xl:pl-[11vw]">
               <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
                 <div className="text-blue hover:text-red">
+                  <Link href="/Crypto/CommunistCBDC">
+                    <a>Communist CBDCs</a>
+                  </Link>
+                </div>
+                <p>Jan 11, 2023</p>
+              </li>
+              <li className="flex flex-row lg:w-[27vw] xl:w-[21vw] 2xl:w-[17.5vw] justify-between">
+                <div className="text-blue hover:text-red">
                   <Link href="/Crypto/XRPXLMScam">
                     <a>XRP & XLM The biggest scams</a>
                   </Link>

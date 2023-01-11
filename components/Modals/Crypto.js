@@ -20,7 +20,7 @@ export default function Crypto({ CryptoRef, setCryptoModalOpen }) {
           <li>
             <Link href="/Crypto/CommunistCBDC">
               <button className="hover:text-red" onClick={OpenLink}>
-                <a>Communist CBDC's</a>
+                <a>Communist CBDCs</a>
               </button>
             </Link>
             <br />
