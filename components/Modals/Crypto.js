@@ -8,7 +8,7 @@ export default function Crypto({ CryptoRef, setCryptoModalOpen }) {
   return (
     <div ref={CryptoRef} className="flex w-full justify-center">
       <div className="absolute border-2 bg-background border-blue w-64 h-content">
-        <ul className="flex flex-wrap flex-col text-center justify-center text-sm py-[0.5vh]">
+        <ul className="flex flex-wrap flex-col text-center justify-center text-sm py-1 space-y-1">
           <li>
             <Link href="/Crypto/XRPXLMScam">
               <button className="hover:text-red" onClick={OpenLink}>
