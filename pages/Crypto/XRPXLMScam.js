@@ -39,6 +39,8 @@ export default function XRPXLMScam({ title }) {
         <b>XRP (Ripple)</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://messari.io/asset/xrp/profile/launch-and-initial-token-distribution"
         >
           https://messari.io/asset/xrp/profile/launch-and-initial-token-distribution
@@ -48,6 +50,8 @@ export default function XRPXLMScam({ title }) {
         <b>XLM (Stellar)</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://messari.io/asset/stellar/profile/launch-and-initial-token-distribution"
         >
           https://messari.io/asset/stellar/profile/launch-and-initial-token-distribution
@@ -135,6 +139,8 @@ export default function XRPXLMScam({ title }) {
         Ripple Petition -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.change.org/p/ripple-stop-ripple-dumping"
         >
           https://www.change.org/p/ripple-stop-ripple-dumping
@@ -163,6 +169,8 @@ export default function XRPXLMScam({ title }) {
       <p>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.xrparcade.com/escrow/"
         >
           https://www.xrparcade.com/escrow/
@@ -218,6 +226,8 @@ export default function XRPXLMScam({ title }) {
       <p>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://stellar.org/foundation/previous-mandate?locale=en"
         >
           https://stellar.org/foundation/previous-mandate?locale=en
@@ -251,6 +261,8 @@ export default function XRPXLMScam({ title }) {
         First Airdrop -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.stellar.org/blog/bitcoin-claim-lumens"
         >
           https://www.stellar.org/blog/bitcoin-claim-lumens
@@ -260,6 +272,8 @@ export default function XRPXLMScam({ title }) {
         Second Airdrop -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.stellar.org/blog/bitcoin-claim-lumens-2"
         >
           https://www.stellar.org/blog/bitcoin-claim-lumens-2
@@ -325,6 +339,8 @@ export default function XRPXLMScam({ title }) {
         Simply Explained: Stellar Consensus -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://medium.com/london-blockchain-labs/blockchain-definition-of-the-week-stellar-consensus-protocol-5006f42203b0"
         >
           https://medium.com/london-blockchain-labs/blockchain-definition-of-the-week-stellar-consensus-protocol-5006f42203b0
@@ -334,6 +350,8 @@ export default function XRPXLMScam({ title }) {
         Understanding Stellar Consensus -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://medium.com/interstellar/understanding-the-stellar-consensus-protocol-423409aad32e"
         >
           https://medium.com/interstellar/understanding-the-stellar-consensus-protocol-423409aad32e
@@ -343,6 +361,8 @@ export default function XRPXLMScam({ title }) {
         Stellar Funds as of 2019 -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://stellar.org/foundation/mandate"
         >
           https://stellar.org/foundation/mandate

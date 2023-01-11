@@ -88,6 +88,8 @@ export default function ArchGuide({ title }) {
         instructions if you are looking for that please check out this guide -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.coded-with-love.com/blog/install-arch-linux-encrypted/"
         >
           https://www.coded-with-love.com/blog/install-arch-linux-encrypted/
@@ -97,6 +99,8 @@ export default function ArchGuide({ title }) {
         You can find the raw version of this guide on github here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef"
         >
           https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef
@@ -212,6 +216,8 @@ export default function ArchGuide({ title }) {
         <b>BTRFS</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Btrfs"
         >
           https://wiki.archlinux.org/title/Btrfs
@@ -221,6 +227,8 @@ export default function ArchGuide({ title }) {
         <b>EXT4</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Ext4"
         >
           https://wiki.archlinux.org/title/Ext4
@@ -230,6 +238,8 @@ export default function ArchGuide({ title }) {
         <b>XFS</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/XFS"
         >
           https://wiki.archlinux.org/title/XFS
@@ -410,6 +420,8 @@ export default function ArchGuide({ title }) {
         as you can see in the benchmark here
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.reddit.com/r/btrfs/comments/hyra46/benchmark_of_btrfs_decompression/"
         >
           -
@@ -499,6 +511,8 @@ export default function ArchGuide({ title }) {
       <p>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Ext4#Turning_barriers_off"
         >
           https://wiki.archlinux.org/title/Ext4#Turning_barriers_off
@@ -753,6 +767,8 @@ export default function ArchGuide({ title }) {
         <br />
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2"
         >
           https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2
@@ -802,6 +818,8 @@ export default function ArchGuide({ title }) {
         more about DKMS here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support"
         >
           https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support
@@ -1017,6 +1035,8 @@ export default function ArchGuide({ title }) {
         <b>XFCE</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://xfce.org/"
         >
           https://xfce.org/
@@ -1025,6 +1045,8 @@ export default function ArchGuide({ title }) {
         <b>GNOME</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.gnome.org/"
         >
           https://www.gnome.org/
@@ -1033,6 +1055,8 @@ export default function ArchGuide({ title }) {
         <b>KDE</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://kde.org/plasma-desktop/"
         >
           https://kde.org/plasma-desktop/
@@ -1041,6 +1065,8 @@ export default function ArchGuide({ title }) {
         <b>LXQt</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://lxqt-project.org/"
         >
           https://lxqt-project.org/
@@ -1049,6 +1075,8 @@ export default function ArchGuide({ title }) {
         <b>Budgie</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://getsol.us/home/"
         >
           https://getsol.us/home/
@@ -1057,6 +1085,8 @@ export default function ArchGuide({ title }) {
         <b>Cinnamon</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)"
         >
           https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)
@@ -1065,6 +1095,8 @@ export default function ArchGuide({ title }) {
         <b>MATE</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/MATE_(software)"
         >
           https://en.wikipedia.org/wiki/MATE_(software)
@@ -1149,6 +1181,8 @@ export default function ArchGuide({ title }) {
         Environment. You can read about different Display Managers here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Display_manager#Graphical"
         >
           https://wiki.archlinux.org/title/Display_manager#Graphical
@@ -1158,6 +1192,8 @@ export default function ArchGuide({ title }) {
         here by checking out this page -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Desktop_environment#Officially_supported"
         >
           https://wiki.archlinux.org/title/Desktop_environment#Officially_supported
@@ -1192,6 +1228,8 @@ export default function ArchGuide({ title }) {
         XFS Performance Tweaks -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/XFS#Performance"
         >
           https://wiki.archlinux.org/title/XFS#Performance
@@ -1218,6 +1256,8 @@ export default function ArchGuide({ title }) {
         You can find my Linux Performance Tweaks guide here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://danterobinson.dev/Linux/PerformanceGuide"
         >
           https://danterobinson.dev/Linux/PerformanceGuide
@@ -1228,6 +1268,8 @@ export default function ArchGuide({ title }) {
         Guide here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://danterobinson.dev/Linux/SecurityGuide"
         >
           https://danterobinson.dev/Linux/SecurityGuide

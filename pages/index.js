@@ -21,6 +21,8 @@ export default function HomePage() {
             my github page which can be found in the footer or clicking{" "}
             <a
               className="text-blue hover:text-red underline"
+              target="_blank"
+              rel="noopener noreferrer"
               href="https://github.com/dante-robinson/Blog"
             >
               here
@@ -54,6 +56,8 @@ export default function HomePage() {
               which can be found{" "}
               <a
                 className="text-blue hover:text-red underline"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://polcompball.miraheze.org/wiki/Libertarianism"
               >
                 here
@@ -64,6 +68,8 @@ export default function HomePage() {
               comparison to the Keynesian school of thought{" "}
               <a
                 className="text-blue hover:text-red underline"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.analyticssteps.com/blogs/what-austrian-economics-austrian-economics-vs-keynesian-economics"
               >
                 here
@@ -98,6 +104,8 @@ export default function HomePage() {
             <div className="flex justify-between px-[8vw]">
               <a
                 className="text-blue hover:text-red"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.youtube.com/c/BIPhakathi"
               >
                 BIPhakathi
@@ -105,6 +113,8 @@ export default function HomePage() {
 
               <a
                 className="text-blue hover:text-red"
+                target="_blank"
+                rel="noopener noreferrer"
                 href="https://www.youtube.com/channel/UC6lIbuv_ai9ml_B3IVAgxrw"
               >
                 Goodness in People

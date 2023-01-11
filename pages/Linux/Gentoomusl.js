@@ -95,6 +95,8 @@ export default function Gentoomusl({ title }) {
       <p>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.musl-libc.org/functional-differences-from-glibc.html"
         >
           https://wiki.musl-libc.org/functional-differences-from-glibc.html
@@ -119,6 +121,8 @@ export default function Gentoomusl({ title }) {
         <b>Conty Chroot</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/Kron4ek/Conty"
         >
           https://github.com/Kron4ek/Conty
@@ -171,6 +175,8 @@ export default function Gentoomusl({ title }) {
         <b>KISS Linux</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://kisslinux.org/"
         >
           https://kisslinux.org/

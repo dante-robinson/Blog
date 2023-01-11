@@ -50,6 +50,8 @@ export default function GentooGlibctomusl({ title }) {
         <b>Gentoo Downloads - </b>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.gentoo.org/downloads/"
         >
           https://www.gentoo.org/downloads/
@@ -60,6 +62,8 @@ export default function GentooGlibctomusl({ title }) {
         <b>Gentoo Mirrors - </b>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.gentoo.org/downloads/mirrors/"
         >
           https://www.gentoo.org/downloads/mirrors/
@@ -75,14 +79,14 @@ export default function GentooGlibctomusl({ title }) {
 
       <p>
         We will need to mount the drive next if you are encrypted you will need
-        to run "cryptsetup LuksOpen devicename" but I'm sure you already know all
-        this. We will need to open the compressed stage3 as root so load another
-        terminal and run sudo su then launch the default file manager in PopOS
-        case you can do this by typing nautilus. Then go to the home directory
-        of the user and open the archive wherever you saved it. Then inside the
-        file explorer we can move to where you mounted the drive on /mnt
-        Remember to only mount the drive to /mnt and don't do make-rslave and
-        rbind yet. If you did do this run
+        to run "cryptsetup LuksOpen devicename" but I'm sure you already know
+        all this. We will need to open the compressed stage3 as root so load
+        another terminal and run sudo su then launch the default file manager in
+        PopOS case you can do this by typing nautilus. Then go to the home
+        directory of the user and open the archive wherever you saved it. Then
+        inside the file explorer we can move to where you mounted the drive on
+        /mnt Remember to only mount the drive to /mnt and don't do make-rslave
+        and rbind yet. If you did do this run
       </p>
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
@@ -133,6 +137,8 @@ export default function GentooGlibctomusl({ title }) {
       <p>
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base#Mounting_the_necessary_filesystems"
         >
           https://wiki.gentoo.org/wiki/Handbook:AMD64/Installation/Base#Mounting_the_necessary_filesystems

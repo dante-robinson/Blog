@@ -73,6 +73,8 @@ export default function PerformanceGuide({ title }) {
         steps directly from there. You can find my install guide here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://danterobinson.dev/Linux/ArchGuide"
         >
           https://danterobinson.dev/Linux/ArchGuide
@@ -89,6 +91,8 @@ export default function PerformanceGuide({ title }) {
         on github here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa"
         >
           https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa
@@ -99,6 +103,8 @@ export default function PerformanceGuide({ title }) {
         -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://danterobinson.dev/Linux/SecurityGuide"
         >
           https://danterobinson.dev/Linux/SecurityGuide
@@ -466,6 +472,8 @@ export default function PerformanceGuide({ title }) {
         <b>ananicy-cpp</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gitlab.com/ananicy-cpp/ananicy-cpp"
         >
           https://gitlab.com/ananicy-cpp/ananicy-cpp
@@ -474,6 +482,8 @@ export default function PerformanceGuide({ title }) {
         <b>irqbalance</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/Irqbalance/irqbalance"
         >
           https://github.com/Irqbalance/irqbalance
@@ -482,6 +492,8 @@ export default function PerformanceGuide({ title }) {
         <b>memavaild</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/hakavlad/memavaild"
         >
           https://github.com/hakavlad/memavaild
@@ -490,6 +502,8 @@ export default function PerformanceGuide({ title }) {
         <b>nohang</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/hakavlad/nohang"
         >
           https://github.com/hakavlad/nohang
@@ -498,6 +512,8 @@ export default function PerformanceGuide({ title }) {
         <b>preload</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Preload"
         >
           https://wiki.archlinux.org/title/Preload
@@ -506,6 +522,8 @@ export default function PerformanceGuide({ title }) {
         <b>prelockd</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/hakavlad/prelockd"
         >
           https://github.com/hakavlad/prelockd
@@ -514,6 +532,8 @@ export default function PerformanceGuide({ title }) {
         <b>uresourced</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gitlab.freedesktop.org/benzea/uresourced"
         >
           https://gitlab.freedesktop.org/benzea/uresourced
@@ -847,6 +867,8 @@ export default function PerformanceGuide({ title }) {
         Audio Sampling Rates -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling"
         >
           https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling
@@ -892,6 +914,8 @@ export default function PerformanceGuide({ title }) {
         provide some system checks for you -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://kx.studio/Applications:Cadence"
         >
           https://kx.studio/Applications:Cadence
@@ -903,6 +927,8 @@ export default function PerformanceGuide({ title }) {
         check out this page -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://jackaudio.org/applications/"
         >
           https://jackaudio.org/applications/
@@ -912,6 +938,8 @@ export default function PerformanceGuide({ title }) {
         Read more about upmixing/downmixing here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling"
         >
           https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling
@@ -1082,6 +1110,8 @@ export default function PerformanceGuide({ title }) {
       <b>Gentoo Based</b> -{" "}
       <a
         className="text-red break-all hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://github.com/dywisor/tlp-portage/blob/maint/README.rst"
       >
         https://github.com/dywisor/tlp-portage/blob/maint/README.rst
@@ -1090,6 +1120,8 @@ export default function PerformanceGuide({ title }) {
       <b>RedHat Based</b> -{" "}
       <a
         className="text-red break-all hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
         href="https://access.redhat.com/discussions/4903881"
       >
         https://access.redhat.com/discussions/4903881
@@ -1116,6 +1148,8 @@ export default function PerformanceGuide({ title }) {
         this guide -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://linrunner.de/tlp/settings/index.html"
         >
           https://linrunner.de/tlp/settings/index.html

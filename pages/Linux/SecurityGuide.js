@@ -65,6 +65,8 @@ export default function SecurityGuide({ title }) {
         on github here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca"
         >
           https://gist.github.com/dante-robinson/3a2178e43009c8267ac02387633ff8ca
@@ -441,6 +443,8 @@ export default function SecurityGuide({ title }) {
         however they do cost money you can check out there page here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://grsecurity.net/"
         >
           https://grsecurity.net/
@@ -505,6 +509,8 @@ export default function SecurityGuide({ title }) {
         AppArmor -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.apparmor.com/"
         >
           https://www.apparmor.com/
@@ -565,7 +571,9 @@ export default function SecurityGuide({ title }) {
         <b>Arch</b> -{" "}
         <a
           className="text-red break-all hover:underline"
-          href="https://wiki.archlinux.org/title/SELinux "
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://wiki.archlinux.org/title/SELinux"
         >
           https://wiki.archlinux.org/title/SELinux
         </a>
@@ -573,6 +581,8 @@ export default function SecurityGuide({ title }) {
         <b>Debian</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.debian.org/SELinux/Setup"
         >
           https://wiki.debian.org/SELinux/Setup
@@ -581,6 +591,8 @@ export default function SecurityGuide({ title }) {
         <b>Fedora</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes"
         >
           https://docs.fedoraproject.org/en-US/quick-docs/getting-started-with-selinux/#getting-started-with-selinux-selinux-states-and-modes
@@ -589,6 +601,8 @@ export default function SecurityGuide({ title }) {
         <b>Gentoo</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.gentoo.org/wiki/SELinux/Installation"
         >
           https://wiki.gentoo.org/wiki/SELinux/Installation
@@ -597,6 +611,8 @@ export default function SecurityGuide({ title }) {
         <b>Mint</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610"
         >
           https://forums.linuxmint.com/viewtopic.php?p=1236610#p1236610
@@ -605,6 +621,8 @@ export default function SecurityGuide({ title }) {
         <b>RedHat</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux"
         >
           https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/using_selinux/getting-started-with-selinux_using-selinux#selinux-states-and-modes_getting-started-with-selinux
@@ -613,6 +631,8 @@ export default function SecurityGuide({ title }) {
         <b>Ubuntu</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.ubuntu.com/SELinux"
         >
           https://wiki.ubuntu.com/SELinux
@@ -652,6 +672,8 @@ export default function SecurityGuide({ title }) {
         found here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst"
         >
           https://github.com/torvalds/linux/blob/master/Documentation/vm/slub.rst
@@ -685,6 +707,8 @@ export default function SecurityGuide({ title }) {
         exploit you can read more about it here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)"
         >
           https://en.wikipedia.org/wiki/Meltdown_(security_vulnerability)
@@ -705,6 +729,8 @@ export default function SecurityGuide({ title }) {
         which you can read about here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)"
         >
           https://en.wikipedia.org/wiki/Spectre_(security_vulnerability)
@@ -725,6 +751,8 @@ export default function SecurityGuide({ title }) {
         about DKMS Modules here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support"
         >
           https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support
@@ -814,6 +842,8 @@ export default function SecurityGuide({ title }) {
         find out more about that here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://gitlab.com/apparmor/apparmor/-/wikis"
         >
           https://gitlab.com/apparmor/apparmor/-/wikis/FullSystemPolicy
@@ -830,6 +860,8 @@ export default function SecurityGuide({ title }) {
         <b>Targeted</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement"
         >
           https://github.com/SELinuxProject/selinux-notebook/blob/main/src/type_enforcement.md#type-enforcement
@@ -838,6 +870,8 @@ export default function SecurityGuide({ title }) {
         <b>MLS</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md"
         >
           https://github.com/SELinuxProject/selinux-notebook/blob/main/src/mls_mcs.md
@@ -909,6 +943,8 @@ export default function SecurityGuide({ title }) {
         You can learn more about running Xephyr on your system here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://wiki.archlinux.org/title/Xephyr#Execution"
         >
           https://wiki.archlinux.org/title/Xephyr#Execution
@@ -1052,6 +1088,8 @@ export default function SecurityGuide({ title }) {
         read this post here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html"
         >
           https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
@@ -1063,6 +1101,8 @@ export default function SecurityGuide({ title }) {
         can check there page here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://usbkill.com/"
         >
           https://usbkill.com/
@@ -1070,6 +1110,8 @@ export default function SecurityGuide({ title }) {
         you can see a video off some tests with it here -
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.youtube.com/watch?v=I6bRoSK39io"
         >
           https://www.youtube.com/watch?v=I6bRoSK39io
@@ -1078,6 +1120,8 @@ export default function SecurityGuide({ title }) {
         thread -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device"
         >
           https://unix.stackexchange.com/questions/65891/how-to-execute-a-shellscript-when-i-plug-in-a-usb-device
@@ -1096,6 +1140,8 @@ export default function SecurityGuide({ title }) {
         attack is still possible. You can read more about USBGuard here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://usbguard.github.io/documentation/configuration.html"
         >
           https://usbguard.github.io/documentation/configuration.html
@@ -1234,6 +1280,8 @@ export default function SecurityGuide({ title }) {
         attacks which you can read more about here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://en.wikipedia.org/wiki/Replay_attack"
         >
           https://en.wikipedia.org/wiki/Replay_attack
@@ -1534,6 +1582,8 @@ export default function SecurityGuide({ title }) {
         these hashing algorithms check out this page -
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://emn178.github.io/online-tools/sha256.html"
         >
           https://emn178.github.io/online-tools/sha256.html
@@ -1557,6 +1607,8 @@ export default function SecurityGuide({ title }) {
         to add a password if you would like -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/kitsunyan/systemd-boot-password"
         >
           https://github.com/kitsunyan/systemd-boot-password
@@ -1570,6 +1622,8 @@ export default function SecurityGuide({ title }) {
         and BSD based systems. You can read more about it here -
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://cisofy.com/"
         >
           https://cisofy.com/
@@ -1605,6 +1659,8 @@ export default function SecurityGuide({ title }) {
         <b>AIDE</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://aide.github.io/"
         >
           https://aide.github.io/
@@ -1613,6 +1669,8 @@ export default function SecurityGuide({ title }) {
         <b>ClamAV</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.clamav.net/"
         >
           https://www.clamav.net/
@@ -1621,6 +1679,8 @@ export default function SecurityGuide({ title }) {
         <b>RKHunter</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://sourceforge.net/projects/rkhunter/"
         >
           https://sourceforge.net/projects/rkhunter/
@@ -1629,6 +1689,8 @@ export default function SecurityGuide({ title }) {
         <b>OpenVAS</b> -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://github.com/greenbone/openvas-scanner"
         >
           https://github.com/greenbone/openvas-scanner
@@ -1689,6 +1751,8 @@ export default function SecurityGuide({ title }) {
         link to here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://grapheneos.org/"
         >
           https://grapheneos.org/
@@ -1697,6 +1761,8 @@ export default function SecurityGuide({ title }) {
         here -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://dt.gl/tweetstorm-grapheneos/"
         >
           https://dt.gl/tweetstorm-grapheneos/
@@ -1708,6 +1774,8 @@ export default function SecurityGuide({ title }) {
         Laptop -
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://puri.sm/"
         >
           https://puri.sm/
@@ -1716,6 +1784,8 @@ export default function SecurityGuide({ title }) {
         but is planned) -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://frame.work/"
         >
           https://frame.work/
@@ -1777,8 +1847,15 @@ export default function SecurityGuide({ title }) {
       </p>
       <p>
         You can also check out the company Yubico to pick up a YubiKey here -{" "}
-        <a>https://www.yubico.com/ca/works-with-yubikey/catalog/linux/</a> This
-        will allow you to not only have the password for user/root but also
+        <a
+          className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.yubico.com/ca/works-with-yubikey/catalog/linux/"
+        >
+          https://www.yubico.com/ca/works-with-yubikey/catalog/linux/
+        </a>{" "}
+        This will allow you to not only have the password for user/root but also
         require the system to have the yubikey plugged into the device to be
         able to login. They even offer some Keys with fingerprint scanners so
         they would need the YubiKey and your fingerprint. You can also pick up
@@ -1787,6 +1864,8 @@ export default function SecurityGuide({ title }) {
         you are interested in reading the pros and cons of something like this -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://security.stackexchange.com/questions/201345/is-it-reasonable-to-use-keepassxc-with-yubikey"
         >
           https://security.stackexchange.com/questions/201345/is-it-reasonable-to-use-keepassxc-with-yubikey
@@ -1799,6 +1878,8 @@ export default function SecurityGuide({ title }) {
         whonix -{" "}
         <a
           className="text-red break-all hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
           href="https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F"
         >
           https://www.whonix.org/wiki/KVM#Why_Use_KVM_Over_VirtualBox.3F
