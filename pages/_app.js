@@ -84,14 +84,22 @@ function MyApp({ Component, pageProps }) {
             <div className="text-sm relative my-[0.5vh] h-content w-full">
               <footer className="flex mx-[1vw] md:mx-[0vw] text-foreground text-sm justify-between">
                 <div>
-                  <a href="https://cointr.ee/dante_robinson">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://cointr.ee/dante_robinson"
+                  >
                     <FontAwesomeIcon className="mx-[0.5vw]" icon={faBitcoin} />
                     CoinTree
                   </a>
                 </div>
 
                 <div>
-                  <a href="https://github.com/dante-robinson/Blog">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/dante-robinson/Blog"
+                  >
                     Source Code on Github
                     <FontAwesomeIcon className="mx-[0.5vw]" icon={faGithub} />
                   </a>
