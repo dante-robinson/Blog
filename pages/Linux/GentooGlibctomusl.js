@@ -91,7 +91,7 @@ export default function GentooGlibctomusl({ title }) {
 
       <blockquote className="bg-background border-2 border-magenta px-[1vw] py-[0.5vh]">
         <p className="text-xs sm:text-sm break-all font-semibold">
-          unmount -l /mnt/whatever
+          umount -l /mnt/whatever
         </p>
       </blockquote>
 
