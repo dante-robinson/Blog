@@ -1,0 +1,38 @@
+.two-image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .two-image-container {
+    flex-direction: row;
+  }
+
+  .second-image-inside-container {
+    margin-top: 0px;
+    margin-left: 1vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .second-image-inside-container {
+    margin-top: 1vw;
+  }
+}
+
+.first-image-inside-container {
+  width: 45%;
+}
+
+.second-image-inside-container {
+  width: 45%;
+}
+
+.first-image-center-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

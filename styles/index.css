@@ -1,0 +1,104 @@
+.intro {
+  text-align: center;
+  padding-top: 1vh;
+}
+
+.two-columns {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.about-me {
+  height: 100%;
+  text-align: center;
+  padding-top: 1.5vh;
+  padding-bottom: 1.5vh;
+  margin-top: 1vh;
+}
+
+.recommended-channels {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 8vw;
+  padding-right: 8vw;
+}
+
+.link-list {
+  text-align: center;
+  padding-top: 1.5vh;
+  justify-content: center;
+}
+
+.note {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.index-posts {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  align-items: center;
+}
+
+.post-list-item {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1vh;
+}
+
+.post-date {
+  padding: 0;
+  margin: 0;
+}
+
+.page-link {
+  color: #7aa2f7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-link:hover {
+  color: #f7768e;
+}
+
+@media (min-width: 768px) {
+  .about-me {
+    width: 100%;
+  }
+
+  .link-list {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .two-columns {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .post-list-item {
+    width: 33vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  .post-list-item {
+    width: 28vw;
+  }
+}
