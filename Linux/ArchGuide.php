@@ -7,7 +7,7 @@
 <head>
   <?php
   include("../configs/head.php");
-  ?>
+?>
 </head>
 
 <?php
@@ -19,7 +19,7 @@ include("../includes/title.php");
     <div class="page-box">
       <?php
       include("../includes/nav.php");
-      ?>
+?>
 
       <div class="page">
         <p class="post-date">Oct 30, 2021</p>
@@ -1029,8 +1029,8 @@ include("../includes/title.php");
       </div>
 
       <?php
-      include("../includes/footer.php");
-      ?>
+include("../includes/footer.php");
+?>
 
     </div>
   </div>

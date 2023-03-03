@@ -1,4 +1,4 @@
-<?php include("./configs/config.php"); ?>
+<?php require "./configs/config.php"; ?>
 
 <!DOCTYPE html>
 <html>
@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/styles/index.css" />
 
     <?php
-    include("./configs/head.php");
+    require "./configs/head.php";
     ?>
 </head>
 
 <?php
-include("./includes/title.php");
+require "./includes/title.php";
 ?>
 
 <div class="page-template">
@@ -20,7 +20,7 @@ include("./includes/title.php");
         <div class="page-box">
 
             <?php
-            include("./includes/nav.php");
+            require "./includes/nav.php";
             ?>
 
             <div class="page">
@@ -115,6 +115,10 @@ include("./includes/title.php");
 
                         <ul class="index-posts">
                             <li class="post-list-item">
+                                <a class="page-link" href="BSD/4MonthsofBSD">4 Months of BSD</a>
+                                <p class="post-date">Mar 03, 2023</p>
+                            </li>
+                            <li class="post-list-item">
                                 <a class="page-link" href="Crypto/CommunistCBDC">Communist CBDCs</a>
                                 <p class="post-date">Jan 11, 2023</p>
                             </li>
@@ -158,7 +162,7 @@ include("./includes/title.php");
             </div>
 
             <?php
-            include("./includes/footer.php");
+            require "./includes/footer.php";
             ?>
 
         </div>

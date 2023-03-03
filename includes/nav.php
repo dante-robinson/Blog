@@ -5,9 +5,9 @@
             <div class="LinuxModal hidden">
                 <?php
                 if ($CURRENT_PAGE == "Index") {
-                    include("./includes/Modals/LinuxModal.php");
+                    include "./includes/Modals/LinuxModal.php";
                 } else {
-                    include("../includes/Modals/LinuxModal.php");
+                    include "../includes/Modals/LinuxModal.php";
                 }
                 ?>
             </div>
@@ -18,13 +18,26 @@
             <div class="CryptoModal hidden">
                 <?php
                 if ($CURRENT_PAGE == "Index") {
-                    include("./includes/Modals/CryptoModal.php");
+                    include "./includes/Modals/CryptoModal.php";
                 } else {
-                    include("../includes/Modals/CryptoModal.php");
+                    include "../includes/Modals/CryptoModal.php";
                 }
                 ?>
             </div>
         </li>
-    </ul>
+
+        <li class="nav-li">
+            <button class="BSDModalButton">BSD</button>
+            <div class="BSDModal hidden">
+                <?php
+                if ($CURRENT_PAGE == "Index") {
+                    include "./includes/Modals/BSDModal.php";
+                } else {
+                    include "../includes/Modals/BSDModal.php";
+                }
+                ?>
+            </div>
+        </li>
+</ul>
 </nav>
 <script type="text/javascript" src="/scripts/NavModal.js"></script>
