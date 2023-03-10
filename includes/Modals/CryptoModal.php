@@ -5,6 +5,8 @@
                 <a class=" link" href="/Crypto/XRPXLMScam">XRP & XLM The biggest scams</a>
                 <br />
                 <a class="link" href="/Crypto/CommunistCBDC">Communist CBDCs</a>
+                <br />
+                <a class="link" href="/Crypto/WhatMakesShtcoins">What makes a Sh*tcoin</a>
             </li>
         </ul>
     </div>

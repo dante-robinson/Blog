@@ -115,6 +115,10 @@ require "./includes/title.php";
 
                         <ul class="index-posts">
                             <li class="post-list-item">
+                                <a class="page-link" href="Crypto/WhatMakesShtcoins">What makes a sh*tcoin</a>
+                                <p class="post-date">Mar 09, 2023</p>
+                            </li>
+                            <li class="post-list-item">
                                 <a class="page-link" href="BSD/4MonthsofBSD">4 Months of BSD</a>
                                 <p class="post-date">Mar 03, 2023</p>
                             </li>

@@ -29,6 +29,14 @@ switch ($_SERVER["SCRIPT_NAME"]) {
         $CURRENT_PAGE = "Communist CBDCs";
         $PAGE_TITLE = $CURRENT_PAGE;
         break;
+    case "/BSD/4MonthsofBSD.php":
+        $CURRENT_PAGE = "4 Months of BSD";
+        $PAGE_TITLE = $CURRENT_PAGE;
+        break;
+    case "/Crypto/WhatMakesShtcoins.php":
+        $CURRENT_PAGE = "What makes a sh*tcoin";
+        $PAGE_TITLE = $CURRENT_PAGE;
+        break;
     default:
         $CURRENT_PAGE = "Index";
         $PAGE_TITLE = "Dante's Blog";

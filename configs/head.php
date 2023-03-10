@@ -62,6 +62,18 @@ switch ($CURRENT_PAGE) {
         <meta name="keywords" content="" />
         <?php
         break;
+    case "4 Months of BSD":
+        ?>
+        <meta name="description" content="Discussing my past 4 months of daily driving various BSDs." />
+        <meta name="keywords" content="" />
+        <?php
+        break;
+    case "What makes a sh*tcoin":
+        ?>
+        <meta name="description" content="How to spot a sh*tcoin. This post covers the many things most sh*tcoins tend to follow so you can decide for yourself if it's worth investing in." />
+        <meta name="keywords" content="" />
+        <?php
+        break;
     default:
         ?>
         <meta name="description" content="My personal blog where I talk about Linux, Crypto and other thoughts." />
