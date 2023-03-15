@@ -1,0 +1,41 @@
+.modal {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-border {
+  background-color: #24283b;
+  border-width: 2px;
+  border-color: #7aa2f7;
+  width: 16rem;
+  border-style: solid;
+  height: max-content;
+  position: absolute;
+  margin-top: 2%;
+}
+
+.modal-ul {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding-top: 0.5vh;
+  padding: 0;
+  list-style-type: none;
+}
+
+.modal-li {
+  width: 100%;
+}
+
+.link {
+  color: #7dcfff;
+}
+
+.link:hover {
+  text-decoration: none;
+  color: #f7768e;
+}
