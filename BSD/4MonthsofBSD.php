@@ -38,11 +38,8 @@ require "../includes/title.php";
         <p>
         For those looking for a TLDR (To Long Didn't Read) I will be
         sticking with OpenBSD for the time being and if something doesn't
-        work out I will be looking to move back to FreeBSD, Gentoo or macOS. Yes
-        I actually don't mind macOS that much I love Apple's build quality, but
-        I always find brew (package manager) is not as good as a full fledged one
-        on Linux/BSD.I think BSD is amazing and the changes over Linux are worth
-        making the switch.
+        work out I will be looking to move back to FreeBSD, Gentoo. I think BSD
+        is amazing and the changes over Linux are worth making the switch.
         </p>
         
         <p>
@@ -475,10 +472,10 @@ require "../includes/title.php";
           for game support from Steam otherwise if your still playing on Linux
           why would they care? They didn't lose you as a customer they don't care
           what platform your on. This is for alot of different things if we want
-          proper React or NextJS support we need to ask for it or help program it
-          ourselves and upload the Pull Request. If you want to try BSD but can't
-          because something doesn't work, it's most likely not going to work
-          unless someone (you) does something about it.
+          proper React or NextJS (Working now) support we need to ask for it or 
+          help program it ourselves and upload the Pull Request. If you want to 
+          try BSD but can't because something doesn't work, it's most likely not
+          going to work unless someone (you) does something about it.
           </p>
         </body>
 

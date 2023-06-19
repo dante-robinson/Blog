@@ -1,3 +1,5 @@
+<?php global $CURRENT_PAGE; ?>
+
 <nav>
     <ul class="nav-ul">
         <li class="nav-li">
