@@ -10,9 +10,7 @@
     ?>
 </head>
 
-<?php
-include("../includes/title.php");
-?>
+<?php include("../includes/title.php"); ?>
 
 <div class="page-template">
     <div class="page-center-box">
@@ -60,7 +58,7 @@ include("../includes/title.php");
                 
                 <p>
                 Now depending where you get your information from you may have
-                heard Proof of Stake (PoS) is the savior of crypto saving making it
+                heard Proof of Stake (PoS) is the savior of crypto, making it
                 upwards of 99% more efficient, these claims are true but they
                 fail to mention what you are giving up as it comes at a massive
                 cost. First of all you have now come full circle and removed the
@@ -163,7 +161,7 @@ include("../includes/title.php");
                 they will keep growing faster than you forever like the current
                 system. Say they stake 10 coins and make a reward of 10 coins per
                 block and they pay out say 10% (even more than your average stock
-                market gain YoY). Let's then say you stake 1 coin now that 10%
+                market gain YoY(Year over Year)). Let's then say you stake 1 coin now that 10%
                 is divided amongst all stakers lets say for simplicity there's
                 100 each at 1 coin (because if they stake 2 coins they will get
                 more of that 10% than you will) so you now make 0.1% of that 10

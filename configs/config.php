@@ -1,5 +1,9 @@
 <!-- Add all new page titles here -->
 <?php
+global $SERVER;
+global $CURRENT_PAGE;
+global $PAGE_TITLE;
+
 switch ($_SERVER["SCRIPT_NAME"]) {
     case "/Linux/ArchGuide.php":
         $CURRENT_PAGE = "Arch Linux Install Guide";
@@ -35,6 +39,10 @@ switch ($_SERVER["SCRIPT_NAME"]) {
         break;
     case "/Crypto/WhatMakesShtcoins.php":
         $CURRENT_PAGE = "What makes a sh*tcoin";
+        $PAGE_TITLE = $CURRENT_PAGE;
+        break;
+    case "/BSD/BitcoinNodeOpenBSD.php":
+        $CURRENT_PAGE = "How to run a Bitcoin Node on OpenBSD";
         $PAGE_TITLE = $CURRENT_PAGE;
         break;
     default:
