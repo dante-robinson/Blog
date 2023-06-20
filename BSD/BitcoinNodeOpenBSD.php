@@ -118,6 +118,22 @@
           </p>
 
           <p>
+            When you get to the stage about the drive you are going to want to 
+            most likely use GPT and then once it shows you all the partitions you
+            will need to press 'e' and then enter to edit the paritions and you 
+            can then type 'p g' to print the partitions again but in GB (not bytes).
+            OpenBSD for some reason doesnt fill the whole drive by default.
+            From here you should see near the top free space in GB or G we need 
+            to add this free space to our /home directory usually partition L.
+            We can do this by entering 'R l' and then enter, followed by doing 
+            '+60G' and then replace the 60 with your free GB. You can double check
+            everything is ok by running 'p g' again to see the /home partition 
+            has grown in space. After this is confirmed press 'w' and then enter 
+            to write to the disk and then 'q' and enter to quit and continue the 
+            install.
+          </p>
+
+          <p>
             I just named my user a basic name like bitcoin and did all the other 
             default settings in my OpenBSD install. After you reboot into your 
             installed OpenBSD system you will need to login as root and configure
