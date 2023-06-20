@@ -38,7 +38,7 @@ require "../includes/title.php";
         <p>
         For those looking for a TLDR (To Long Didn't Read) I will be
         sticking with OpenBSD for the time being and if something doesn't
-        work out I will be looking to move back to FreeBSD, Gentoo. I think BSD
+        work out I will be looking to move back to FreeBSD or Gentoo. I think BSD
         is amazing and the changes over Linux are worth making the switch.
         </p>
         
@@ -124,8 +124,8 @@ require "../includes/title.php";
           are a decent maybe 10% ish are standalone distros without forks.
           </p>
 
-          <a href="https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg" class="link">
-          https://upload.wikimedia.org/wikipedia/commons/b/b5/Linux_Distribution_Timeline_21_10_2021.svg</a>
+          <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions" class="link">
+          https://en.wikipedia.org/wiki/List_of_Linux_distributions</a>
 
           <p>
           However even with the new package managers most of these distros are 
