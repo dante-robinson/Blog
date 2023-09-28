@@ -9,6 +9,10 @@ footer {
   width: 100%;
 }
 
+a {
+  font-family: sans-serif;
+}
+
 i {
   margin-left: 0.05vw;
   margin-right: 0.05vw;

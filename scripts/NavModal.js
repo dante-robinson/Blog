@@ -13,8 +13,10 @@ const BSDModalButton = document.querySelector(".BSDModalButton");
 const openLinuxModal = function () {
   if (LinuxModal.classList.contains("hidden")) {
     LinuxModal.classList.remove("hidden");
+    LinuxModal.classList.add("modal-container");
   } else {
     LinuxModal.classList.add("hidden");
+    LinuxModal.classList.remove("modal-container");
   }
 };
 
@@ -39,18 +41,6 @@ LinuxModalButton.addEventListener("click", openLinuxModal);
 CryptoModalButton.addEventListener("click", openCryptoModal);
 BSDModalButton.addEventListener("click", openBSDModal);
 
-// Close Modal functions by re-adding hidden tag
-const closeLinuxModal = function () {
-  LinuxModal.classList.add("hidden");
-};
-
-const closeCryptoModal = function () {
-  CryptoModal.classList.add("hidden");
-};
-
-const closeBSDModal = function () {
-  BSDModal.classList.add("hidden");
-};
 // Won't work with other buttons as an "||" or statement some reason
 // Therefore 2 separate if statements are needed.
 // If event doesnt match button Modal can't open

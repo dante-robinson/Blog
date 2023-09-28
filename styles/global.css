@@ -4,6 +4,13 @@
   line-height: 1.5rem;
 }
 
+iframe {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  border: none;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -19,14 +26,14 @@ h4 {
   background-color: #1f2335;
   color: #c0caf5;
   font-size: 0.875rem;
-  min-height: 100vh;
+  min-height: 60vh;
   width: 100%;
   padding-bottom: 12vh;
 }
 
 .page-center-box {
   display: flex;
-  height: 100%;
+  min-height: 60%;
   width: 100%;
   justify-content: center;
 }
@@ -39,7 +46,7 @@ h4 {
   border-width: 4px;
   border-style: solid;
   height: min-content;
-  min-height: 80%;
+  min-height: 60%;
   border-color: #a9b1d6;
 }
 
@@ -84,7 +91,7 @@ h4 {
 }
 
 .link {
-  color: #f7768e;
+  color: #7dcfff;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -94,7 +101,7 @@ h4 {
 }
 
 .link:hover {
-  text-decoration: underline;
+  color: #f7768e;
 }
 
 .blockquote {

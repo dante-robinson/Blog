@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="../styles/global.css" />
+
+    <meta
+      name="description"
+      content="Discussing my past 4 months of daily driving various BSDs."
+    />
+    <meta
+      name="keywords"
+      content="FreeBSD, OpenBSD, NetBSD, DragonFlyBSD, review, recommend, recommendation, easiest, easy"
+    />
+
+    <title>4 Months of using various BSDs</title>
+  </head>
+
+  <iframe
+    sandbox="allow-same-origin allow-top-navigation"
+    src="../iframes/title.html"
+    style="background-color: #1f2335"
+    scrolling="no"
+  ></iframe>
+
+  <div class="page-template">
+    <div class="page-center-box">
+      <div class="page-box">
+        <div class="page">
+          <iframe
+            sandbox="allow-same-origin allow-top-navigation"
+            src="../iframes/nav.html"
+            scrolling="no"
+            height="100px"
+          ></iframe>
+
+          <p class="post-date">Mar 03, 2023</p>
+
+          <h2 class="post-title">4 Months of using various BSDs</h2>
+
+          <p>
+            Over the past 4 months I have been running various BSDs on my daily
+            machine and I have to say I love it. I am coming from Gentoo Linux
+            as a bit of background and I have been using Linux for about 5 years
+            full time now, so I am writing with a decent amount of UNIX-Like
+            experience. This will be mostly a discussion comparing BSD to Linux
+            and what I like about and dislike about the various BSDs by itself.
+          </p>
+
+          <p>
+            For those looking for a TLDR (To Long Didn't Read) I will be
+            sticking with OpenBSD for the time being and if something doesn't
+            work out I will be looking to move back to FreeBSD or Gentoo. I
+            think BSD is amazing and the changes over Linux are worth making the
+            switch.
+          </p>
+
+          <p>
+            If you are currently running on macOS or Windows you may be thinking
+            you might need to run Linux before trying out BSD this is not the
+            case at all. It more or less depends on how much work your willing
+            to put into switching, BSD install process is not complex but it is
+            more hands on and to someone who may be less tech literate than
+            others using a TUI (Terminal User Interface) or CLI (Command Line
+            Interface) based installers may seem scary, they are not, do not be
+            afraid of these things. I would recommend trying FreeBSD as opposed
+            to something like Ubuntu as FreeBSD can do like 99% of what Linux
+            can do and is a lighter OS with less garbage like systemd or snap
+            packages. FreeBSD has a great writeup on how to install from scratch
+            with PICTURES! as well as a command line guide for basic commands
+            and how to install a Desktop interface (as you have many options
+            unlike macOS/Windows). You can find the Handbook here -
+            <a
+              href="https://docs.freebsd.org/en/books/handbook/introduction/"
+              class="link"
+              >https://docs.freebsd.org/en/books/handbook/introduction/</a
+            >
+          </p>
+
+          <h3 class="table-of-contents-header">Table of Contents</h3>
+
+          <div class="table-of-contents-container">
+            <a class="table-of-contents-item" href="#why"
+              >Why does any of this matter?</a
+            ><br />
+            <a class="table-of-contents-item" href="#linux"
+              >Why BSD over Linux?</a
+            ><br />
+            <a class="table-of-contents-item" href="#licenses">Licenses</a
+            ><br />
+            <a class="table-of-contents-item" href="#docs">Documentation</a
+            ><br />
+            <a class="table-of-contents-item" href="#foundations">Foundations</a
+            ><br />
+            <a class="table-of-contents-item" href="#gaming">Gaming</a><br />
+            <a class="table-of-contents-item" href="#recommend"
+              >Recomendations</a
+            ><br />
+          </div>
+
+          <body>
+            <h3 class="header">Why does any of this matter?<a id="why"></a></h3>
+
+            <p>
+              This is a great question the short answer is that it probably
+              doesn't. If your someone who just uses a computer and doesn't care
+              about how it works then it probably isn't going to matter. If your
+              actively looking to improve your development environment even
+              macOS is a good option over windows as it comes with an actual
+              shell unlike Windows command line. If your starting to say to
+              yourself I want to run something open source that not only myself
+              but others can audit the code and make sure it's safe. Then your
+              starting to look into Linux and BSD. What is most important is
+              does your current OS do what you want it to do? If not then you
+              probably don't need to change it. If your looking to move to all
+              open source software maybe try using the applications on your OS
+              first. Apps like GoDot, Krita, KdenLive, LibreOffice are available
+              for many different OSes. If these tools aren't going to work for
+              you chances are BSD or Linux won't either.
+            </p>
+
+            <h3 class="header">Why BSD over Linux?<a id="linux"></a></h3>
+
+            <p>
+              Linux has all these modern hip applications and all these
+              different package management systems and so many distros to choose
+              from why even consider BSD? Well the issue with "distros" on Linux
+              is they aren't really doing anything (no offense devs...). Most
+              distros are merely a fork of someone else design for example
+              Debian and Ubuntu both use the same package manager both work very
+              similar, so where is the difference? The packages that come
+              preinstalled on the distro that can range from a different Desktop
+              Environment (DE) to pre-installed packages/configs on the machine
+              ready to use right after install.
+            </p>
+
+            <p>
+              Not all Linux distros are made this way but a majority of them
+              are. So why should you install one over the other? Well the whole
+              point in the creators minds is that it makes everything work the
+              way you want it out of the box. For 80-90% that's probably not the
+              case though which make basically every distro a waste of not only
+              the creators time but also adds to the complexity of the space.
+            </p>
+
+            <p>
+              So what's the difference with the Linux distros that aren't forks?
+              These distros actually develop something rather than manage a
+              package repo. These distros have new package managers new init
+              systems and in some cases like Gentoo completely different ways of
+              doing things from the majority. Here is a full list of all the
+              Linux distros you will notice a majority fork off from another
+              project but even still there are a decent maybe 10% ish are
+              standalone distros without forks.
+            </p>
+
+            <a
+              href="https://en.wikipedia.org/wiki/List_of_Linux_distributions"
+              class="link"
+            >
+              https://en.wikipedia.org/wiki/List_of_Linux_distributions</a
+            >
+
+            <p>
+              However even with the new package managers most of these distros
+              are still the same thing. They have designed a new package
+              management system which might be easier to use or they have some
+              new feature like the AUR. However only maybe 1% of distros are
+              actually doing something unique. Gentoo, Bedrock, KISS, Nix,
+              Chimera and maybe even Void. These guys are using the Linux Kernel
+              like the other distros but actually are different. Maybe that
+              means they are straying from the GNU Code base, using a new C
+              library and the list goes on. If your not looking at these distros
+              the experience you will have on Linux is going to be mostly the
+              same, even something like Fedora (RedHat Based) to Mint (Debian
+              Based) is going to feel like the same thing. Not all forks are
+              useless some like PopOS for example are making their own Desktop's
+              which is cool.
+            </p>
+
+            <p>
+              Linux is very confusing it's the first question everyone asks
+              "what distro do I install?" There's even guides (bad) on this
+              topic in a quick search. BSD doesn't have this issue you have many
+              variations of BSD which you can find at the link below.
+            </p>
+
+            <a
+              href="https://en.wikipedia.org/wiki/List_of_BSD_operating_systems"
+              class="link"
+            >
+              https://en.wikipedia.org/wiki/List_of_BSD_operating_systems</a
+            >
+
+            <p>
+              Now that may seem like a lot and it is but there are really only 4
+              main BSDs that comes up in conversation maybe 5. You may not even
+              have heard of any besides the largest one FreeBSD. So what's the
+              difference here? FreeBSD is designed to run everything like Linux
+              does and can even emulate Linux actually. This is more your
+              mainstream BSD this where over 70% answered to a survey in 2005
+              saying they use FreeBSD. This is probably where most users want to
+              be as eveything is most likely to work like they want. OpenBSD is
+              more based around security of course but not just that it's more
+              code correctness, I personally really like the goals of this
+              project however you will encounter many issues that you will
+              probably need to fix yourself and some software doesn't even work
+              that may work on other BSDs for example. NetBSD focus is around
+              bringing BSD to every possible platform, this is probably not what
+              you think it is it doesn't mean the latest GPUs and stuff but more
+              in the sense of architectures. For example POWERPC or ARM and
+              those 2 are just minor in comparison to the list of platforms they
+              support feel free to check out their site it's incredible
+              honestly. If you had a PowerMac you will know a lot of Linux
+              distros dropped support for it you might be worried FreeBSD will
+              drop support for example next this makes NetBSD a very compelling
+              option. The downside of this is the dev team is focused on so many
+              platforms without enough devs it's tough to add modern support for
+              things or even bug fixes. DragonFly BSD main focus is speed the
+              hardware is really lacking it may not work for you at the time of
+              writing at least however it's really cool to just reading their
+              home page will tell you so much about what's different, worth the
+              read.
+            </p>
+
+            <p>
+              The next major difference as you have probably realized by now is
+              unlike Linux distros which are mostly all the same core packages,
+              BSD is it's own complete system each BSD is different from each
+              other. BSDs do use each others code from time to time to add a
+              feature but personally I think this needs to be done more often to
+              get modern hardware supported quickly. What do you gain from a
+              complete system? Well besides the huge differences in each BSD
+              this allows the project to offer a more stable system than Linux
+              (no really!), not only that it allows for the system to be more
+              optimized at the base level working with everything nicely because
+              well.. it was designed to around using each piece of that base. So
+              why is it more stable? It's a pretty bold claim this may not be
+              true for the bleeding edge of hardware however when your able to
+              make sure everything works with each other nothing should ever
+              break but besides that the system updates as a whole. Have you
+              ever noticed Linux distros like Ubuntu have a release? This is
+              because they update the GNU core utils among other system packages
+              all at once. Linux is mainly designed around GNU software but try
+              running musl notice the breakages even Clang/LLVM a few years back
+              wouldn't compile everything I still don't think it does today.
+              Some portable kernel huh... There is so much room for error from
+              different parties trying make everything work together maybe Linux
+              updates and GNU needs to patch something for it that comes a day
+              later this kernel update could make something unstable it happens.
+              When the OS is a complete system like BSD it doesn't happen unless
+              your running -current.
+            </p>
+
+            <p>
+              Packages on Linux come from your main distro repo but not just
+              that. You then need to trust other random people on the internet
+              when using things like the AUR or even adding a new repo to your
+              package manager because you can't find that package you need/want.
+              This can be a huge security risk and BSD you don't need to do any
+              of that. People praise the AUR but it's not that special when you
+              think about it and I've used Arch for over a year. Meet BSDs Port
+              system not only can you download binaries from a trusted source
+              for your packages but you can also get direct access to the source
+              code of those packages to compile them natively in your local
+              ports tree. I will admit it's not as nice as Gentoo's portage as
+              in the package manger doesn't directly support building the
+              packages and they will need to be done manually like 99% of other
+              Linux distros. FreeBSD does have a tool called Poudriere which can
+              compile lots of ports for you in 1 command with the options you
+              want. So who can manage ports? People approved by that BSD. Is it
+              as good as the AUR? It terms of security it destroys it. In terms
+              of total available packages FreeBSD is your best best at around
+              half the packages as the AUR. Your more than welcome to join the
+              ports team to manage packages you want to bring to the BSD this
+              basically makes it the same as the capabilites of the AUR. The
+              only real difference being the packages aren't supported yet
+              because people aren't maintaining them.
+            </p>
+
+            <p>
+              Changes are actually discussed. Have you noticed something with
+              Linux over the years that some things just don't make any sense?
+              Take this
+            </p>
+
+            <a
+              href="https://www.phoronix.com/news/Linux-Retire-Itanium-IA64-Patch"
+              class="link"
+            >
+              https://www.phoronix.com/news/Linux-Retire-Itanium-IA64-Patch</a
+            >
+            <br />
+            <a
+              href="https://www.phoronix.com/news/Linux-5.19-DRM-Driver-Updates"
+              class="link"
+            >
+              https://www.phoronix.com/news/Linux-5.19-DRM-Driver-Updates</a
+            >
+
+            <p>
+              So it's all good to add 500K lines of code for new GPUs but
+              keeping 65K lines of code for older CPU support is bloat? That
+              makes no sense. If anything we should be refining the driver code
+              that's huge has to be a way to improve that. Well it's not that
+              easy you might think or it's that size for a reason. Right check
+              this
+            </p>
+
+            <a
+              href="https://github.com/openbsd/src/blob/master/bin/ls/ls.c"
+              class="link"
+            >
+              https://github.com/openbsd/src/blob/master/bin/ls/ls.c</a
+            >
+            <br />
+            <a
+              href="https://github.com/coreutils/coreutils/blob/master/src/ls.c"
+              class="link"
+            >
+              https://github.com/coreutils/coreutils/blob/master/src/ls.c</a
+            >
+
+            <p>
+              Same ls command on OpenBSD is 600 ish lines of code where as in
+              the GNU core utils it's 5600 ish. That's an insane difference!
+              It's like the code was just slapped together it works good enough
+              never touch it again. i386 support was already dropped in Linux as
+              well as i486 recently I think... now Itanium? These are not
+              massive savings and if you think it's bloat the support isn't even
+              compiled in the kernel on your OS as it's for a different
+              architecture. I do want to say I get where the development team is
+              coming from it does talk developer resources to maintain, it's the
+              same issue I mentioned with NetBSD above. I do think though it
+              should be added a secondary type of system no system should every
+              not be supported on Linux with the amount of developers they have.
+              I come from a biased opinion on this as I enjoy using old hardware
+              and seeing what modern tasks it can handle.
+            </p>
+
+            <p>
+              This brings me into my next point proper clean code. Things get
+              looked at multiple times on BSD. How can this be lighter/cleaner?
+              On Linux it feels like slap something together pray it works an
+              never touch it until it breaks, It's just horrible development
+              design. This isn't just an issue with Linux but GNU as well which
+              is what most distros are using.
+            </p>
+
+            <p>
+              In 2020 the Linux kernel had 27.8 million lines of code. That is
+              huge! This is just the kernel not including all the utils or Xorg,
+              etc. For comparison another bloated project is web browsers with
+              Chrome coming in at a whopping 35 million lines. A project like
+              OpenBSD has 33.8 million lines of code at the time of writing and
+              that includes an Xorg server as well as like 5 pre installed
+              Window Managers (WM). Not to mention it's entire complete system
+              all the utils, compilers, etc. Code size is not the be all end all
+              either though Linux supports more devices which one could argue
+              explains it's code size however it does seem rather large in
+              comparison.
+            </p>
+
+            <h3 class="header">Licenses<a id="licenses"></a></h3>
+
+            <p>
+              The topic people either care a lot about or not at all. I'm going
+              to cover this briefly the BSD license allows anyone to take the
+              code and does not require the project to be open sourced to use it
+              unlike the GPL. It is a very short and concise license unlike the
+              GPL. I don't have any issues with GPL licensed code personally
+              however I disagree with the philosophy behind it. I understand the
+              argument that BSD licensed code can and has been used in macOS as
+              well as windows and probably even more closed source software but
+              I think this is actually a good thing.
+            </p>
+
+            <p>
+              Hear me out if you create a standard for something isn't it better
+              for everyone else to use that same standard library or package for
+              ease of use across different platforms? Take for example zsh
+              imagine if you couldn't use this natively on macOS like bash
+              because of a license. Just sounds stupid... OpenSSH is BSD
+              licensed and is able to be used by default on closed source OSes
+              imagine if it wasn't... Microsoft and Apple may have may their own
+              standard applications for both, sounds like a serious pain. GCC
+              isn't used on macOS either Clang/LLVM is over again licensing
+              issues so now your losing out on a huge company auditing your code
+              because they use it, that's some huge support your losing over a
+              license.
+            </p>
+
+            <p>
+              That's all I want to say on licenses there's really not much else
+              to say. If you believe everything should be open sourced like GNU
+              then the GPL is for you. It's a great idea but unrealistic.
+            </p>
+
+            <h3 class="header">Documentation<a id="docs"></a></h3>
+
+            <p>
+              Documentation can be really good or really bad depending on how
+              you look at it. On all the BSDs you are basically required to read
+              man the man pages which is as simple as running the "man" and then
+              the command you wish to run however you can also use the -k flag
+              to help find the command you may need. However this is not the be
+              all end all in my opinion sometimes having a full guide on how to
+              setup poudriere or some other more complex task. FreeBSD does
+              handle this quite well in my opinion the best out of all the BSDs,
+              the handbook they provide for installation and post installation
+              is amazing and they have many guides for setting things up like
+              bhyve as well as poudriere which is a pro. Other systems like
+              OpenBSD do have a FAQ section which is useful for many things that
+              need a guide however once you pass these 2 BSDs it's not great.
+              NetBSD there is no documentation to even setup SLiM and yes I
+              tried slim_enable="yes" or whatever in my config file, it's not in
+              the manpage either basic stuff like this should be documented.
+              NetBSD has a documentation section for quite a few things which
+              could be good but some other important things are still missing.
+            </p>
+
+            <p>
+              Overall documentation is great the manpages are great haven't had
+              any real major issues it's more just a different mind set, instead
+              of say doing a search when you have an issue you read the manpages
+              for that application instead to understand what you want it to do.
+            </p>
+
+            <h3 class="header">Foundations<a id="foundations"></a></h3>
+
+            <p>
+              Now this is an interesting topic, for starters many people bash
+              The FreeBSD Foundation because some of the core members of the
+              foundation use macbooks as their daily drivers. I think the
+              foundation is not so much the devs some might be but I would say
+              the foundation is more in charge of marketing and financial type
+              of stuff so it's not a big deal.
+            </p>
+
+            <p>
+              The other big issue I want to talk about is NDAs and how well
+              OpenBSD guys handle NDAs, they have a policy to not sign any NDAs.
+              Other BSDs like FreeBSD Foundation does sign NDAs but some of the
+              core devs don't so it's really up in the air to what changes some
+              of these BSDs can make. The issue with NDAs is they are not
+              legally allowed to talk or make changes for the things they are
+              signing about. The problem is the divide between the devs if the
+              foundation signs an NDA and they say in their own words "The
+              Foundation also represents the FreeBSD Project in executing
+              contracts, license agreements, and other legal arrangements that
+              require a recognized legal entity." You then have other devs who
+              didn't sign NDAs working on the same project saying they can make
+              these changes. Here is a clip
+            </p>
+
+            <a
+              href="https://www.youtube.com/live/UaQpvXSa4X8?feature=share&t=1083"
+              class="link"
+            >
+              https://www.youtube.com/live/UaQpvXSa4X8?feature=share&t=1083</a
+            >
+
+            <p>
+              Linux Foundation also supports signing NDAs as well. I personally
+              like the way OpenBSD handles these things by signing no NDAs, yes
+              this will lead to less support from these companies.
+            </p>
+
+            <h3 class="header">Gaming<a id="gaming"></a></h3>
+
+            <p>
+              If you play open sourced games like 0AD or SuperTuxKart then all
+              the BSDs should work for you. Games like Veloren are currently not
+              on OpenBSD but work on FreeBSD. If your a gamer you should most
+              likely stick with Windows or Linux, however if you want to use BSD
+              for gaming and don't mind tweaking things to work your best bet is
+              using FreeBSD. FreeBSD currently runs steam and thus proton
+              through its Linux compatibility layer as sadly Steam doesn't
+              support BSDs despite claiming to support open source platforms. I
+              have listed a Youtube channel below the records various games on
+              BSD as well as another tool that does the setup for you for
+              certain games to work out of the box on FreeBSD so you can see if
+              it supports the games you are looking to play.
+            </p>
+
+            <a
+              href="https://www.youtube.com/@Alexander88207/videos"
+              class="link"
+            >
+              https://www.youtube.com/@Alexander88207/videos</a
+            >
+            <br />
+            <a
+              href="https://codeberg.org/Alexander88207/Suyimazu/src/branch/main/Docs/Working-Games.md"
+              class="link"
+            >
+              https://codeberg.org/Alexander88207/Suyimazu/src/branch/main/Docs/Working-Games.md</a
+            >
+
+            <h3 class="header">Recommendations<a id="recommend"></a></h3>
+
+            <p>
+              I personally would recommend running any servers you can on
+              OpenBSD just for the added security benefits as well as the
+              smaller code base. Instead of following my security guide for
+              Linux I think just using OpenBSD is a better option.
+            </p>
+
+            <p>
+              In terms of a desktop OpenBSD is actually very capable despite
+              being focused heavily around security. No it's not going to be as
+              smooth or elegant as a workstation designed OS like macOS and you
+              will need to make some tweaks to config files for unveil so your
+              browser can read files on your computer (to upload things).
+              OpenBSD has support for almost everything you may need it's not
+              perfect but most users should be able to live with it. Krita,
+              Kdenlive, Libreoffice, GoDot all exist in the ports tree for
+              OpenBSD and work fine, meaning you can Photo & Video edit, make
+              games, and even do office work without issues. For programming you
+              have neovim and geany, not all neovim plugins work so you will
+              most likely need to make your own configuration file. Things like
+              React or NextJS don't work without tweaking it and even if you do
+              tweak the code to run people have reported auto refresh functions
+              not working. OpenBSD you will more or less have to see if it will
+              work for you.
+            </p>
+
+            <p>
+              If OpenBSD doesn't work for you then I would recommend trying
+              FreeBSD before going to Linux, FreeBSD has the same ports as
+              mentioned above but includes React and NextJS support working out
+              of the box as well as a port for VSCode. Auto refresh still
+              doesn't work without messing around with fswatch-mon or by using
+              webpack to work with react's auto refresh. FreeBSD offers many
+              more ports and will be much easier to use than OpenBSD in terms of
+              not needing to try to get so many things working manually. If you
+              do play games I still recommend going with Windows or Linux but if
+              you can live with FreeBSDs gaming support then it's your best
+              choice.
+            </p>
+
+            <p>
+              DragonFly BSD wouldn't work on any of my computers so I can't
+              really recommend it, it looks cool but I can't say much more
+              beyond that. As for NetBSD if you have an older computer what else
+              are you really going to run? You can run that outdated macOS
+              version on your powermac or you can run NetBSD with the latest
+              security patches, really depends what you want to do with that
+              machine. I think NetBSD has a place but in my opinion it's not for
+              modern hardware just due to how many different supported
+              architectures there are, I don't see fixes for modern hardware
+              coming in a timely manner. I could be wrong here I didn't daily
+              drive it for long enough but with OpenBSD and FreeBSD being
+              available I only see NetBSD as being useful on my older machines.
+            </p>
+
+            <p>
+              At the end of the day the support for applications and games comes
+              down to us the people. If you want gaming on BSD you need to run
+              BSD and ask for game support from Steam otherwise if your still
+              playing on Linux why would they care? They didn't lose you as a
+              customer they don't care what platform your on. This is for alot
+              of different things if we want proper React or NextJS (Working
+              now) support we need to ask for it or help program it ourselves
+              and upload the Pull Request. If you want to try BSD but can't
+              because something doesn't work, it's most likely not going to work
+              unless someone (you) does something about it.
+            </p>
+          </body>
+        </div>
+
+        <iframe
+          src="../iframes/footer.html"
+          sandbox="allow-same-origin allow-top-navigation"
+          scrolling="no"
+          height="50px"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</html>
