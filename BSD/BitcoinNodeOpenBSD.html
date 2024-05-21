@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html>
   <head>
     <link rel="stylesheet" href="../styles/global.css" />
@@ -122,13 +121,12 @@
               Most likely you will want to use the amd64 image unless you know
               you are using and arm/riscv SOC or your computer is super old and
               you need macppc (old macs usually, like pre 2005 G5 and earlier)
-              or i386 (I think i486 and i586 should also work on the i386 image
-              as well these are for PCs pre-1999), i686 should work on amd64
-              image as they support 64 bit. For these old PCs I would recommend
-              not running a node in general but you can always use it as a test
-              to learn or see how well it works before shelling out money on
-              more modern hardware (Literally anything since BTC is so
-              lightweight).
+              or i386 (I think i486, i586, and i686 should also work on the i386
+              image as well these are for PCs pre-1999) For these old PCs I
+              would recommend not running a node in general but you can always
+              use it as a test to learn or see how well it works before shelling
+              out money on more modern hardware (Literally anything since BTC is
+              so lightweight).
             </p>
 
             <a
@@ -178,16 +176,18 @@
               <p>vi /etc/doas.conf</p>
             </blockquote>
 
-            Yes I know you probably want to use vim we will install it in a
-            second. You will need to press 'i' to enable insert mode and type
-            exactly the text below.
+            <p>
+              Yes I know you probably want to use vim we will install it in a
+              second. You will need to press 'i' to enable insert mode and type
+              exactly the text below.
+            </p>
 
             <blockquote class="blockquote">
               <p>permit persist :wheel</p>
             </blockquote>
 
             <p>
-              vi unlike vim it a little different to delete a typo u need to
+              vi unlike vim it a little different to delete a typo you need to
               move the cursor back to the letter and type a new one or start
               over by pressing escape and ':q'. Once you have the text proper
               you can save and close vi by pressing escape and running ':wq'.
@@ -385,11 +385,12 @@
             <p>
               <b>
                 assumevalid=0<br />
-                blockonly=0<br />
+                blocksonly=0<br />
                 txindex=1<br />
                 discover=1<br />
                 dns=0<br />
                 dnsseed=0<br />
+                datadir=/home/user/.bitcoin/<br />
                 listen=1
               </b>
             </p>
@@ -460,7 +461,7 @@
 
             <p>
               <b>
-                rpcallowip=0.0.0.0\0<br />
+                rpcallowip=0.0.0.0/0<br />
                 rpcbind=localip:8332<br />
                 rpcpassword=somepassword<br />
                 rpcport=8332<br />
@@ -473,7 +474,9 @@
               That's it now you can just restart 'bitcoind' and RPC will run.
               You can login into the RPC on another pc with bitcoin installed
               using the rpc commands which I will touch on more in the Lightning
-              Guide.
+              Guide. If you want to use rcctl to autorun the command on boot you
+              will want to grow the /var partition instead of home and place the
+              config in /etc/bitcoin.conf
             </p>
 
             <h3 class="header">
@@ -502,14 +505,15 @@
               blank line
             </p>
 
-            <p>
-              <b>
+            <blockquote class="blockquote">
+              <p>
                 ControlPort 9051<br />
                 CookieAuthentication 1<br />
                 CookieAuthFileGroupReadable 1<br />
-                DataDirectoryGroupReadable 1
-              </b>
-            </p>
+                DataDirectoryGroupReadable 1<br />
+                ExitPolicy reject *:* # no exits allowed
+              </p>
+            </blockquote>
 
             <p>
               After these settings are set we want to run the following 2
@@ -532,32 +536,32 @@
               <p>vim .bitcoin/bitcoin.conf</p>
             </blockquote>
 
-            <p>
-              <b>
-                bind=127.0.0.1<br />
-                proxy=127.0.0.1:9050
-              </b>
-            </p>
-
-            <p>
-              Lastly we need to add the user to the _tor group and set the right
-              permissions the the directory. We can do that by running
-            </p>
-
             <blockquote class="blockquote">
               <p>
-                doas usermod -G _tor user<br />
-                doas chown -R _tor /var/lib/tor
+                bind=127.0.0.1<br />
+                proxy=127.0.0.1:9050
               </p>
             </blockquote>
 
             <p>
-              You will need to type 'exit' to logout of the user and log back in
-              again for the group to take affect or you will get an error. After
-              this you can run 'bitcoind' and it should load through tor now and
-              when running your bitcoin-cli command you will need to use the rpc
-              commands to get the address. The line will look something like
-              'bitcoin-cli -netinfo -rpcuser=Username -rpcpassword=Password
+              If your are fine with how the node is with just TOR and don't want
+              to connect a LN node to it it should be fine. Otherwise run
+              bitcoind wait for it to say something about your externalip
+              showing a bunch of letters and numbers ending in ".onion:8333",
+              once that shows up press CTRL+C to close the running command and
+              take a picture with your phone to be able to retype it in. You can
+              then reopen your bitcoin.conf file and
+            </p>
+
+            <blockquote class="blockquote">
+              <p>externalip=ip.onion:8333<br /></p>
+            </blockquote>
+
+            <p>
+              After this you can run 'bitcoind' and it should load through tor
+              now and when running your bitcoin-cli command you will need to use
+              the rpc commands to get the address. The line will look something
+              like 'bitcoin-cli -netinfo -rpcuser=Username -rpcpassword=Password
               -rpcconnect=IP-from-ifconfig -rpcport=8332'. This should give you
               a .onion IP address which you can use to check on bitnodes like
               before and add it to your 'externalip' setting in bitcoin.conf if
@@ -610,6 +614,17 @@
             <h3 class="header">
               <a id="done">Done!</a>
             </h3>
+
+            <p>You can run your node by running the command.</p>
+
+            <blockquote class="blockquote">
+              <p>bitcoind</p>
+            </blockquote>
+
+            <p>
+              You can also set <b>daemon=1</b> in your bitcoin.conf if you want
+              it to run in the background without seeing all the text.
+            </p>
 
             <p>
               That's it you are officially supporting Free and Open Source money

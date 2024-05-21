@@ -1,0 +1,846 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="../styles/global.css" />
+
+    <meta
+      name="description"
+      content="How to run a Bitcoin Lightning Node on OpenBSD."
+    />
+    <meta name="keywords" content="bitcoin, lightning, node, how to, OpenBSD" />
+
+    <title>Bitcoin Lightning Node on OpenBSD</title>
+  </head>
+
+  <iframe
+    sandbox="allow-same-origin"
+    src="../iframes/title.html"
+    style="background-color: #1f2335"
+    scrolling="no"
+  ></iframe>
+
+  <div class="page-template">
+    <div class="page-center-box">
+      <div class="page-box">
+        <iframe
+          sandbox="allow-same-origin allow-top-navigation"
+          src="../iframes/nav.html"
+          scrolling="no"
+          height="100px"
+        ></iframe>
+
+        <div class="page">
+          <body>
+            <p class="post-date">Oct 3, 2023</p>
+
+            <h2 class="post-title">
+              How to run a Bitcoin Lightning Node on OpenBSD
+            </h2>
+
+            <div class="table-of-contents-container">
+              <a class="table-of-contents-item" href="#alt">Alternatives</a
+              ><br />
+              <a class="table-of-contents-item" href="#why">Why?</a><br />
+              <a class="table-of-contents-item" href="#install"
+                >Installing OpenBSD</a
+              ><br />
+              <a class="table-of-contents-item" href="#setup">Setup Node</a
+              ><br />
+              <a class="table-of-contents-item" href="#tor">TOR (Optional)</a
+              ><br />
+              <a class="table-of-contents-item" href="#done">Done!</a>
+            </div>
+
+            <h3 class="header">
+              <a id="alt">Alternatives</a>
+            </h3>
+
+            <p>
+              This guide covers how to use C-Lightning (CLN) it is based on the
+              C Language (mainly) making it super lightweight.
+            </p>
+
+            <h3 class="header">
+              <a id="why">Why?</a>
+            </h3>
+
+            <p>
+              Running a Lightning Node helps the Bitcoin Lightning network only
+              and does not help mainnet. If you are interested running a
+              lightning node you will need more computing power and more ram to
+              be able to open more channels at one time. You will also require a
+              good amount of BTC to actually have your channels be used, I would
+              personally recommend over 0.5BTC that you are willing to hold on
+              this node. HOLDING BTC ON THIS NODE IS NOT THE SAME AS COLD
+              STORAGE, YOU CAN LOSE YOUR BTC IF YOUR NODE UPTIME IS BAD!
+            </p>
+
+            <p>
+              You will want to backup your new private keys that's stored on the
+              node elsewhere to have a backup just in case. I've read reports
+              online of some people having their nodes offline for days at a
+              time even without losing funds because the other parties didn't
+              close channels or have any transactions stuck in motion. I would
+              still be cautious of this however and don't look at it as an easy
+              way to make some extra sats with no risk.
+            </p>
+
+            <p>
+              You also need to be able to connect to ideally your own bitcoin
+              node, this can be run on the same machine however I would
+              recommend run it on 2 different machines incase something were to
+              happen. This guide covers how to connect to another machine on
+              your local network using the local ip, so nothing is available
+              from the outside.
+            </p>
+
+            <p>
+              Lastly for the last why question, is that you make money, or I
+              should say you can make money depending how much you want to
+              charge for routing the transactions. If you just want to help the
+              network you can process transactions at break even or even at
+              negative amounts if you want to pay out of pocket for some reason.
+            </p>
+
+            <p>
+              Since there is no lightning server package at the time of writing
+              we will need to manually compile the code to build on OpenBSD. You
+              will need to run the following command to install all the compile
+              dependencies.
+            </p>
+
+            <h3 class="header">
+              <a id="install">Installing OpenBSD</a>
+            </h3>
+
+            <p>
+              Hardware wise CLN recommends 4GB of Ram and 5GB of storage if you
+              are running a separate system for your Bitcoin Node.
+            </p>
+
+            <a
+              href="https://docs.corelightning.org/docs/getting-started"
+              class="link"
+              >https://docs.corelightning.org/docs/getting-started</a
+            >
+            <p>
+              You will need a Bitcoin Node and I would recommend reading my
+              older guide on this and running this on a separate computer.
+            </p>
+
+            <a href="./BitcoinNodeOpenBSD" class="link"
+              >https://danterobinson.dev/BSD//BitcoinNodeOpenBSD</a
+            >
+
+            <p>
+              For Hobbyists CLN recommends against devices like Raspberry Pi's
+              due to lower performance and not having a power backup like
+              laptops. They recommend the average consumer use an older laptop,
+              I would recommend something like Intel Core 7th gen or newer even
+              U series CPUs will be fine if you plan to go this route. I would
+              also say that a Raspberry Pi is fine and you can buy a cheaper
+              100-200$ UPS (Power Backup) that will run it fine. I personally am
+              using a Dell Optiplex 3050 with an i5 8500T, 32GB of very basic
+              2666MHz DDR4, and a 2TB Samsung 870 EVO SSD connected to a basic
+              600VA UPS.
+            </p>
+
+            <a
+              href="https://docs.corelightning.org/docs/hardware-considerations#hobbyist"
+              class="link"
+              >https://docs.corelightning.org/docs/hardware-considerations#hobbyist</a
+            >
+
+            <p>
+              For Power Users or those looking for something super reliable to
+              most likely make some profit back off of, CLN recommends jumping
+              up to ECC memory which will require usually server grade
+              components (Xeon, EPYCs, Opterons) however there are these days
+              some consumer boards that will take ECC memory so you could look
+              around for those as well. This is a good recommendation as it will
+              hopefully prevent most memory crashes.
+            </p>
+
+            <a
+              href="https://docs.corelightning.org/docs/hardware-considerations#power-user"
+              class="link"
+              >https://docs.corelightning.org/docs/hardware-considerations#power-user</a
+            >
+
+            <p>
+              CLN then recommends using an SSD over a HDD which I think if your
+              at this spending level is an obvious choice I have been running
+              only SSDs full time in my systems since 2017 and have never looked
+              back to consider HDDs so I would agree with this recommendation.
+            </p>
+
+            <p>
+              Thirdly they recommend using some level of drive mirroring like
+              RAID, this is another great option I have considered doing for my
+              personal node as well, even RAID 1 will let you have a complete
+              backup on a second drive. I've had issues setting up OpenBSD with
+              RAID 1 in the past, mainly the bootloader install section, however
+              I will include instructions for how to do this in the link below.
+            </p>
+
+            <a
+              href="https://www.openbsdhandbook.com/disk_operations/raid/"
+              class="link"
+              >https://www.openbsdhandbook.com/disk_operations/raid/</a
+            >
+
+            <p>
+              You will most likely want the disks to have a GPT Partition Style
+              following those steps and you will need 2 similar sized drives.
+              After that you can follow this guide.
+            </p>
+
+            <p>
+              Lastly CLN recommends using a checksumming filesystem like BTRFS
+              (Linux) or ZFS (Linux and FreeBSD). OpenBSD doesn't support either
+              of these because of licensing issues and complexity to maintain
+              and only supports UFS2 (FFS), if you are interested in a
+              checksumming filesystem I would recommend ZFS on FreeBSD over
+              BTRFS. I have used BTRFS on Linux for a few years with some minor
+              issues, I haven't personlly used ZFS long enough to have issues
+              with it (1 month) but it has been around 8 years longer so can be
+              more refined. I would have to do a full deep dive into the 2 to
+              really compare them but I trust a FreeBSD system more for uptime
+              than Linux systems (speaking from over 5+ of experience on
+              different distros as daily drivers).
+            </p>
+
+            <p>
+              I'm not going to cover every little detail for how to install
+              OpenBSD, it should be pretty straight forward like any other OS.
+              Download the ISO/IMG file from the OpenBSD website (listed below)
+              and burn it to a USB/Disc with the program of your choice then
+              boot it (usually selecting it in the BIOS but ARM can differ).
+              Most likely you will want to use the amd64 image unless you know
+              you are using and arm/riscv SOC.
+            </p>
+
+            <a
+              href="https://www.openbsd.org/faq/faq4.html#Download"
+              class="link"
+            >
+              https://www.openbsd.org/faq/faq4.html#Download
+            </a>
+
+            <p>
+              The only real options you want to actually change are going to be
+              sshd and xenodm. sshd will allow you to remote into the pc over
+              the ssh protocol and will need to be hardened and adds a layer of
+              potential access point for attackers (obviously). The other option
+              xenodm is basically your Xorg (X11) server on OpenBSD, Bitcoin
+              doesn't need a GUI to work so we can set this to 'no' and do
+              everything in the terminal. Feel free to enable xenodm (it runs
+              FVWM by default) you may want to install a better DE/WM (Desktop
+              Environment/Window Manager) if you go that route.
+            </p>
+
+            <p>
+              When you get to the stage about the drive you are going to want to
+              most likely use GPT and then once it shows you all the partitions
+              you will need to press 'e' and then enter to edit the paritions
+              and you can then type 'p g' to print the partitions again but in
+              GB (not bytes). OpenBSD for some reason doesnt fill the whole
+              drive by default. From here you should see near the top free space
+              in GB or G we need to add this free space to our /home directory
+              usually partition L. We can do this by entering 'R l' and then
+              enter, followed by doing '+60G' and then replace the 60 with your
+              free GB. You can double check everything is ok by running 'p g'
+              again to see the /home partition has grown in space. After this is
+              confirmed press 'w' and then enter to write to the disk and then
+              'q' and enter to quit and continue the install.
+            </p>
+
+            <p>
+              I just named my user a basic name like lightning and did all the
+              other default settings in my OpenBSD install. After you reboot
+              into your installed OpenBSD system you will need to login as root
+              and configure doas which is basically like OpenBSD's version of
+              sudo.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>vi /etc/doas.conf</p>
+            </blockquote>
+
+            <p>
+              Yes I know you probably want to use vim we will install it in a
+              second. You will need to press 'i' to enable insert mode and type
+              exactly the text below.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>permit persist :wheel</p>
+            </blockquote>
+
+            <p>
+              vi unlike vim it a little different to delete a typo you need to
+              move the cursor back to the letter and type a new one or start
+              over by pressing escape and ':q'. Once you have the text proper
+              you can save and close vi by pressing escape and running ':wq'.
+            </p>
+
+            <p>
+              Now we can exit the root user simply by running the command
+              'exit'. Next we can login to the user we created and start
+              installing packages.
+            </p>
+
+            <h3 class="header">
+              <a id="setup">Setup</a>
+            </h3>
+
+            <p>
+              To build the program you can find the link below on the offical
+              git page with instructions specific to OpenBSD.
+            </p>
+
+            <a
+              class="link"
+              href="https://github.com/ElementsProject/lightning/blob/master/doc/getting-started/getting-started/installation.md#to-build-on-openbsd"
+              >https://github.com/ElementsProject/lightning/blob/master/doc/getting-started/getting-started/installation.md#to-build-on-openbsd</a
+            >
+
+            <p>
+              After that we get into how to actually use the node. To launch the
+              node is as simple as running ./lightningd where you have the
+              executable compiled. For me it was inside the lightning directory
+              I had downloaded and in a folder called lightningd so from the
+              home directory launching it would look like
+            </p>
+
+            <blockquote class="blockquote" cite="">
+              <p>./lightning/lightningd/lightningd</p>
+            </blockquote>
+
+            <p>
+              From here lightning is now running in the background. Now we just
+              need to configure some things. You can kill lightningd after maybe
+              a minute or two by running
+            </p>
+
+            <blockquote class="blockquote" cite="">
+              <p>pkill lightningd</p>
+            </blockquote>
+
+            <p>
+              You may or may not need to use doas in front of that command. The
+              reason you want to wait a minute or two is so that it has time to
+              configure everything and make the directory we need. That
+              directory is .lightning in your home directory. To make a config
+              file run
+            </p>
+
+            <blockquote class="blockquote" cite="">
+              <p>vim .lightning/config</p>
+            </blockquote>
+
+            <p>
+              Most of my guides use nano because it's easy for beginners to use,
+              where vi and vim you need to learn a little to use. I did use vim
+              in my Bitcoin Node guide however. Feel free to replace vi with vim
+              or nano if you wish just make sure to add the package using
+              pkg_add first. vi is stock in OpenBSD and functions similarly to
+              vim.
+            </p>
+
+            <p>
+              From here we want to add a few basic options like connecting our
+              lightning node to our dedicated bitcoin node, you can also in
+              theory connect it to a public facing RPC node. However considering
+              this node holds real value as collateral I would strongly
+              recommend self hosting your own Bitcoin node instead. We can
+              enable encryption to protect the accounts from being accessed if
+              for whatever reason the filesystem gets corrupted with an
+              attacker. Everything else will just be how we want our node to
+              function. Unlike the Bitcoin guide I will explain the options here
+              because it's not as well documented. Below is the config file.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>
+                bitcoin-rpcuser=YourBitcoinNodeRPCUsername<br />
+                bitcoin-rpcpassword=YourBitcoinNodeRPCPassword<br />
+                bitcoin-rpcconnect=LocalIPAddressOfMachine<br />
+                bitcoin-retry-timeout=999999999999999<br />
+                encrypted-hsm<br />
+                bind-addr=127.0.0.1:9735<br />
+                alias="NodeName"<br />
+                fee-base=1<br />
+                fee-per-satoshi=500<br />
+                min-capacity-sat=100000<br />
+              </p>
+            </blockquote>
+
+            <p>
+              Alright let's break this down. The <b>rpc</b> stuff should be
+              pretty straight forward, these all options you should have set in
+              your Bitcoin config. You can check my OpenBSD Bitcoin guide if you
+              need help with that as those settings apply regardless of
+              Operating System you are using (file location may differ though).
+              If you are running your Bitcoin node on the same machine as your
+              lightning node you don't need any rpc options.
+            </p>
+
+            <p>
+              <b>encrypted-hsm</b> is the option to encrypt the node behind a
+              password, this is optional but strongly recommended.
+              <b>bind-addr</b> is binding the node to run on the machines local
+              IP at the default port 9735, it's highly unlikely you want to
+              change this. <b>alias</b> is what your name will be publically
+              called, also optional it defaults to a random codename based on
+              your public key you should set this to something so people
+              recognize you and are more willing to open channels with you.
+            </p>
+
+            <p>
+              Now we get into the more fine tuned options you most likely want
+              to mess around with based on your goals. <b>fee-base</b> This is
+              the base amount to charge any user per transaction that goes
+              through your node. This is set in millisatoshis (a unit specfic to
+              Lightning) with is 1/1,000th of a satoshi, 500 is half a sat and
+              the default is 1000. This value varies from person to person from
+              usually 0 to 5. It should also be noted If you change this option
+              later it won't automatically update your current open channels and
+              you will have to pay a network fee to update each one. If you have
+              the collateral to have lots of channels you may be able to get
+              away with a higher amount due to it costing less to go through
+              your node vs 4x 500 fee nodes, otherwise you probably want this
+              500 or less.
+            </p>
+
+            <p>
+              <b>fee-per-satoshi</b> This is the fee that is charged ontop of
+              the base fee for every satoshi that passes through your node. This
+              number is written in 1/1,000,000th of 100% so 10,000 is 1%, 10 or
+              0.0001% is the default. This setting like the previous is only
+              applied to new channels and needs to be changed for a fee on all
+              existing channels. If your a smaller node you probably want a
+              lower number here as well. This number is noted on sites like
+              amboss as ppm or Price Per Million sats that pass through, the
+              average ranges from 499 to 1499 but some nodes go outside of this
+              range of course. You can calculate your ppm before opening any
+              channels with some basic math at 500 its 0.05% 1,000,000 x 0.005 =
+              500 remember 0.01 is 1% and 1 is 100 when calculating. This gives
+              a rate of 500 ppm.
+            </p>
+
+            <p>
+              <b>min-capacity-sat</b> This is the lowest channel size you are
+              willing to open with someone else. I set this to 10 sats which is
+              super low and will probably never see any traffic if actually
+              opened (it would infact cost more to open a 10 sat channel than
+              the value of inside it...). I set this at 100,000, I would
+              recommend changing this value the default is 10,000. I wouldn't
+              recommend any channels smaller than 100,000 personally and some
+              nodes require 1,000,000 sats or more to open a channel. The
+              recommended channel size in the community is 1 to 5 million sats
+              (0.01 to 0.05 BTC), if you can afford larger channels by all means
+              do it but larger channels isn't everything as you won't be routing
+              much payments if you don't have channels connecting to users.
+            </p>
+
+            <p>
+              This is all you should really need to setup a basic node, however
+              I encourage you to read the full documentation linked below if you
+              want to see a full list of options available.
+            </p>
+
+            <a
+              class="link"
+              href="https://docs.corelightning.org/docs/configuration"
+              >https://docs.corelightning.org/docs/configuration</a
+            >
+
+            <p>
+              You can now load up your lightning node. Assuming you cloned the
+              repo into your home directory running it is as easy as
+              ./lightning/lightningd/lightningd if you enable encrypted-hsm you
+              will now be prompted for a password and your node should then be
+              online. It will take some time to show up (up to a few hours in
+              some cases), now we can use the cli while this is running to
+              create some channels and fund the node.
+            </p>
+
+            <p>
+              If you are unfamiliar with TTYs they are like having a second
+              terminal open without closing the first one (when you don't have a
+              GUI). You can change TTYs by pressing CTRL + ALT + F# with # being
+              any number. OpenBSD defaults Xorg (xenodm) to TTY5 for example
+              which we aren't using here but if you were using it you would see
+              it there. Linux varies from distro to distro but the command is
+              often the same. You are most likely using TTY1 so we can just
+              switch to TTY2 while leaving lightningd running in TTY1 by
+              pressing CTRL + ALT + F2 you can check you are using TTY1 if you
+              want by pressing CTRL + ALT + F1 after that and you should end up
+              back to the terminal you just had open. But again make sure your
+              using TTY2 from here on. In TTY2 just log in to your user again
+              and this time we are going to run.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli getinfo</p>
+            </blockquote>
+
+            <p>
+              You should get a response with a bunch of info about your node, if
+              not double check lightningd is running in TTY1. This could also be
+              not working because you changed your bind-addr in the config and
+              it's not running on the localhost IP. After we know our node is
+              running we can create a Bitcoin address to send money to add funds
+              to our node.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli newaddr</p>
+            </blockquote>
+
+            <p>
+              This command will pull up one of the 22 receiving addresses based
+              on your private key (most likely a different address each time you
+              run it but it's to the same wallet). The currently default is a
+              bech32 or native segwit address. You also have it output a Taproot
+              address if your wallet supports sending via taproot to saves some
+              gas fees. To use a taproot address add a space after newaddr and
+              add p2tr and then run the command.
+            </p>
+
+            <p>
+              Then using your Bitcoin wallet you can send a transaction to the
+              address it has given you. If your new to this send a small amount
+              first and then maybe send 0.01 BTC to open your first decent sized
+              channel. You will need extra BTC in this wallet as well to cover
+              gas fees as each channel opened is processed on Bitcoins mainnet.
+              You can check the balance on the node by running
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli listfunds</p>
+            </blockquote>
+
+            <p>
+              This will show you all the funds across channels and public
+              addresses in your wallet. I would recommend at this point looking
+              at setting up TOR if that's what your interested in before adding
+              any channels which I have listed how to do so below. If your not
+              interested in TOR that's fine it's not needed. Now let's open our
+              first channel. First we need to find a Node that is A) willing to
+              open channels and B) has enough collateral to open a channel with
+              you. To do this we can head over to amboss I will leave a link
+              below and scroll down the page to the popular nodes section.
+              Ignore 1ML we will talk about this one later for example Kraken
+              (the exchange) is up there so I will use that example. If you
+              click on their page it shows Min. "Channel Size" at the time of
+              writting is 1,000,000 sats for Kraken. Kraken is likely to have
+              collateral in their wallet to open up a channel with you, when you
+              open up a channel in this case 1 million sats both parties put up
+              1 million sats so the channel can function both ways. In some
+              cases you may open a channel and you will see on amboss the
+              channel isn't mutal (disabled). You will see an 2 arrows facing up
+              or down showing the which channel is down. The up arrows mean the
+              Node your viewing has the channel disabled to the other node and
+              the arrows down mean the opposite. If both arrows are showing the
+              channel doesnt work. Otherwise it just works one way which ideally
+              you don't want in most cases, example being this case having a
+              channel with Kraken on ur end only helps people depositing to
+              Kraken from your other channels if you have any if it's mutual
+              (which it should be with Kraken) then users withdrawing lightning
+              sats to their wallet in Kraken have a chance to go through your
+              node to get to where they need to go.
+            </p>
+
+            <a class="link" href="https://amboss.space/"
+              >https://amboss.space/</a
+            >
+
+            <p>
+              Alright so now that's covered we can open the channel. First let's
+              connect to Kraken or whoever your using. We need to take the
+              address of the node amboss shows us and use it in this command.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli connect address</p>
+            </blockquote>
+
+            <p>
+              Replace the address with the one from amboss it may have @ with an
+              IP and then : with a port most likely 9735 which is fine to run in
+              the command. After we connect to the node we want to open a
+              channel with we can now run the command to open the channel. Once
+              the channel is open it will auto connect everytime the node is
+              restarted.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli fundchannel id amount</p>
+            </blockquote>
+
+            <p>
+              The id will be the output from the previous connect command and
+              the amount is in sats so in our use case let's do the minimum
+              1,000,000 wwritten without commas.
+            </p>
+
+            <p>
+              The only other commands you really need to know are closing
+              channels and withdrawing your funds. To close a channel run
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli close id</p>
+            </blockquote>
+
+            <p>
+              The id can be a channel id or the id of the node used to open the
+              channel. If you want the channel id just run
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli listchannels</p>
+            </blockquote>
+
+            <p>
+              going back to the close command you can also add after the id a 0
+              and then your personal bitcoin address to withdraw to. The 0 just
+              tells core lightning to wait 0 seconds before executing the
+              command. Otherwise it will default back to your lightning node
+              wallet.
+            </p>
+
+            <p>
+              The next command is withdrawing from the wallet. You must have the
+              channels closed to get the bitcoin out of them as the channel
+              holds the coins in its own "wallet". This command got my bitcoins
+              stuck for 4 months as the default sat/vB was so low. I will show
+              you how to prevent this as you can wound up stuck forever if it's
+              set way to low for example but not low enough to be purged (due to
+              others paying higher gas fees than you getting priority to be in
+              the next block).
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli withdraw address amount fee</p>
+            </blockquote>
+
+            <p>
+              The amount is in sats and the address is your bitcoin address you
+              want to send to the fee is optional but I would recommend it since
+              I had some transactions get stuck. The fee to keep it simple is
+              written as 4000perkb you will change the number. 4000perkb is = to
+              4 sat/vB. You can check the current average block sat/vB by going
+              to mempool I will leave a link for that below to. Then just
+              multiply the current sat/vB by 1000 and use that number to be
+              included in the next block or so.
+            </p>
+
+            <a class="link" href="https://mempool.space/"
+              >https://mempool.space/</a
+            >
+
+            <p>
+              That's all you need to know to run a lightning node that is there
+              to help the network. If you are interested in making money with
+              your node you will need many 5,000,000 sat channels I would
+              recommend at least 0.5 BTC sitting on your node in channels. For
+              those people there is other commands we need to run to collect the
+              fees earned from the node.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/cli/lightning-cli bkpr-channelsapy</p>
+            </blockquote>
+
+            <p>
+              This will show you your earnings of all time across each channel
+              individually.
+            </p>
+
+            <p>
+              If your looking for more commands I suggest reading the
+              documentation using the link below. Just remove the lightning part
+              of each command you only need to add on everything after the first
+              dash of the command after the word lightning to use it.
+            </p>
+
+            <a class="link" href="https://docs.corelightning.org/reference"
+              >https://docs.corelightning.org/reference</a
+            >
+
+            <h3 class="header">
+              <a id="tor">TOR (Optional)</a>
+            </h3>
+
+            <p>
+              Adding TOR is really simple, we just need to install the packages
+              to OpenBSD by running the following command.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>doas pkg_add tor torsocks</p>
+            </blockquote>
+
+            <p>After this we can start by editing the tor config by running</p>
+
+            <blockquote class="blockquote">
+              <p>doas vim /etc/tor/torrc</p>
+            </blockquote>
+
+            <p>
+              For this file you want to try search with '/' but not all the
+              commands will show up and will just need to be added manually to a
+              blank line
+            </p>
+
+            <blockquote class="blockquote">
+              <p>
+                ControlPort 9051<br />
+                CookieAuthentication 1<br />
+                CookieAuthFileGroupReadable 1<br />
+                DataDirectoryGroupReadable 1<br />
+                ExitPolicy reject *:* # no exits allowed
+              </p>
+            </blockquote>
+
+            <p>
+              After these settings are set we want to run the following 2
+              commands to start tor and enable it to autostart on each install.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>
+                doas rcctl enable tor<br />
+                doas rcctl start tor
+              </p>
+            </blockquote>
+
+            <p>
+              Next thing we need to do is go back and edit the bitcoin.conf
+              again by running
+            </p>
+
+            <blockquote class="blockquote">
+              <p>vim .lightning/config</p>
+            </blockquote>
+
+            <blockquote class="blockquote">
+              <p>
+                bindaddr=127.0.0.1:9735<br />
+                proxy=127.0.0.1:9050<br />
+                addr=statictor:127.0.0.1:9051<br />
+                always-use-proxy=true
+              </p>
+            </blockquote>
+
+            <p>
+              If you don't plan to use RPC at all to connect a Bitcoin Node
+              (running internally on your Lightning Node not 2 machines) you can
+              setup OpenBSD pf module to block all connections that aren't
+              through tor (you will need to disable this by adding # to each
+              line when wanting to update the system and/or updating packages).
+              This can be done by running
+            </p>
+
+            <blockquote class="blockquote">
+              <p>doas vim /etc/pf.conf</p>
+            </blockquote>
+
+            <p>
+              Inside of pf.conf you can delete everything by entering 'dd' twice
+              to delete the current line until the file is empty. After this
+              make the file look like this
+            </p>
+
+            <blockquote class="blockquote">
+              <p>
+                set skip on lo<br />
+                <br />
+                # block OUT traffic<br />
+                block out<br />
+                <br />
+                # block IN traffic and allow response to our OUT requests<br />
+                block return<br />
+                <br />
+                # allow TCP requests made by _tor user<br />
+                pass out on egress proto tcp user _tor
+              </p>
+            </blockquote>
+
+            <p>
+              You can of course just avoid typing the lines with a '#' in front.
+              The # means these lines are "commented out" and will not be read.
+              Then we just need to restart pf by running 'pfctl -f /etc/pf.conf'
+              and that's it no more outside connections. Again only do this step
+              if you don't plan on using RPC as it won't work doing this step.
+              You should also change 'discover' to 0 in your bitcoin.conf for
+              added security if you choose to go this route.
+            </p>
+
+            <h3 class="header">
+              <a id="done">Done!</a>
+            </h3>
+
+            <p>
+              That's it you can now just run the following command everytime you
+              power on the machine.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>./lightning/lightningd/lightningd</p>
+            </blockquote>
+
+            <p>
+              Or if your lazy like me/want to computer to auto reload the script
+              on boot up from a power failure or update you can make the
+              following rc script. Run <b>doas vim /etc/rc.d/lightningd</b>
+            </p>
+
+            <blockquote class="blockquote">
+              <p>
+                #!/bin/ksh<br />
+                <br />
+                daemon="/home/username/lightning/lightningd/lightningd"<br />
+                daemon_flags="--daemon --logfile=/home/username/lightning.log<br />
+                <br />
+                . /etc/rc.d/rc.subr<br />
+                <br />
+                rc_reload=YES<br />
+                <br />
+                rc_cmd $1
+              </p>
+            </blockquote>
+
+            <p>
+              Then all you have to do is make it executable with chmod then
+              enable this to run at runtime. If you are still in TTY2 you can
+              change to TTY1 and close lightningd with CTRL + C and then start
+              it through rcctl or just leave it running and let rcctl handle
+              starting it next bootup. If you want to start it through rcctl
+              just use the same command and replace enable with start.
+            </p>
+
+            <blockquote class="blockquote">
+              <p>doas chmod +x /etc/rc.d/lightnind</p>
+              <br />
+              <p>doas rcctl enable lightningd</p>
+            </blockquote>
+
+            <p>Enjoy your lightning node!</p>
+          </body>
+        </div>
+
+        <iframe
+          src="../iframes/footer.html"
+          sandbox="allow-same-origin allow-top-navigation"
+          scrolling="no"
+          height="50px"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</html>

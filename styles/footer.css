@@ -13,12 +13,16 @@ a {
   font-family: sans-serif;
 }
 
-i {
-  margin-left: 0.05vw;
-  margin-right: 0.05vw;
+span {
+  display: inline-block;
+}
+
+div {
+  width: 50%;
 }
 
 .footer-link {
+  display: flex;
   text-decoration: none;
   font-size: 0.875rem;
   line-height: 1.25rem;
