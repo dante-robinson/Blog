@@ -3,6 +3,11 @@
 <html>
   <head>
     <link rel="stylesheet" href="../styles/global.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../scripts/header.js" async></script>
+    <script src="../scripts/nav.js" async></script>
+    <script src="../scripts/footer.js" async></script>
 
     <meta
       name="description"
@@ -13,26 +18,16 @@
     <title>Bitcoin Lightning Node on OpenBSD</title>
   </head>
 
-  <iframe
-    sandbox="allow-same-origin"
-    src="../iframes/title.html"
-    style="background-color: #1f2335"
-    scrolling="no"
-  ></iframe>
-
   <div class="page-template">
+    <header-component></header-component>
+
     <div class="page-center-box">
       <div class="page-box">
-        <iframe
-          sandbox="allow-same-origin allow-top-navigation"
-          src="../iframes/nav.html"
-          scrolling="no"
-          height="100px"
-        ></iframe>
-
         <div class="page">
+          <nav-component></nav-component>
+
           <body>
-            <p class="post-date">Oct 3, 2023</p>
+            <p class="post-date">May 21, 2024</p>
 
             <h2 class="post-title">
               How to run a Bitcoin Lightning Node on OpenBSD
@@ -52,18 +47,14 @@
               <a class="table-of-contents-item" href="#done">Done!</a>
             </div>
 
-            <h3 class="header">
-              <a id="alt">Alternatives</a>
-            </h3>
+            <h3 class="header">Alternatives<a id="alt"></a></h3>
 
             <p>
               This guide covers how to use C-Lightning (CLN) it is based on the
               C Language (mainly) making it super lightweight.
             </p>
 
-            <h3 class="header">
-              <a id="why">Why?</a>
-            </h3>
+            <h3 class="header">Why?<a id="why"></a></h3>
 
             <p>
               Running a Lightning Node helps the Bitcoin Lightning network only
@@ -110,9 +101,7 @@
               dependencies.
             </p>
 
-            <h3 class="header">
-              <a id="install">Installing OpenBSD</a>
-            </h3>
+            <h3 class="header">Installing OpenBSD<a id="install"></a></h3>
 
             <p>
               Hardware wise CLN recommends 4GB of Ram and 5GB of storage if you
@@ -291,9 +280,7 @@
               installing packages.
             </p>
 
-            <h3 class="header">
-              <a id="setup">Setup</a>
-            </h3>
+            <h3 class="header">Setup<a id="setup"></a></h3>
 
             <p>
               To build the program you can find the link below on the offical
@@ -672,9 +659,7 @@
               >https://docs.corelightning.org/reference</a
             >
 
-            <h3 class="header">
-              <a id="tor">TOR (Optional)</a>
-            </h3>
+            <h3 class="header">TOR (Optional)<a id="tor"></a></h3>
 
             <p>
               Adding TOR is really simple, we just need to install the packages
@@ -781,9 +766,7 @@
               added security if you choose to go this route.
             </p>
 
-            <h3 class="header">
-              <a id="done">Done!</a>
-            </h3>
+            <h3 class="header">Done!<a id="done"></a></h3>
 
             <p>
               That's it you can now just run the following command everytime you
@@ -833,13 +816,7 @@
             <p>Enjoy your lightning node!</p>
           </body>
         </div>
-
-        <iframe
-          src="../iframes/footer.html"
-          sandbox="allow-same-origin allow-top-navigation"
-          scrolling="no"
-          height="50px"
-        ></iframe>
+        <footer-component></footer-component>
       </div>
     </div>
   </div>

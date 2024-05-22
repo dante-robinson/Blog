@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
   <head>
     <link rel="stylesheet" href="../styles/global.css" />
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../scripts/header.js" async></script>
+    <script src="../scripts/nav.js" async></script>
+    <script src="../scripts/footer.js" async></script>
     <meta
       name="description"
       content="A collection of detailed hardening tweaks for your Linux Server or desktop with detailed explanations of each change. This guide does not include Networking Security tweaks."
@@ -13,23 +17,12 @@
     <title>Linux Security Guide</title>
   </head>
 
-  <iframe
-    sandbox="allow-same-origin allow-top-navigation"
-    src="../iframes/title.html"
-    style="background-color: #1f2335"
-    scrolling="no"
-  ></iframe>
-
   <div class="page-template">
+    <header-component></header-component>
     <div class="page-center-box">
       <div class="page-box">
         <div class="page">
-          <iframe
-            sandbox="allow-same-origin allow-top-navigation"
-            src="../iframes/nav.html"
-            scrolling="no"
-            height="100px"
-          ></iframe>
+          <nav-component></nav-component>
 
           <p class="post-date">Feb 13, 2022</p>
 
@@ -1806,12 +1799,7 @@ UUID=xxxx     /var/tmp   ext4    defaults,bind,nosuid,noexec,nodev  0 1</pre
             >
           </p>
         </div>
-        <iframe
-          src="../iframes/footer.html"
-          sandbox="allow-same-origin allow-top-navigation"
-          scrolling="no"
-          height="50px"
-        ></iframe>
+        <footer-component></footer-component>
       </div>
     </div>
   </div>

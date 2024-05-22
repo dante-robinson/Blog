@@ -1,8 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html>
   <head>
     <link rel="stylesheet" href="../styles/global.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../scripts/header.js" async></script>
+    <script src="../scripts/nav.js" async></script>
+    <script src="../scripts/footer.js" async></script>
 
     <meta
       name="description"
@@ -16,23 +21,14 @@
     <title>Communist CBDCs</title>
   </head>
 
-  <iframe
-    sandbox="allow-same-origin allow-top-navigation"
-    src="../iframes/title.html"
-    style="background-color: #1f2335"
-    scrolling="no"
-  ></iframe>
-
   <div class="page-template">
+    <header-component></header-component>
+
     <div class="page-center-box">
       <div class="page-box">
         <div class="page">
-          <iframe
-            sandbox="allow-same-origin allow-top-navigation"
-            src="../iframes/nav.html"
-            scrolling="no"
-            height="100px"
-          ></iframe>
+          <nav-component></nav-component>
+
           <p class="post-date">Jan 11, 2023</p>
 
           <h2 class="post-title">Communist CBDCs</h2>
@@ -608,12 +604,7 @@
             </a>
           </p>
         </div>
-        <iframe
-          src="../iframes/footer.html"
-          sandbox="allow-same-origin allow-top-navigation"
-          scrolling="no"
-          height="50px"
-        ></iframe>
+        <footer-component></footer-component>
       </div>
     </div>
   </div>

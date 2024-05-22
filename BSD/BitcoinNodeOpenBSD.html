@@ -1,8 +1,13 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/image.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <script src="../scripts/header.js" async></script>
+    <script src="../scripts/nav.js" async></script>
+    <script src="../scripts/footer.js" async></script>
 
     <meta
       name="description"
@@ -16,23 +21,14 @@
     <title>How to run a Bitcoin Node on OpenBSD</title>
   </head>
 
-  <iframe
-    sandbox="allow-same-origin allow-top-navigation"
-    src="../iframes/title.html"
-    style="background-color: #1f2335"
-    scrolling="no"
-  ></iframe>
-
   <div class="page-template">
+    <header-component></header-component>
+
     <div class="page-center-box">
       <div class="page-box">
         <div class="page">
-          <iframe
-            sandbox="allow-same-origin allow-top-navigation"
-            src="../iframes/nav.html"
-            scrolling="no"
-            height="100px"
-          ></iframe>
+          <nav-component></nav-component>
+
           <body>
             <p class="post-date">Jun 19, 2023</p>
 
@@ -52,9 +48,7 @@
               <a class="table-of-contents-item" href="#done">Done!</a>
             </div>
 
-            <h3 class="header">
-              <a id="why">Why?</a>
-            </h3>
+            <h3 class="header">Why?<a id="why"></a></h3>
 
             <p>
               2 Questions, why run a node? and why OpenBSD? To answer the first
@@ -73,9 +67,7 @@
               purposes.
             </p>
 
-            <h3 class="header">
-              <a id="alt">Alternatives</a>
-            </h3>
+            <h3 class="header">Alternatives<a id="alt"></a></h3>
 
             <p>
               There are many easier solutions to running a full node such as
@@ -93,9 +85,7 @@
               >https://raspiblitz.org/</a
             >
 
-            <h3 class="header">
-              <a id="install">Installing OpenBSD</a>
-            </h3>
+            <h3 class="header">Installing OpenBSD<a id="install"></a></h3>
 
             <p>
               For hardware you can use pretty much anything you will need to
@@ -199,9 +189,7 @@
               installing packages.
             </p>
 
-            <h3 class="header">
-              <a id="setup">Setup Node</a>
-            </h3>
+            <h3 class="header">Setup Node<a id="setup"></a></h3>
 
             <p>
               First let's install vim to make editing future files easier by
@@ -479,9 +467,7 @@
               config in /etc/bitcoin.conf
             </p>
 
-            <h3 class="header">
-              <a id="tor">TOR (Optional) </a>
-            </h3>
+            <h3 class="header">TOR (Optional)<a id="tor"></a></h3>
 
             <p>
               Running TOR is pretty simple but we do need to add a few packages
@@ -611,9 +597,7 @@
               added security if you choose to go this route.
             </p>
 
-            <h3 class="header">
-              <a id="done">Done!</a>
-            </h3>
+            <h3 class="header">Done!<a id="done"></a></h3>
 
             <p>You can run your node by running the command.</p>
 
@@ -692,12 +676,7 @@
           </body>
         </div>
 
-        <iframe
-          src="../iframes/footer.html"
-          sandbox="allow-same-origin allow-top-navigation"
-          scrolling="no"
-          height="50px"
-        ></iframe>
+        <footer-component></footer-component>
       </div>
     </div>
   </div>

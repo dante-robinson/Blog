@@ -1,4 +1,4 @@
-ul {
+.page > ul {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -13,7 +13,7 @@ ul {
   list-style-type: none;
 }
 
-li {
+.page > ul > li {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -23,9 +23,8 @@ li {
   justify-content: space-between;
 }
 
-.link {
+.page > ul > li > .link {
   display: flex;
-  color: #7dcfff;
   width: max-content;
   align-self: center;
   height: 100%;
@@ -35,11 +34,6 @@ li {
 p {
   padding-right: 20%;
   width: max-content;
-}
-
-.link:hover {
-  text-decoration: none;
-  color: #f7768e;
 }
 
 hr {

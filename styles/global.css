@@ -1,14 +1,7 @@
 * {
   font-family: sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.5rem;
-}
-
-iframe {
-  display: block;
-  overflow: hidden;
-  width: 100%;
-  border: none;
 }
 
 body {
@@ -16,19 +9,15 @@ body {
   margin: 0;
 }
 
-h4 {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
 .page-template {
   display: flex;
-  background-color: #1f2335;
+  background-color: #1a1b26;
   color: #c0caf5;
-  font-size: 0.875rem;
+  font-size: 1rem;
   min-height: 60vh;
   width: 100%;
   padding-bottom: 12vh;
+  flex-direction: column;
 }
 
 .page-center-box {
@@ -55,7 +44,7 @@ h4 {
   width: 95%;
   padding-right: 2.5%;
   padding-left: 2.5%;
-  background-color: #1f2335;
+  background-color: inherit;
   justify-content: center;
   flex-direction: column;
 }
@@ -78,7 +67,8 @@ h4 {
 }
 
 .table-of-contents-container {
-  color: #7dcfff;
+  font-weight: 700;
+  color: #ffc777;
 }
 
 .table-of-contents-item {
@@ -87,12 +77,12 @@ h4 {
 }
 
 .table-of-contents-item:hover {
-  text-decoration: underline;
+  color: #ff9e64;
 }
 
 .link {
-  color: #7dcfff;
-  font-size: 1rem;
+  color: #7aa2f7;
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
   word-break: break-all;
@@ -101,12 +91,12 @@ h4 {
 }
 
 .link:hover {
-  color: #f7768e;
+  color: #3d59a1;
 }
 
 .blockquote {
-  background-color: #24283b;
-  border-width: 2px;
+  background-color: #1f2335;
+  border-width: 0.3rem;
   border-style: solid;
   border-color: #bb9af7;
   padding-left: 1vw;
@@ -119,13 +109,15 @@ h4 {
 
 .header {
   display: flex;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   justify-content: center;
   font-weight: 600;
 }
 
 .small-header {
+  font-size: 1.15rem;
+  line-height: 1.45rem;
   display: flex;
   justify-content: center;
   font-weight: 600;
@@ -135,7 +127,7 @@ h4 {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-width: 0.2vw;
+  border-width: 0.3rem;
   border-color: #7aa2f7;
   border-style: solid;
 }
@@ -161,8 +153,8 @@ img {
     line-height: 1.25rem;
   }
   .post-title {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 2.25rem;
+    line-height: 3rem;
   }
   .page-box {
     padding-left: 1vw;
