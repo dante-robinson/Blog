@@ -42,6 +42,19 @@ class Footer extends HTMLElement {
         line-height: 1.25rem;
         color: #c0caf5;
       }
+
+      @media (max-width: 799px) {
+        footer {
+          display: flex;
+          flex-direction: column;
+        }
+
+        footer > div {
+          width: 100%;
+          padding-bottom: 3vh;
+          justify-content: center !important;
+        }
+      }
     </style>
 
     <footer>

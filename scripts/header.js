@@ -20,9 +20,9 @@ class Header extends HTMLElement {
         justify-content: center;
         font-family: sans-serif;
         font-size: 2.25rem;
-        line-height: 2.5rem;
+        line-height: 3rem;
         color: #7aa2f7;
-        height: 10vh;
+        height: 18vh;
         font-weight: 700;
         text-decoration: none;
       } 

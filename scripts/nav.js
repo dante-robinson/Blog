@@ -28,8 +28,6 @@ class NavBar extends HTMLElement {
       }
 
       .nav-li {
-        padding-left: 3vw;
-        padding-right: 3vw;
         position: relative;
         justify-content: center;
       }
@@ -47,7 +45,19 @@ class NavBar extends HTMLElement {
 
       .nav-a:hover {
         color: #3d59a1;
-      } 
+      }
+
+      @media (max-width: 1024px) {
+        nav {
+          justify-content: normal;
+        }
+
+        .nav-ul {
+          width: 100%;
+          margin-left: 2vw;
+          margin-right: 2vw;
+        }
+      }
     </style>
 
     <nav>

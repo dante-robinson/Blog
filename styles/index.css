@@ -11,8 +11,8 @@
 
 h3 {
   font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .about-me {
@@ -26,8 +26,8 @@ h3 {
 .recommended-channels {
   display: flex;
   justify-content: space-between;
-  padding-left: 8vw;
-  padding-right: 8vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
 }
 
 .link-list {
@@ -43,6 +43,7 @@ h3 {
   height: 100%;
   width: 100%;
   justify-content: center;
+  text-align: center;
 }
 
 .index-posts {
@@ -76,7 +77,36 @@ h3 {
   color: #3d59a1;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 400px) {
+  .page-link {
+    font-size: 0.75rem !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .recommended-channels {
+    flex-direction: column;
+  }
+
+  .recommended-channels > a {
+    padding-bottom: 3vh;
+  }
+
+  .post-date {
+    display: none;
+  }
+
+  .page-link {
+    font-size: 0.85rem;
+  }
+
+  .post-list-item {
+    margin-top: 3vh;
+    width: auto;
+  }
+}
+
+@media (max-width: 768px) {
   .about-me {
     width: 100%;
   }
@@ -84,21 +114,53 @@ h3 {
   .link-list {
     width: 100%;
   }
+
+  .recommended-channels {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .post-date {
+    display: none;
+  }
+
+  .
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1040px) {
+  .about-me {
+    width: 100%;
+  }
+
+  .link-list {
+    width: 100%;
+  }
+
+  .recommended-channels {
+    flex-direction: row;
+  }
   .two-columns {
     flex-direction: row;
     width: 100%;
   }
 
-  .post-list-item {
-    width: 33vw;
+  .post-date {
+    display: none;
+  }
+
+  .recommended-channels {
+    padding-left: 1vw;
+    padding-right: 1vw;
   }
 }
 
-@media (min-width: 1280px) {
-  .post-list-item {
-    width: 28vw;
+@media (min-width: 1368px) {
+  .post-date {
+    display: flex;
+  }
+
+  .recommended-channels {
+    padding-left: 2vw;
+    padding-right: 2vw;
   }
 }
