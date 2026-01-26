@@ -58,14 +58,14 @@ class Footer extends HTMLElement {
     </style>
 
     <footer>
-      <div style="justify-content: start" class="BitcoinModal">
+      <div style="justify-content: start">
         <a
-          class="footer-link BitcoinModalButton"
+          class="footer-link"
           target="_parent"
           rel="noopener noreferrer"
-          href="https://cointr.ee/dante_robinson"  
+          href="https://openbsd.amsterdam"  
         >
-          <span>Bitcoin Address</span>
+          <span>Hosted on OpenBSD.amsterdam</span>
         </a>
         
       </div>

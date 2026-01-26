@@ -1,0 +1,363 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="../styles/global.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="../scripts/header.js" async></script>
+    <script src="../scripts/nav.js" async></script>
+    <script src="../scripts/footer.js" async></script>
+    <meta
+      name="description"
+      content="Just discussing why I haven't posted in over a year."
+    />
+    <meta name="keywords" content="Rambling, Blog Post, dante robinson" />
+
+    <title>Where Have I Been?</title>
+  </head>
+
+  <div class="page-template">
+    <header-component></header-component>
+    <div class="page-center-box">
+      <div class="page-box">
+        <div class="page">
+          <nav-component></nav-component>
+
+          <p class="post-date">Jan 26, 2026</p>
+
+          <h2 class="post-title">Where Have I Been?</h2>
+
+          <h3 class="table-of-contents-header">Table of Contents</h3>
+
+          <div class="table-of-contents-container">
+            <a class="table-of-contents-item" href="#computers">Computers</a
+            ><br />
+            <a class="table-of-contents-item" href="#posts">Why no Posts?</a
+            ><br />
+            <a class="table-of-contents-item" href="#future"
+              >The Future of the Blog</a
+            >
+          </div>
+
+          <body>
+            <p>
+              This is going to be a somewhat long post about where I have been,
+              what I have been up to over the past year or so, why I haven't
+              posted anything new, and what's going to happen with the blog
+              moving forward. It's been almost 2 years since my last blog post!
+              I did have a few posts that I started but never finished, but I
+              haven't really touched this blog at all or really any programming
+              things for that matter.
+            </p>
+
+            IMAGE OF GITHUB COMMITS FOR 2025 AND 2024
+
+            <h3 class="header">Computers<a id="computers"></a></h3>
+
+            <p>
+              Back at my last blog post I was self-hosting a lot of stuff on my
+              own using a collection of Raspberry Pi Zero 2W computers and
+              trying to move those services to another stack of Mango Pi MQ Pro
+              D1 boards as they use around 1W of power. I never did get that
+              completed as my self-hosted services were all on OpenBSD and those
+              machines wouldn't boot on OpenBSD. I did open a mailing list
+              thread for it <a>Here</a> but I haven't looked back to see if it's
+              been supported since.
+            </p>
+
+            <p>
+              I started getting back into collecting hardware as well which was
+              keeping me away from the blog. For those of you that don't know me
+              I have these weird fascination with computer hardware. I am super
+              interested in using hardware and getting the most out of it. I
+              bought a few machines that I was playing with firstly, a Blue and
+              White PowerMac G3 with the 300MHz chip and I added 1GB of Ram. The
+              second machine was a PowerMac G4 MDD Dual Proccesor 1.25GHz
+              machine with 2GB of Ram. The third machine was a PowerMac G5 Dual
+              Proccesor 2.3GHz with 6GB of Ram the DDR model not the newer DDR2
+              model. The last machine I was playing with is the only one left I
+              still own due to life changes, is the PowerBook G4 12" with the
+              1.25GHz Processor and the stock soldered 768MB of Ram, it's in a
+              little rough shape maybe 6/10. I added a 512GB Samsung 860 EVO SSD
+              to each machine with the Startech IDE to SATA Adapter.
+            </p>
+
+            <p>
+              With these I was determined to run something on them in the modern
+              day and make them usable. I don't want to get into a huge rant,
+              but many companies obsolete old hardware for very little reason
+              other than to sell you more stuff. You need to set your
+              expectations with older hardware correctly, obviously these around
+              going to be editing 4K Videos and watching YouTube streamed
+              through a bloated web browser. In fact no major browser works
+              anymore on these even on Linux and BSD. I was able to get the G4
+              to watch YouTube at 480p smooth no stutters with the stock AMD GPU
+              through mpv-yt-dlp and the G5 could even playback 720p no problem
+              and even 1080p on NetBSD. It's very impressive considering when
+              that G5 came out the main used resolution was 1280 x 1024 which
+              was a 720p display but taller kinda like 16:10 displays that were
+              popular after that and are becoming more common again now. Keep in
+              mind however with YouTube you aren't just playing video at 720p
+              your also streaming it which adds load to the network and CPU.
+            </p>
+
+            <p>
+              With these old machines they are running basically as they were
+              designed to do once you remove the bloated web. The modern web is
+              filled with poorly designed websites using Javascript for
+              literally everything and super bloated web browsers. I fell victim
+              to this same trap as well when I started this blog I used a
+              version of React known as NextJS. It was more convinent than the
+              setup I have now but also more bloated with a million libraries. I
+              will talk more about this later, actually.
+            </p>
+
+            <p>
+              I ended up using NetBSD more than OpenBSD due to the Linux being
+              well Linux... they like to drop support for old hardware.
+              arch/powerpc still exists today in the kernel, but almost all
+              distros have stopped supporting it except for the obvious like
+              Gentoo.
+              <a
+                href="https://www.phoronix.com/news/FreeBSD-32-bit-Deprecation-Plan"
+                >Even FreeBSD 15 has dropped support for it (and every other 32
+                bit CPU)1</a
+              >. Linux has already dropped support for a newer platform
+              <a
+                href="https://www.phoronix.com/news/Linux-6.7-To-Drop-Itanium-IA-64"
+                >Itanium 64 bit in kernel 6.7</a
+              >
+              and patches are in place already to remove some other popular
+              <a
+                href="https://www.phoronix.com/news/Linux-x86-Removing-Old-CPUs-v2"
+                >32 bit platforms i486 and i586</a
+              >. i586 is basically 1 generation older than the G3 and it's a
+              shame to see it get dropped.
+            </p>
+
+            <p>
+              I was able to run things like Krita on the G4 and even some
+              Kdenlive so it shows they can still edit photos and videos, of
+              course at a lower resolution. I ended up moving the G3 to MacOS 9
+              and the G4 to Mac OS X 10.4 (Tiger) with the 10.4.12 fixes for
+              security and the Shuriken mod fixes. The G5 ran best on Mac OS X
+              10.5 (Leopard) with the Snow Leopard mod which I think is pretty
+              well known at this point. Finding older software on Macintosh
+              Repository and Macintosh Garden I could install Final Cut and as
+              expected all works well. I hate seeing old machines end up in the
+              landfill, but I did have to end up selling them in the end due to
+              changes in my life.
+            </p>
+
+            <p>
+              My personal machine when I last wrote this blog was a Framework 13
+              with the 1370P chip and 64GB of Ram. This was my 2nd Framework and
+              I really don't like the quality control of the company at all. The
+              expansion cards didn't line up fully, the hinge always felt rough,
+              I had a battery die prematurely and even broke off one of the
+              studs for the screws to mount to because for some reason it's made
+              of plastic. My last laptop before this was a 2019 Macbook Pro 16"
+              with the 2.3GHz i9 9980H and 32GB of Ram. The level of quality on
+              that machine changed my mind about past gaming laptops I had in
+              the past, and it was also my last large laptop at 16" or more.
+            </p>
+
+            <p>
+              I decided to pick on a Macbook Pro 14" to replace the framework, I
+              wanted the M4 Max chip, but the cost increase was too much, so I
+              maxed out the base chip. It's running the base M4 with 32GB Ram
+              and the 2TB SSD with the Matte Display. I really like it, and I'm
+              actually enjoying MacOS again. I talked about things a bit through
+              different blog posts, but I switched from Gentoo to OpenBSD as my
+              full time OS as I didn't want to deal with compilation errors
+              anymore and the time it takes to compile. I will forever love
+              Gentoo I think it's a great Distro and arguably one of the easiest
+              to understand for me, but I was looking to simplify my life to
+              make time for other things. I Did try running KISS Linux for maybe
+              3 months and while the base system had minimal packages, I had to
+              manually create the packages and then troubleshoot compilation
+              errors without the help of portage which made it not as simplified
+              as I would like. OpenBSD on the other hand while similar the
+              Kernel was compact compared to Linux and the amount of packages
+              was smaller depsite not being able to remove some dependencies
+              without compiling the entire system was slow. The File System,
+              FFS2 while reliable is very slow even on PCIe Gen 4 SSDs like my
+              980 PRO.
+            </p>
+
+            <p>
+              I am still enjoying the Macbook I have again now and have even
+              moved from my GrapheneOS based Pixel to an iPhone again. I just
+              don't really want to spend all this time trying to create this
+              perfect setup. MacOS is great has a standard ZSH shell that works
+              with oh-my-zsh like on any other UNIX Based OS and I can still
+              install almost everything through a package manager like on Linux
+              and BSD by using <a href="www.brew.sh">brew</a>.
+            </p>
+
+            <h3 class="header">Why no posts?<a id="posts"></a></h3>
+
+            <p>
+              Ok, so switching computers around and playing with older machines
+              isn't really enough to distract me from this blog alone. Besides
+              the life stuff I won't get into here, the other thing holding me
+              back was a Bitcoin tutorial blog I was working on. These don't
+              show up on my GitHub commits yet as the repo is private for now,
+              but I was doing some work on that and wrote around 10 full pages
+              explaining some things. It's nowhere near done and the time it
+              takes to type up each page and gather all the research is a lot
+              and can be overwhelming. The idea is for it to explain things and
+              reference the code base directly to back up what is being said for
+              a non-biased explanation not the crypto bro style talking about
+              making money and how this is the future, etc. The last commit I
+              did for this was April 3rd 2024 but the repo I have saved on an
+              external drive shows the last edit as May 2025.
+            </p>
+
+            <p>
+              The other main thing I have been doing has been re-doing my
+              highschool. During my original time in highschool I was mostly
+              building computers, overclocking and playing a lot of video games.
+              I'm at the point in my life where I want to go back and re-do what
+              I missed the first time and learn all the things I need to know.
+              This has been a hard learning curve for me as I don't really have
+              the know how to study and the time management skils to focus. I
+              want to be able to mess around less with computers now and focus
+              more on this instead of spending my time compiling packages for a
+              slightly lighter OS.
+            </p>
+
+            <p>
+              It's been very hard for me to do as I enjoy doing these things on
+              the computer, but I've done it all already, I've done Linux From
+              Scratch, I've daily driven Gentoo which taught me a ton about the
+              inner workings of the system. I've made my own packages for KISS
+              Linux and even edited some build scripts for Gentoo musl. I've
+              self-hosted a bunch of services I use day to day learning about
+              Port Forwarding, and I've even had this blog self-hosted and had
+              to learn all about that. There is not much more I can really do
+              that's new besides going to school to learn more about how the
+              hardware playing with works at the PCB level more than I already
+              know. I've set top records in overclocking, most of my life I
+              overclocked my machines for personal FPS in games, but I finally
+              did make a HWBOT account and attempted to
+              <a
+                href="https://esports.hwbot.org/benchmarks/cinebench_-_r15/submissions/4567592"
+                >touch a top record</a
+              >
+              with the knowledge I have about Electrical Arcing and how having
+              more PCB layers is good when dealing with higher voltages or how
+              to tune Cas Latency on your memory to make it faster (in terms of
+              latency) while running at the same frequency. I really love
+              hardware the high end the low end and the older classic stuff.
+              It's really been an internal challenge to try to step away from
+              and focus on the school work for me. I will try to keep posting
+              while doing the other things I want to get done, but it won't be
+              as frequent as 2023 was.
+            </p>
+
+            <h3 class="header">The Future of the Blog<a id="future"></a></h3>
+
+            <p>
+              So what's next for the Blog? I have a lot of ideas I want to do
+              with it. The first thing I want to touch on is Javascript. So this
+              blog started out being programmed in NextJS, and it was much
+              easier to write posts for with a proper template. As I used more
+              vintage hardware I wanted to accomodate my personal website to a
+              less bloated web as let's be honest this blog isn't very
+              intensive. I moved the Blog over to PHP once I used OpenBSD as
+              NextJS wouldn't work properly when trying to run locally to see my
+              changes in real time. PHP had kept the similar template style but
+              still had a few dependencies and I still needed to run a constant
+              local server to see the website in real time. I eventually
+              converted the website to full HTML + CSS with JS for buttons only
+              and this took me time during both of the conversions away from
+              making posts. I am happy with the website in simple HTML + CSS,
+              but the template system is completing gone. I tried using iframes,
+              and it didn't work at all how I wanted. There is a person who I
+              have been following for a few years named sewn. They are very
+              smart and have been in the KISS Linux space for years, you can
+              find their blog <a href="https://sewn.moe">here</a>. But sewn has
+              this
+              <a href="https://codeberg.org/sewn/pages/src/branch/master/gen.sh"
+                >script</a
+              >
+              which looks like it generates an HTML file with the template done
+              already. I might look into making something like this, but I have
+              also moved from Neovim to VSCodium since I'm back on macOS and
+              wanted to save time setting up my IDE. I might be able to set up
+              something similar with some extension in VSCode. The end point
+              being I want to make it simpler to make a blog post without
+              needing to copy the template I've already made from older posts.
+            </p>
+
+            <p>
+              The other thing is moving the website to
+              <a href="https://openbsd.amsterdam">openbsd.amsterdam</a> this was
+              actually done already back in April 2025. I liked self-hosting on
+              OpenBSD and I think it's more lightweight and secure than Linux,
+              so I wanted to keep using it. Not a lot of providers offer OpenBSD
+              as an option and OpenBSD Amsterdam donates some money to the
+              OpenBSD Foundation which I liked to help to the development. This
+              is a simple httpd setup without relayd.
+            </p>
+
+            <p>
+              When I started this website I was focused on making guides for
+              people to try to help the others gain knowledge and grow the
+              community of UNIX Based Operating Systems. This goal has not
+              changed, but it has shifted a bit as I want to expand the website
+              to more of a blog. I want to write stuff like this post, just
+              talking about my thoughts on something. Just because I'm using a
+              Mac right now doesn't mean I still don't care about Linux and BSD,
+              like I said this blog is running on OpenBSD. I may bash Linux or
+              the BSDs from time to time for something because nothing is
+              perfect not even macOS, they all have issues.
+            </p>
+
+            <p>
+              For example what I mentioned earlier about Linux dropping Itanium
+              could be a blog post in itself a couple paragraphs of my thoughts.
+              I understand why it was removed due to low users, it wasn't a
+              popular platform even when new. But it's kind of hypocritical
+              consider the AMD GPU Driver will just add 500K lines of code, and
+              it's accepted no problem. Would people even be interested in
+              hearing about this... I don't know.
+            </p>
+
+            <p>
+              Another thing I was working on before I took a break was looking
+              into how to set up an RSS Feed for this website. I haven't looked
+              into it since, but ideally I want to not have some API JS plugin
+              just for RSS. I want something organic ideally that just works
+              without a 3rd party if possible. I'd also like to make some type
+              of organic system to do a thumbs up or down on a post. This will
+              likely involve storing a cookie in the browser to count as a vote.
+              So technically you could thumb up in multiple browsers or by
+              clearing cookies, but for a blog post I don't think that really
+              matters. But I guess you never know maybe someone wants to put in
+              enough effort to do that to downvote something, haha.
+            </p>
+
+            <p>
+              The last thing I really need to implement is a whole UI redesign
+              and making a mobile version that matches the desktop version. I
+              want to take some UI design course or something to learn what is
+              most appealing to the end user, and then try to design something
+              myself while still using HTML + CSS.
+            </p>
+
+            <p>
+              I don't know when the next post will be from here, but I want to
+              try to commit to at least a post a month going forward. On what I'm 
+              doing, learning or just my opinions on something going on in the 
+              computing space.
+            </p>
+          </body>
+        </div>
+      <footer-component></footer-component>
+      </div>
+    </div>
+  </div>
+</html>

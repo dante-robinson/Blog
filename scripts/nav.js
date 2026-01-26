@@ -73,6 +73,10 @@ class NavBar extends HTMLElement {
         <li class="nav-li">
           <a class="nav-a" href="../nav/BSD" target="_parent">BSD</a>
         </li>
+
+        <li class="nav-li">
+          <a class="nav-a" href="../nav/Thoughts" target="_parent">Thoughts</a>
+        </li>
       </ul>
     </nav> 
     `;
