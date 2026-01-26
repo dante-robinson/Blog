@@ -197,3 +197,12 @@ img {
     padding-right: 1vw;
   }
 }
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 0.25rem solid;
+  padding: 0.5rem;
+}
