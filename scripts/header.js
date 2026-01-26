@@ -21,7 +21,7 @@ class Header extends HTMLElement {
         font-family: sans-serif;
         font-size: 2.25rem;
         line-height: 3rem;
-        color: #7aa2f7;
+        color: #7aa2f7 !important;
         height: 18vh;
         font-weight: 700;
         text-decoration: none;
