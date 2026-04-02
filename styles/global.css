@@ -1,64 +1,81 @@
-* {
-  font-family: sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.5rem;
+html {
+  background-color: #101010;
+  color: #b9b9b9;
+  font-size: 100%;
 }
 
 body {
-  padding: 0;
   margin: 0;
+  font-family: sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.5rem;
 }
 
-.page-template {
-  display: flex;
-  background-color: #1a1b26;
-  color: #c0caf5;
-  font-size: 1rem;
-  min-height: 60vh;
-  width: 100%;
-  padding-bottom: 12vh;
-  flex-direction: column;
+h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+h3 {
+  margin-top: 1rem;
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+h4 {
+  font-size: 1.15rem;
+  line-height: 1.45rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+a {
+  color: #94aee3;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  font-weight: 600;
+}
+
+a:hover {
+  color: #7495d9;
 }
 
 .page-center-box {
   display: flex;
-  min-height: 60%;
-  width: 100%;
   justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+.page-outside {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
 }
 
 .page-box {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  justify-content: center;
-  border-width: 0.4rem;
-  border-style: solid;
-  height: min-content;
-  min-height: 60%;
-  border-color: #a9b1d6;
+  width: 100%;
+  margin: 0 auto;
+  border: 0.4rem solid #7c7c7c;
+  min-height: 50vh;
 }
 
 .page {
   display: flex;
-  width: 95%;
-  padding-right: 2.5%;
-  padding-left: 2.5%;
-  background-color: inherit;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  padding: 0 2rem;
 }
 
 .post-date {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.post-title {
-  display: flex;
-  font-size: 1.25rem;
-  font-weight: 700;
-  justify-content: center;
+  text-align: right;
 }
 
 .table-of-contents-header {
@@ -68,7 +85,7 @@ body {
 
 .table-of-contents-container {
   font-weight: 700;
-  color: #ffc777;
+  color: #8abae1;
 }
 
 .table-of-contents-item {
@@ -77,132 +94,29 @@ body {
 }
 
 .table-of-contents-item:hover {
-  color: #ff9e64;
-}
-
-.link {
-  color: #7aa2f7;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  word-break: break-all;
-  display: inline;
-  margin-right: -4px;
-}
-
-.link:hover {
-  color: #3d59a1;
+  color: #c9e6fd;
 }
 
 .blockquote {
-  background-color: #1f2335;
-  border-width: 0.3rem;
-  border-style: solid;
-  border-color: #bb9af7;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  background-color: #252525;
+  border: 0.3rem solid #5f819d;
+  padding: 0 1rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 700;
-  word-break: break-all;
-}
-
-.header {
-  display: flex;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.small-header {
-  font-size: 1.15rem;
-  line-height: 1.45rem;
-  display: flex;
-  justify-content: center;
-  font-weight: 600;
-}
-
-.image-center-container {
-  display: flex;
-  justify-items: center;
-}
-
-.image-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  border-width: 0.3rem;
-  border-color: #7aa2f7;
-  border-style: solid;
+  overflow-wrap: anywhere;
 }
 
 .hidden {
   display: none;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-}
-
-@media (max-width: 500px) {
-  .post-date {
-    justify-content: center;
-  }
-
-  .post-title {
-    text-align: center;
-  }
-}
-
-@media (max-width: 1024px) {
-  .second-image-inside-container {
-    margin-top: 0 !important;
-  }
-}
-
-@media (max-width: 1023px) {
-  .post-title {
-    text-align: center;
-  }
-
-  .first-image-inside-container {
-    width: 100% !important;
-  }
-
-  .second-image-inside-container {
-    margin-top: 1vh !important;
-    width: 100% !important;
-  }
-}
-
-@media (min-width: 640px) {
-  .page {
-    width: 100%;
-    padding-right: 0;
-    padding-left: 0;
-  }
-
-  .blockquote {
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-  }
-  .post-title {
-    font-size: 2.25rem;
-    line-height: 3rem;
-  }
-  .page-box {
-    padding-left: 1vw;
-    padding-right: 1vw;
-  }
-}
-
 table {
   border-collapse: collapse;
 }
 
-td, th {
+td,
+th {
   border: 0.25rem solid;
   padding: 0.5rem;
 }

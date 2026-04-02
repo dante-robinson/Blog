@@ -1,45 +1,50 @@
+h2 {
+  margin: 4rem 0;
+}
+
+.page-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .page > ul {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
-  min-height: 65vh;
-  text-align: center;
-  justify-content: center;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style: none;
 }
 
 .page > ul > li {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+  align-items: center;
   justify-content: space-between;
+  width: 60%;
 }
 
-.page > ul > li > .link {
-  display: flex;
-  width: max-content;
-  align-self: center;
-  height: 100%;
-  padding-left: 20%;
+.page a {
+  text-align: center;
 }
 
-p {
-  padding-right: 20%;
-  width: max-content;
+.page p {
+  margin: 0;
+  text-align: right;
+  white-space: nowrap;
 }
 
 hr {
+  width: 60%;
+  margin: 2rem 0;
   color: #c0caf5;
   background-color: #c0caf5;
-  height: 0.25%;
-  width: 60%;
   opacity: 0.15;
 }

@@ -1,73 +1,95 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="../styles/global.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="../scripts/header.js" async></script>
-    <script src="../scripts/nav.js" async></script>
-    <script src="../scripts/footer.js" async></script>
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/image.css" />
     <meta
       name="description"
       content="Various tweaks and modifications that can be used to increase the performance of your Linux based system."
     />
-    <meta name="keywords" content="Linux, Performance, tweaks, guide" />
 
     <title>Linux Performance Guide</title>
   </head>
 
-  <div class="page-template">
-    <header-component></header-component>
+  <body>
     <div class="page-center-box">
-      <div class="page-box">
-        <div class="page">
-          <nav-component></nav-component>
+      <div class="page-outside">
+        <header>
+          <h1>
+            <a target="_parent" href="/">Dante's Blog</a>
+          </h1>
+          <nav>
+            <ul>
+              <li>
+                <a href="../nav/Linux" target="_parent">Linux</a>
+              </li>
 
-          <p class="post-date">Oct 30, 2021</p>
+              <li>
+                <a href="../nav/Crypto" target="_parent">Crypto</a>
+              </li>
 
-          <h2 class="post-title">Linux Performance Tweaks</h2>
+              <li>
+                <a href="../nav/BSD" target="_parent">BSD</a>
+              </li>
 
-          <h3 class="table-of-contents-header">Table of Contents</h3>
+              <li>
+                <a href="../nav/Thoughts" target="_parent">Thoughts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="page-box">
+          <div class="page">
+            <p class="post-date">Oct 30, 2021</p>
 
-          <div class="table-of-contents-container">
-            <a class="table-of-contents-item" href="#reflector-mirrors"
-              >Reflector Mirrors (Arch Based Only)</a
-            ><br />
-            <a class="table-of-contents-item" href="#configure-pacman"
-              >Conifgure Pacman (Arch Based Only)</a
-            ><br />
-            <a class="table-of-contents-item" href="#makepkg">Makepkg Tweaks</a
-            ><br />
-            <a class="table-of-contents-item" href="#yay"
-              >Installing Yay (Arch Based Only)</a
-            ><br />
-            <a class="table-of-contents-item" href="#pamac"
-              >Installing Pamac (Arch Based Only)</a
-            ><br />
-            <a class="table-of-contents-item" href="#performance"
-              >Performance Tweaks</a
-            ><br />
-            <a class="table-of-contents-item" href="#sound"
-              >Installing Sound Drivers and Improving Sound Quality</a
-            ><br />
-            <a class="table-of-contents-item" href="#fonts">Installing Fonts</a
-            ><br />
-            <a class="table-of-contents-item" href="#io"
-              >Setting I/O Schedulers</a
-            ><br />
-            <a class="table-of-contents-item" href="#initramfs"
-              >Initramfs Tweaks (Arch Based Only)</a
-            ><br />
-            <a class="table-of-contents-item" href="#laptop"
-              >Laptop battery Improvement</a
-            ><br />
-            <a class="table-of-contents-item" href="#touchpad"
-              >Fusuma Touchpad Gestures</a
-            >
-          </div>
+            <h2>Linux Performance Tweaks</h2>
 
-          <body>
+            <h3 class="table-of-contents-header">Table of Contents</h3>
+
+            <div class="table-of-contents-container">
+              <a class="table-of-contents-item" href="#reflector-mirrors"
+                >Reflector Mirrors (Arch Based Only)</a
+              ><br />
+              <a class="table-of-contents-item" href="#configure-pacman"
+                >Conifgure Pacman (Arch Based Only)</a
+              ><br />
+              <a class="table-of-contents-item" href="#makepkg"
+                >Makepkg Tweaks</a
+              ><br />
+              <a class="table-of-contents-item" href="#yay"
+                >Installing Yay (Arch Based Only)</a
+              ><br />
+              <a class="table-of-contents-item" href="#pamac"
+                >Installing Pamac (Arch Based Only)</a
+              ><br />
+              <a class="table-of-contents-item" href="#performance"
+                >Performance Tweaks</a
+              ><br />
+              <a class="table-of-contents-item" href="#sound"
+                >Installing Sound Drivers and Improving Sound Quality</a
+              ><br />
+              <a class="table-of-contents-item" href="#fonts"
+                >Installing Fonts</a
+              ><br />
+              <a class="table-of-contents-item" href="#io"
+                >Setting I/O Schedulers</a
+              ><br />
+              <a class="table-of-contents-item" href="#initramfs"
+                >Initramfs Tweaks (Arch Based Only)</a
+              ><br />
+              <a class="table-of-contents-item" href="#laptop"
+                >Laptop battery Improvement</a
+              ><br />
+              <a class="table-of-contents-item" href="#touchpad"
+                >Fusuma Touchpad Gestures</a
+              >
+            </div>
+
             <p>
               Welcome to my Linux Performance Tweaks Guide, this is a personal
               collection of tweaks and settings that I do to a fresh Install on
@@ -76,7 +98,7 @@
               covered in my Arch Linux install guide already and this guide will
               be focusing on the next steps directly from there. You can find my
               install guide here -
-              <a class="link" href="https://danterobinson.dev/Linux/ArchGuide"
+              <a href="https://danterobinson.dev/Linux/ArchGuide"
                 >https://danterobinson.dev/Linux/ArchGuide</a
               >
             </p>
@@ -93,7 +115,6 @@
               If you are interested in the raw version of the guide you can find
               that on github here -
               <a
-                class="link"
                 href="https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa"
                 >https://gist.github.com/dante-robinson/cd620c7283a6cc1fcdd97b2d139b72fa</a
               >
@@ -102,10 +123,7 @@
             <p>
               If you are interested in my Linux Security Guide you can find that
               here -
-              <a
-                class="link"
-                href="https://danterobinson.dev/Linux/SecurityGuide"
-              >
+              <a href="https://danterobinson.dev/Linux/SecurityGuide">
                 https://danterobinson.dev/Linux/SecurityGuide
               </a>
             </p>
@@ -120,7 +138,7 @@
               other.
             </p>
 
-            <h3 class="header">
+            <h3>
               Reflector Mirrors (Arch Based Only)<a id="reflector-mirrors"></a>
             </h3>
 
@@ -160,8 +178,8 @@
               going to change much.
             </p>
 
-            <h3 class="header">
-              Configure pacman (Arch Based Only) <a id="configure-pacman"></a>
+            <h3>
+              <a id="configure-pacman">Configure pacman (Arch Based Only)</a>
             </h3>
 
             <p>
@@ -209,7 +227,7 @@
               need to fix.
             </p>
 
-            <h3 class="header">Makepkg Tweaks <a id="makepkg"></a></h3>
+            <h3><a id="makepkg">Makepkg Tweaks</a></h3>
 
             <p>
               Although we haven’t really have to build anything on our own
@@ -351,8 +369,8 @@
               <p>PKGEXT='.pkg.tar'</p>
             </blockquote>
 
-            <h3 class="header">
-              Installing Yay (Arch Based Only) <a id="yay"></a>
+            <h3>
+              <a id="yay">Installing Yay (Arch Based Only)</a>
             </h3>
 
             <p>
@@ -405,9 +423,7 @@
               <p>sudo rm -R yay</p>
             </blockquote>
 
-            <h3 class="header">
-              Installing Pamac (Arch Based Only) <a id="pamac"></a>
-            </h3>
+            <h3><a id="pamac">Installing Pamac (Arch Based Only)</a></h3>
 
             <p>
               This might be a little bit different than how some other people in
@@ -446,7 +462,9 @@
               settings and enable them also.
             </p>
 
-            <h3 class="header">Performance Tweaks <a id="performance"></a></h3>
+            <h3>
+              <a id="performance">Performance Tweaks</a>
+            </h3>
 
             <p>
               These are overall system tweaks some of which are used in the
@@ -454,7 +472,7 @@
               we are gonna do is download all the needed packages with
             </p>
 
-            <p><b>Arch Based</b></p>
+            <p><strong>Arch Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -462,13 +480,13 @@
                 uresourced
               </p>
             </blockquote>
-            <p><b>Debian Based</b></p>
+            <p><strong>Debian Based</strong></p>
 
             <blockquote class="blockquote">
               <p>sudo apt-get install nohang preload</p>
             </blockquote>
 
-            <p><b>Gentoo Based</b></p>
+            <p><strong>Gentoo Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -477,12 +495,12 @@
               </p>
             </blockquote>
 
-            <p><b>RedHat Based</b></p>
+            <p><strong>RedHat Based</strong></p>
             <blockquote class="blockquote">
               <p>yum install irqbalance nohang prelockd uresourced</p>
             </blockquote>
 
-            <p><b>Void Linux</b></p>
+            <p><strong>Void Linux</strong></p>
 
             <blockquote class="blockquote">
               <p>sudo xbps-install -Su irqbalance preload</p>
@@ -494,34 +512,32 @@
               the link below for each
             </p>
             <p>
-              <b>ananicy-cpp</b> -
-              <a class="link" href="https://gitlab.com/ananicy-cpp/ananicy-cpp"
+              <strong>ananicy-cpp</strong> -
+              <a href="https://gitlab.com/ananicy-cpp/ananicy-cpp"
                 >https://gitlab.com/ananicy-cpp/ananicy-cpp</a
               ><br />
-              <b>irqbalance</b> -
-              <a class="link" href="https://github.com/Irqbalance/irqbalance"
+              <strong>irqbalance</strong> -
+              <a href="https://github.com/Irqbalance/irqbalance"
                 >https://github.com/Irqbalance/irqbalance</a
               ><br />
-              <b>memavaild</b> -
-              <a class="link" href="https://github.com/hakavlad/memavaild"
+              <strong>memavaild</strong> -
+              <a href="https://github.com/hakavlad/memavaild"
                 >https://github.com/hakavlad/memavaild</a
               ><br />
-              <b>nohang</b> -
-              <a class="link" href="https://github.com/hakavlad/nohang"
+              <strong>nohang</strong> -
+              <a href="https://github.com/hakavlad/nohang"
                 >https://github.com/hakavlad/nohang</a
               ><br />
-              <b>preload</b> -
-              <a class="link" href="https://wiki.archlinux.org/title/Preload"
+              <strong>preload</strong> -
+              <a href="https://wiki.archlinux.org/title/Preload"
                 >https://wiki.archlinux.org/title/Preload</a
               ><br />
-              <b>prelockd</b> -
-              <a class="link" href="https://github.com/hakavlad/prelockd"
+              <strong>prelockd</strong> -
+              <a href="https://github.com/hakavlad/prelockd"
                 >https://github.com/hakavlad/prelockd</a
               ><br />
-              <b>uresourced</b> -
-              <a
-                class="link"
-                href="https://gitlab.freedesktop.org/benzea/uresourced"
+              <strong>uresourced</strong> -
+              <a href="https://gitlab.freedesktop.org/benzea/uresourced"
                 >https://gitlab.freedesktop.org/benzea/uresourced</a
               >
             </p>
@@ -733,9 +749,10 @@
               </p>
             </blockquote>
 
-            <h3 class="header">
-              Installing sound drivers and Improving Sound Quality
-              <a id="sound"></a>
+            <h3>
+              <a id="sound">
+                Installing sound drivers and Improving Sound Quality
+              </a>
             </h3>
 
             <p>
@@ -746,7 +763,7 @@
               command
             </p>
 
-            <p><b>Arch Based</b></p>
+            <p><strong>Arch Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -755,7 +772,7 @@
               </p>
             </blockquote>
 
-            <p><b>Debian Based</b></p>
+            <p><strong>Debian Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -764,7 +781,7 @@
               </p>
             </blockquote>
 
-            <p><b>Gentoo Based</b></p>
+            <p><strong>Gentoo Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -774,7 +791,7 @@
               </p>
             </blockquote>
 
-            <p><b>RedHat Based</b></p>
+            <p><strong>RedHat Based</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -783,7 +800,7 @@
               </p>
             </blockquote>
 
-            <p><b>Void Linux</b></p>
+            <p><strong>Void Linux</strong></p>
 
             <blockquote class="blockquote">
               <p>
@@ -874,7 +891,6 @@
             <p>
               Audio Sampling Rates -
               <a
-                class="link"
                 href="https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling"
               >
                 https://en.wikipedia.org/wiki/Sampling_(signal_processing)#Audio_sampling
@@ -921,7 +937,7 @@
             <p>
               If your into Audio production also check out the app cadence which
               can provide some system checks for you -
-              <a class="link" href="https://kx.studio/Applications:Cadence">
+              <a href="https://kx.studio/Applications:Cadence">
                 https://kx.studio/Applications:Cadence
               </a>
             </p>
@@ -930,7 +946,7 @@
               Also don’t forget to switch to a realtime kernel for low latency.
               If your new to Audio Production on Linux and don’t know exactly
               what to use check out this page -
-              <a class="link" href="https://jackaudio.org/applications/">
+              <a href="https://jackaudio.org/applications/">
                 https://jackaudio.org/applications/
               </a>
             </p>
@@ -938,14 +954,13 @@
             <p>
               Read more about upmixing/downmixing here -
               <a
-                class="link"
                 href="https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling"
               >
                 https://wiki.archlinux.org/title/Advanced_Linux_Sound_Architecture#High_quality_resampling
               </a>
             </p>
 
-            <h3 class="header">Installing Fonts <a id="fonts"></a></h3>
+            <h3>Installing Fonts <a id="fonts"></a></h3>
 
             <p>
               These are just extra fonts for some apps that manually set there
@@ -960,7 +975,7 @@
               </p>
             </blockquote>
 
-            <h3 class="header">Setting I/O Schedulers <a id="io"></a></h3>
+            <h3><a id="io">Setting I/O Schedulers</a></h3>
 
             <p>
               Linux can get very slow during I/O intense applications however
@@ -1003,8 +1018,8 @@
               Control + X then y and enter.
             </p>
 
-            <h3 class="header">
-              initramfs tweaks (Arch Based Only) <a id="initramfs"></a>
+            <h3>
+              <a id="initramfs">initramfs tweaks (Arch Based Only)</a>
             </h3>
 
             <p>
@@ -1039,31 +1054,31 @@
               on of the following
             </p>
 
-            <p><b>BTRFS (Single Device)</b></p>
+            <p><strong>BTRFS (Single Device)</strong></p>
 
             <blockquote class="blockquote">
               <p>BINARIES="fsck fsck.btrfs btrfsck"</p>
             </blockquote>
 
-            <p><b>BTRFS (Multi Device)</b></p>
+            <p><strong>BTRFS (Multi Device)</strong></p>
 
             <blockquote class="blockquote">
               <p>BINARIES="fsck fsck.btrfs btrfs btrfsck"</p>
             </blockquote>
 
-            <p><b>EXT4</b></p>
+            <p><strong>EXT4</strong></p>
 
             <blockquote class="blockquote">
               <p>BINARIES="fsck fsck.ext[2|3|4] e2fsck"</p>
             </blockquote>
 
-            <p><b>XFS</b></p>
+            <p><strong>XFS</strong></p>
 
             <blockquote class="blockquote">
               <p>BINARIES="fsck fsck.xfs xfs_repair"</p>
             </blockquote>
 
-            <p><b>VFAT (FAT32) Usually Bootloaders</b></p>
+            <p><strong>VFAT (FAT32) Usually Bootloaders</strong></p>
 
             <blockquote className="blockquote">
               <p>BINARIES="fsck fsck.vfat dosfsck"</p>
@@ -1081,36 +1096,35 @@
               <p>sudo mkinitcpio -P</p>
             </blockquote>
 
-            <h3 class="header">
-              Laptop Battery Improvement <a id="laptop"></a>
+            <h3>
+              <a id="laptop"> Laptop Battery Improvement</a>
             </h3>
 
             <p>You can increase you battery life by adding the tlp package</p>
 
-            <p><b>Arch Based</b></p>
+            <p><strong>Arch Based</strong></p>
 
             <blockquote class="blockquote">
               <p>sudo pacman -S tlp</p>
             </blockquote>
 
-            <p><b>Debian Based</b></p>
+            <p><strong>Debian Based</strong></p>
 
             <blockquote class="blockquote">
               <p>sudo apt-get install tlp</p>
             </blockquote>
 
-            <b>Gentoo Based</b> -
+            <strong>Gentoo Based</strong> -
             <a
-              class="link"
               href="https://github.com/dywisor/tlp-portage/blob/maint/README.rst"
               >https://github.com/dywisor/tlp-portage/blob/maint/README.rst</a
             ><br />
-            <b>RedHat Based</b> -
-            <a class="link" href="https://access.redhat.com/discussions/4903881"
+            <strong>RedHat Based</strong> -
+            <a href="https://access.redhat.com/discussions/4903881"
               >https://access.redhat.com/discussions/4903881</a
             ><br />
 
-            <p><b>Void Linux</b></p>
+            <p><strong>Void Linux</strong></p>
 
             <blockquote class="blockquote">
               <p>sudo xbps-install -Su tlp</p>
@@ -1127,9 +1141,7 @@
               package if it slows your system down to much. If you would like to
               dial in your tlp settings such as limiting clock speeds on battery
               you can check out this guide -
-              <a
-                class="link"
-                href="https://linrunner.de/tlp/settings/index.html"
+              <a href="https://linrunner.de/tlp/settings/index.html"
                 >https://linrunner.de/tlp/settings/index.html</a
               >
             </p>
@@ -1140,9 +1152,7 @@
               <p>sudo nano /etc/tlp.conf</p>
             </blockquote>
 
-            <h3 class="header">
-              Fusuma Touchpad Gestures <a id="touchpad"></a>
-            </h3>
+            <h3><a id="touchpad">Fusuma Touchpad Gestures</a></h3>
 
             <p>
               This will improve the default gestures and you can get these by
@@ -1169,10 +1179,18 @@
             </blockquote>
 
             <p>Then a reboot and it should be running.</p>
-          </body>
+          </div>
+          <footer>
+            <a href="https://openbsd.amsterdam">
+              Hosted on OpenBSD.amsterdam
+            </a>
+
+            <a href="https://github.com/dante-robinson/Blog">
+              Source Code on Github
+            </a>
+          </footer>
         </div>
-        <footer-component></footer-component>
       </div>
     </div>
-  </div>
+  </body>
 </html>

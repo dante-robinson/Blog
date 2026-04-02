@@ -1,69 +1,91 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="../styles/global.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="../scripts/header.js" async></script>
-    <script src="../scripts/nav.js" async></script>
-    <script src="../scripts/footer.js" async></script>
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+
     <meta name="description" content="Arch Linux Install Guide." />
-    <meta name="keywords" content="Arch Linux, Install, Guide, easy" />
 
     <title>Arch Linux Install Guide</title>
   </head>
 
-  <div class="page-template">
-    <header-component></header-component>
+  <body>
     <div class="page-center-box">
-      <div class="page-box">
-        <div class="page">
-          <nav-component></nav-component>
+      <div class="page-outside">
+        <header>
+          <h1>
+            <a target="_parent" href="/">Dante's Blog</a>
+          </h1>
+          <nav>
+            <ul>
+              <li>
+                <a href="../nav/Linux" target="_parent">Linux</a>
+              </li>
 
-          <p class="post-date">Oct 30, 2021</p>
+              <li>
+                <a href="../nav/Crypto" target="_parent">Crypto</a>
+              </li>
 
-          <h2 class="post-title">Arch Linux Install Guide</h2>
+              <li>
+                <a href="../nav/BSD" target="_parent">BSD</a>
+              </li>
 
-          <h3 class="table-of-contents-header">Table of Contents</h3>
+              <li>
+                <a href="../nav/Thoughts" target="_parent">Thoughts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <div class="page-box">
+          <div class="page">
+            <p class="post-date">Oct 30, 2021</p>
 
-          <div class="table-of-contents-container">
-            <a class="table-of-contents-item" href="#format"
-              >Formatting the Drive</a
-            ><br />
-            <a class="table-of-contents-item" href="#btrfs"
-              >BTRFS Subvolumes and Mounting</a
-            ><br />
-            <a class="table-of-contents-item" href="#ext4">EXT4 Mounting</a
-            ><br />
-            <a class="table-of-contents-item" href="#xfs">XFS Mounting</a><br />
-            <a class="table-of-contents-item" href="#fstab"
-              >Mounting Boot and setting up FSTAB</a
-            ><br />
-            <a class="table-of-contents-item" href="#timezone"
-              >Setting Timezone and Locales</a
-            ><br />
-            <a class="table-of-contents-item" href="#hosts"
-              >Setting up localhost and hosts</a
-            ><br />
-            <a class="table-of-contents-item" href="#gpu"
-              >Installing GPU Driver</a
-            ><br />
-            <a class="table-of-contents-item" href="#initramfs"
-              >Initramfs Setup</a
-            ><br />
-            <a class="table-of-contents-item" href="#user">Creating the user</a
-            ><br />
-            <a class="table-of-contents-item" href="#systemd"
-              >Enabling systemd Startups</a
-            ><br />
-            <a class="table-of-contents-item" href="#desktop"
-              >Installing a Desktop</a
-            ><br />
-            <a class="table-of-contents-item" href="#extra">Extra Junk</a>
-          </div>
+            <h2>Arch Linux Install Guide</h2>
 
-          <body>
+            <h3 class="table-of-contents-header">Table of Contents</h3>
+
+            <div class="table-of-contents-container">
+              <a class="table-of-contents-item" href="#format"
+                >Formatting the Drive</a
+              ><br />
+              <a class="table-of-contents-item" href="#btrfs"
+                >BTRFS Subvolumes and Mounting</a
+              ><br />
+              <a class="table-of-contents-item" href="#ext4">EXT4 Mounting</a
+              ><br />
+              <a class="table-of-contents-item" href="#xfs">XFS Mounting</a
+              ><br />
+              <a class="table-of-contents-item" href="#fstab"
+                >Mounting Boot and setting up FSTAB</a
+              ><br />
+              <a class="table-of-contents-item" href="#timezone"
+                >Setting Timezone and Locales</a
+              ><br />
+              <a class="table-of-contents-item" href="#hosts"
+                >Setting up localhost and hosts</a
+              ><br />
+              <a class="table-of-contents-item" href="#gpu"
+                >Installing GPU Driver</a
+              ><br />
+              <a class="table-of-contents-item" href="#initramfs"
+                >Initramfs Setup</a
+              ><br />
+              <a class="table-of-contents-item" href="#user"
+                >Creating the user</a
+              ><br />
+              <a class="table-of-contents-item" href="#systemd"
+                >Enabling systemd Startups</a
+              ><br />
+              <a class="table-of-contents-item" href="#desktop"
+                >Installing a Desktop</a
+              ><br />
+              <a class="table-of-contents-item" href="#extra">Extra Junk</a>
+            </div>
+
             <p>
               Welcome to my personal Arch Linux Build Setup this is somewhat of
               a personal run through of how I have my main system setup but more
@@ -85,7 +107,6 @@
               LVM instructions if you are looking for that please check out this
               guide -
               <a
-                class="link"
                 href="https://www.coded-with-love.com/blog/install-arch-linux-encrypted/"
               >
                 https://www.coded-with-love.com/blog/install-arch-linux-encrypted/</a
@@ -95,13 +116,12 @@
             <p>
               You can find the raw version of this guide on github here -
               <a
-                class="link"
                 href="https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef"
                 >https://gist.github.com/dante-robinson/fdc55726991d3f17e0dbef1701d343ef</a
               >
             </p>
 
-            <h3 class="header">Formatting the Drive <a id="format"></a></h3>
+            <h3><a id="format">Formatting the Drive</a></h3>
 
             <p>
               First of all you should understand how Linux reads drives already
@@ -192,8 +212,8 @@
             </blockquote>
 
             <p>
-              of course swap <b>/dev/nvme0n1p2</b> out with where your drives
-              partition is.
+              of course swap <strong>/dev/nvme0n1p2</strong> out with where your
+              drives partition is.
             </p>
 
             <p>
@@ -221,34 +241,35 @@
             </p>
 
             <p>
-              <b>BTRFS</b> -
-              <a class="link" href="https://wiki.archlinux.org/title/Btrfs"
+              <strong>BTRFS</strong> -
+              <a href="https://wiki.archlinux.org/title/Btrfs"
                 >https://wiki.archlinux.org/title/Btrfs</a
               >
             </p>
 
             <p>
-              <b>EXT4</b> -
-              <a class="link" href="https://wiki.archlinux.org/title/Ext4"
+              <strong>EXT4</strong> -
+              <a href="https://wiki.archlinux.org/title/Ext4"
                 >https://wiki.archlinux.org/title/Ext4</a
               >
             </p>
 
             <p>
-              <b>XFS</b> -
-              <a class="link" href="https://wiki.archlinux.org/title/XFS"
+              <strong>XFS</strong> -
+              <a href="https://wiki.archlinux.org/title/XFS"
                 >https://wiki.archlinux.org/title/XFS</a
               >
             </p>
 
-            <p>To format to <b>BTRFS</b> run</p>
+            <p>To format to <strong>BTRFS</strong> run</p>
 
             <blockquote class="blockquote">
               <p>mkfs.btrfs /dev/nvme0n1p2</p>
             </blockquote>
 
             <p>
-              If your going to run <b>XFS</b> or <b>EXT4</b> its pretty similar
+              If your going to run <strong>XFS</strong> or
+              <strong>EXT4</strong> its pretty similar
             </p>
 
             <blockquote class="blockquote">
@@ -284,8 +305,8 @@
               I will show you how to make that in my Arch Tweaks gist.
             </p>
 
-            <h3 class="header">
-              BTRFS Subvolumes and Mounting <a id="btrfs"></a>
+            <h3>
+              <a id="btrfs">BTRFS Subvolumes and Mounting</a>
             </h3>
 
             <p>
@@ -343,13 +364,13 @@
             <p>The subvolumes meanings</p>
 
             <p>
-              <b>@</b> - Root<br />
-              <b>@home</b> - Home Directory<br />
-              <b>@var</b> - Logs,some temp. files, caches etc.<br />
-              <b>@opt</b> - Add-on packages<br />
-              <b>@tmp</b> - Main temporary files location<br />
-              <b>@snapshots</b> - snapper will store your BTRFS Snapshots here
-              if not using snapper this partition is not needed
+              <strong>@</strong> - Root<br />
+              <strong>@home</strong> - Home Directory<br />
+              <strong>@var</strong> - Logs,some temp. files, caches etc.<br />
+              <strong>@opt</strong> - Add-on packages<br />
+              <strong>@tmp</strong> - Main temporary files location<br />
+              <strong>@snapshots</strong> - snapper will store your BTRFS
+              Snapshots here if not using snapper this partition is not needed
             </p>
 
             <p>
@@ -397,30 +418,30 @@
             </p>
 
             <p>
-              <b>mount</b> – the -o just means options when using mount and
-              these are the options we are using
+              <strong>mount</strong> – the -o just means options when using
+              mount and these are the options we are using
             </p>
 
             <p>
-              <b>noatime</b> – basically improves performance by not writing the
-              time the file was last accessed
+              <strong>noatime</strong> – basically improves performance by not
+              writing the time the file was last accessed
             </p>
 
             <p>
-              <b>commit</b> – the time in seconds it takes for the data to be
-              synchronized to storage set at 120 seconds here so if you lose
-              power or crash any data within the last 2 minutes will be probably
-              be lost feel free to change this.
+              <strong>commit</strong> – the time in seconds it takes for the
+              data to be synchronized to storage set at 120 seconds here so if
+              you lose power or crash any data within the last 2 minutes will be
+              probably be lost feel free to change this.
             </p>
 
             <p>
-              <b>compress</b> – by not listing compress this sets my compression
-              to none. You can use whatever compression method you prefer, the
-              better the compression method the less space files will take on
-              the drive leaving more space for other things. However this will
-              affect the drive speeds as you can see in the benchmark here
+              <strong>compress</strong> – by not listing compress this sets my
+              compression to none. You can use whatever compression method you
+              prefer, the better the compression method the less space files
+              will take on the drive leaving more space for other things.
+              However this will affect the drive speeds as you can see in the
+              benchmark here
               <a
-                class="link"
                 href="https://www.reddit.com/r/btrfs/comments/hyra46/benchmark_of_btrfs_decompression/"
                 >-
                 https://www.reddit.com/r/btrfs/comments/hyra46/benchmark_of_btrfs_decompression/</a
@@ -431,14 +452,14 @@
             </p>
 
             <p>
-              <b>space_cache</b> – I have this set to =v2 you can remove this if
-              you if you prefer to use v1 which can be more stable the devs say
-              but I have had any issues running v2. This just lets the kernel
-              know where blocks of free space are on the disk to write data to
-              when a file is created.
+              <strong>space_cache</strong> – I have this set to =v2 you can
+              remove this if you if you prefer to use v1 which can be more
+              stable the devs say but I have had any issues running v2. This
+              just lets the kernel know where blocks of free space are on the
+              disk to write data to when a file is created.
             </p>
 
-            <p><b>Subvol</b> – just selects the subvolume</p>
+            <p><strong>Subvol</strong> – just selects the subvolume</p>
 
             <p>
               If you have a separate /home partition you can now mount that for
@@ -469,7 +490,7 @@
               more info about at the end of the guide
             </p>
 
-            <h3 class="header">EXT4 Mounting <a id="ext4"></a></h3>
+            <h3><a id="ext4">EXT4 Mounting</a></h3>
 
             <p>
               You will need to mount your partitions to the /mnt Directory by
@@ -496,34 +517,33 @@
             </p>
 
             <p>
-              <b>noatime</b> – basically improves performance by not writing the
-              time the file was last accessed
+              <strong>noatime</strong> – basically improves performance by not
+              writing the time the file was last accessed
             </p>
 
             <p>
-              <b>commit</b> – the time in seconds it takes for the data to be
-              synchronized to storage set at 120 seconds here so if you lose
-              power or crash any data within the last 2 minutes will be probably
-              be lost feel free to change this.
+              <strong>commit</strong> – the time in seconds it takes for the
+              data to be synchronized to storage set at 120 seconds here so if
+              you lose power or crash any data within the last 2 minutes will be
+              probably be lost feel free to change this.
             </p>
 
             <p>
-              <b>barrier</b> - you can also add barrier=0 if you would that will
-              help performance however you may run into data loss in the case of
-              a power loss if not the entire partition becoming corrupted so I
-              left it out here if your on a laptop or on a UPS System maybe
-              consider this. You can read more about this here
+              <strong>barrier</strong> - you can also add barrier=0 if you would
+              that will help performance however you may run into data loss in
+              the case of a power loss if not the entire partition becoming
+              corrupted so I left it out here if your on a laptop or on a UPS
+              System maybe consider this. You can read more about this here
             </p>
 
             <p>
               <a
-                class="link"
                 href="https://wiki.archlinux.org/title/Ext4#Turning_barriers_off"
                 >https://wiki.archlinux.org/title/Ext4#Turning_barriers_off</a
               >
             </p>
 
-            <h3 class="header">XFS Mounting <a id="xfs"></a></h3>
+            <h3><a id="xfs">XFS Mounting</a></h3>
 
             <p>Very simple to mount partitions no extra options just run</p>
 
@@ -537,9 +557,9 @@
               <p>mkdir /mnt/home && mount /dev/nvme0n1p(x) /mnt/home</p>
             </blockquote>
 
-            <h2 class="header">
-              Mounting Boot and setting up FSTAB (ALL) <a id="fstab"></a>
-            </h2>
+            <h3>
+              <a id="fstab">Mounting Boot and setting up FSTAB (ALL)</a>
+            </h3>
 
             <p>
               Alright now we just have to mount the boot partition we created
@@ -611,8 +631,8 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
 
             <p>you basically want to remove the entire entry.</p>
 
-            <h3 class="header">
-              Setting Timezone and Locales <a id="timezone"></a>
+            <h3>
+              <a id="timezone">Setting Timezone and Locales</a>
             </h3>
 
             <p>Now we can move into the mounted system by running</p>
@@ -682,8 +702,8 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               way instead.
             </p>
 
-            <h3 class="header">
-              Setting up localhost and hosts <a id="hosts"></a>
+            <h3>
+              <a id="hosts">Setting up localhost and hosts</a>
             </h3>
 
             <p>
@@ -754,7 +774,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               <p>pacman -S xfsprogs</p>
             </blockquote>
 
-            <h3 class="header">Installing GPU Driver <a id="gpu"></a></h3>
+            <h3><a id="gpu">Installing GPU Driver</a></h3>
 
             <p>
               First we need to configure the pacman configuration file by
@@ -792,18 +812,17 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               interested in looking but In my opinion its no where close to
               being worth running for gaming.<br />
               <a
-                class="link"
                 href="https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2"
                 >https://www.phoronix.com/scan.php?page=article&item=nvidia-nouveau-2019&num=2</a
               >
             </p>
 
-            <p><b>INTEL</b></p>
+            <p><strong>INTEL</strong></p>
             <blockquote class="blockquote">
               <p>pacman -S mesa lib32-mesa xf86-video-intel vulkan-intel</p>
             </blockquote>
 
-            <p><b>AMD</b></p>
+            <p><strong>AMD</strong></p>
             <blockquote class="blockquote">
               <p>
                 pacman -S mesa lib32-mesa xf86-video-amdgpu vulkan-radeon
@@ -811,7 +830,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <p><b>NVIDIA</b></p>
+            <p><strong>NVIDIA</strong></p>
             <blockquote class="blockquote">
               <p>
                 pacman -S nvidia-dkms nvidia-settings nvidia-utils
@@ -819,7 +838,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <p><b>NOUVEAU</b> (Open Source Nvidia)</p>
+            <p><strong>NOUVEAU</strong> (Open Source Nvidia)</p>
             <blockquote class="blockquote">
               <p>pacman -S mesa xf86-video-nouveau</p>
             </blockquote>
@@ -833,7 +852,6 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               have DKMS from the gecko, If you don’t ever plan on running that
               then just change to nvidia. You can read more about DKMS here -
               <a
-                class="link"
                 href="https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support"
                 >https://wiki.archlinux.org/title/Dynamic_Kernel_Module_Support</a
               >
@@ -848,17 +866,17 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               the command below for your CPU
             </p>
 
-            <p><b>INTEL</b></p>
+            <p><strong>INTEL</strong></p>
             <blockquote class="blockquote">
               <p>pacman -S intel-ucode</p>
             </blockquote>
 
-            <p><b>AMD</b></p>
+            <p><strong>AMD</strong></p>
             <blockquote class="blockquote">
               <p>pacman -S amd-ucode</p>
             </blockquote>
 
-            <h3 class="header">Initramfs Setup <a id="initramfs"></a></h3>
+            <h3>Initramfs Setup <a id="initramfs"></a></h3>
 
             <p>Now we need to edit our initial ram disk by running</p>
 
@@ -879,14 +897,14 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
             </p>
 
             <p>
-              <b>BTRFS</b> – btrfs<br />
-              <b>Intel GPU</b> - i915<br />
-              <b>AMD GPU</b> – amdgpu<br />
-              <b>NVIDIA Driver</b> – nvidia nvidia_modeset nvidia_uvm
+              <strong>BTRFS</strong> – btrfs<br />
+              <strong>Intel GPU</strong> - i915<br />
+              <strong>AMD GPU</strong> – amdgpu<br />
+              <strong>NVIDIA Driver</strong> – nvidia nvidia_modeset nvidia_uvm
               nvidia_drm<br />
-              <b>Nouveau Driver</b> – nouveau<br />
-              <b>EXT4</b> - ext4<br />
-              <b>XFS</b> - xfs
+              <strong>Nouveau Driver</strong> – nouveau<br />
+              <strong>EXT4</strong> - ext4<br />
+              <strong>XFS</strong> - xfs
             </p>
 
             <p>
@@ -948,8 +966,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               written above.
             </p>
 
-            <h3 class="header">Creating the user <a id="user"></a></h3>
-            blockquote
+            <h3><a id="user">Creating the user</a></h3>
 
             <p>
               Pretty much at the end now finishing touches before we have a
@@ -1022,8 +1039,8 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               Control + X press y to save and then enter.
             </p>
 
-            <h3 class="header">
-              Enabling systemd Startups <a id="systemd"></a>
+            <h3>
+              <a id="systemd">Enabling systemd Startups</a>
             </h3>
 
             <p>
@@ -1044,7 +1061,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               This is going to enable internet bluetooth and printing services.
             </p>
 
-            <h3 class="header">Installing a Desktop <a id="desktop"></a></h3>
+            <h3><a id="desktop">Installing a Desktop</a></h3>
 
             <p>
               Now we can move on to the final step and that's installing the
@@ -1053,40 +1070,32 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               few.I personally run XFCE as I like to keep my system lightweight
               and don’t care for many effects or built in software. Here are a
               few links to view some different DE’s.<br />
-              <b>XFCE</b> -
-              <a class="link" href="https://xfce.org/">https://xfce.org/</a
-              ><br />
-              <b>GNOME</b> -
-              <a class="link" href="https://www.gnome.org/"
-                >https://www.gnome.org/</a
-              ><br />
-              <b>KDE</b> -
-              <a class="link" href="https://kde.org/plasma-desktop/"
+              <strong>XFCE</strong> -
+              <a href="https://xfce.org/">https://xfce.org/</a><br />
+              <strong>GNOME</strong> -
+              <a href="https://www.gnome.org/">https://www.gnome.org/</a><br />
+              <strong>KDE</strong> -
+              <a href="https://kde.org/plasma-desktop/"
                 >https://kde.org/plasma-desktop/</a
               ><br />
-              <b>LXQt</b> -
-              <a class="link" href="https://lxqt-project.org/"
-                >https://lxqt-project.org/</a
+              <strong>LXQt</strong> -
+              <a href="https://lxqt-project.org/">https://lxqt-project.org/</a
               ><br />
-              <b>Budgie</b> -
-              <a class="link" href="https://getsol.us/home/"
-                >https://getsol.us/home/</a
+              <strong>Budgie</strong> -
+              <a href="https://getsol.us/home/">https://getsol.us/home/</a
               ><br />
-              <b>Cinnamon</b> -
+              <strong>Cinnamon</strong> -
               <a
-                class="link"
                 href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)"
                 >https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)</a
               ><br />
-              <b>MATE</b> -
-              <a
-                class="link"
-                href="https://en.wikipedia.org/wiki/MATE_(software)"
+              <strong>MATE</strong> -
+              <a href="https://en.wikipedia.org/wiki/MATE_(software)"
                 >https://en.wikipedia.org/wiki/MATE_(software)</a
               >
             </p>
 
-            <h4 class="small-header">To Install XFCE</h4>
+            <h4>To Install XFCE</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1102,7 +1111,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               typing ;)
             </p>
 
-            <h4 class="small-header">To Install GNOME</h4>
+            <h4>To Install GNOME</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1112,7 +1121,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <h4 class="small-header">To Install KDE Plasma</h4>
+            <h4>To Install KDE Plasma</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1122,7 +1131,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <h4 class="small-header">To Install LXQt</h4>
+            <h4>To Install LXQt</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1135,7 +1144,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
             Would recommend switching to a QT/Webkit Greeter (on low end PCs)
             once getting an AUR Helper installed.
 
-            <h4 class="small-header">To Install Budgie</h4>
+            <h4>To Install Budgie</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1146,7 +1155,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <h4 class="small-header">To Install Cinnamon</h4>
+            <h4>To Install Cinnamon</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1157,7 +1166,7 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               </p>
             </blockquote>
 
-            <h4 class="small-header">To Install MATE</h4>
+            <h4>To Install MATE</h4>
 
             <blockquote class="blockquote">
               <p>
@@ -1174,7 +1183,6 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               support every single Environment. You can read about different
               Display Managers here -
               <a
-                class="link"
                 href="https://wiki.archlinux.org/title/Display_manager#Graphical"
                 >https://wiki.archlinux.org/title/Display_manager#Graphical</a
               >
@@ -1182,7 +1190,6 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
               You can also find different Display Environments other than those
               listed here by checking out this page -
               <a
-                class="link"
                 href="https://wiki.archlinux.org/title/Desktop_environment#Officially_supported"
                 >https://wiki.archlinux.org/title/Desktop_environment#Officially_supported</a
               >
@@ -1222,14 +1229,12 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
 
             <p>
               XFS Performance Tweaks -
-              <a
-                class="link"
-                href="https://wiki.archlinux.org/title/XFS#Performance"
+              <a href="https://wiki.archlinux.org/title/XFS#Performance"
                 >https://wiki.archlinux.org/title/XFS#Performance</a
               >
             </p>
 
-            <h3 class="header">Extra Junk <a id="extra"></a></h3>
+            <h3><a id="extra">Extra Junk</a></h3>
 
             <p>
               <s
@@ -1249,25 +1254,29 @@ LABEL=ROOT   /   btrfs rw,relatime,compress=lzo,ssd,space_cache=v2,subvolid=256,
 
             <p>
               You can find my Linux Performance Tweaks guide here -
-              <a
-                class="link"
-                href="https://danterobinson.dev/Linux/PerformanceGuide"
+              <a href="https://danterobinson.dev/Linux/PerformanceGuide"
                 >https://danterobinson.dev/Linux/PerformanceGuide</a
               >
             </p>
             <p>
               If your looking to add more Security to your system check my
               Security Guide here -
-              <a
-                class="link"
-                href="https://danterobinson.dev/Linux/SecurityGuide"
+              <a href="https://danterobinson.dev/Linux/SecurityGuide"
                 >https://danterobinson.dev/Linux/SecurityGuide</a
               >
             </p>
-          </body>
+          </div>
+          <footer>
+            <a href="https://openbsd.amsterdam">
+              Hosted on OpenBSD.amsterdam
+            </a>
+
+            <a href="https://github.com/dante-robinson/Blog">
+              Source Code on Github
+            </a>
+          </footer>
         </div>
-        <footer-component></footer-component>
       </div>
     </div>
-  </div>
+  </body>
 </html>

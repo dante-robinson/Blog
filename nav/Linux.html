@@ -1,14 +1,14 @@
 <!doctype html>
 
-<html>
+<html lang="en">
   <head>
-    <link rel="stylesheet" href="../styles/global.css" />
-    <link rel="stylesheet" href="../styles/navPage.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="../scripts/header.js" async></script>
-    <script src="../scripts/nav.js" async></script>
-    <script src="../scripts/footer.js" async></script>
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/global.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/navPage.css" />
+
     <meta
       name="description"
       content="My posts in which I've talked about Linux."
@@ -18,52 +18,77 @@
     <title>Linux Posts</title>
   </head>
 
-  <div class="page-template">
-    <header-component></header-component>
+  <body>
     <div class="page-center-box">
-      <div class="page-box">
-        <div class="page">
-          <nav-component></nav-component>
+      <div class="page-outside">
+        <header>
+          <h1>
+            <a target="_parent" href="/">Dante's Blog</a>
+          </h1>
+          <nav>
+            <ul>
+              <li>
+                <a href="./Linux" target="_parent">Linux</a>
+              </li>
 
-          <ul>
-            <li>
-              <a class="link" href="../Linux/GentooGlibctomusl"
-                >Gentoo Glibc to musl easy</a
-              >
-              <p>Sept 26, 2022</p>
-            </li>
-            <hr />
-            <li>
-              <a class="link" href="../Linux/Gentoomusl"
-                >My experience on Gentoo musl</a
-              >
-              <p>Sept 16, 2022</p>
-            </li>
-            <hr />
-            <li>
-              <a class="link" href="../Linux/SecurityGuide"
-                >Linux Security Guide</a
-              >
-              <p>Feb 13, 2022</p>
-            </li>
-            <hr />
-            <li>
-              <a class="link" href="../Linux/ArchGuide"
-                >Arch Linux Install Guide</a
-              >
-              <p>Oct 30, 2021</p>
-            </li>
-            <hr />
-            <li>
-              <a class="link" href="../Linux/PerformanceGuide"
-                >Performance Tweaks Guide</a
-              >
-              <p>Oct 30, 2021</p>
-            </li>
-          </ul>
+              <li>
+                <a href="./Crypto" target="_parent">Crypto</a>
+              </li>
+
+              <li>
+                <a href="./BSD" target="_parent">BSD</a>
+              </li>
+
+              <li>
+                <a href="./Thoughts" target="_parent">Thoughts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div class="page-box">
+          <h2>Linux</h2>
+          <div class="page">
+            <ul>
+              <li>
+                <a href="../Linux/GentooGlibctomusl"
+                  >Gentoo Glibc to musl easy</a
+                >
+                <p>Sept 26, 2022</p>
+              </li>
+              <hr />
+              <li>
+                <a href="../Linux/Gentoomusl">My experience on Gentoo musl</a>
+                <p>Sept 16, 2022</p>
+              </li>
+              <hr />
+              <li>
+                <a href="../Linux/SecurityGuide">Linux Security Guide</a>
+                <p>Feb 13, 2022</p>
+              </li>
+              <hr />
+              <li>
+                <a href="../Linux/ArchGuide">Arch Linux Install Guide</a>
+                <p>Oct 30, 2021</p>
+              </li>
+              <hr />
+              <li>
+                <a href="../Linux/PerformanceGuide">Performance Tweaks Guide</a>
+                <p>Oct 30, 2021</p>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <a href="https://openbsd.amsterdam">
+              Hosted on OpenBSD.amsterdam
+            </a>
+
+            <a href="https://github.com/dante-robinson/Blog">
+              Source Code on Github
+            </a>
+          </footer>
         </div>
-        <footer-component></footer-component>
       </div>
     </div>
-  </div>
+  </body>
 </html>
