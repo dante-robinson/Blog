@@ -48,3 +48,18 @@ hr {
   background-color: #c0caf5;
   opacity: 0.15;
 }
+
+@media (max-width: 1150px) {
+  .page p {
+    display: none;
+  }
+
+  .page > ul > li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

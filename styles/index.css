@@ -9,11 +9,14 @@
   flex-direction: row;
 }
 
+.two-columns > div {
+  width: 50%;
+}
+
 .recommended-channels {
   display: flex;
   justify-content: space-between;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 0 2rem;
 }
 
 .note {
@@ -38,4 +41,37 @@
 .recent-posts p {
   padding: 0;
   margin: 0;
+}
+
+@media (max-width: 1500px) {
+  .two-columns {
+    flex-direction: column;
+  }
+  .two-columns > div {
+    width: 100%;
+  }
+
+  .recent-posts li + li {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .recent-posts p {
+    display: none;
+  }
+
+  .recent-posts li {
+    justify-content: center;
+  }
+
+  .recent-posts {
+    padding: 0 0;
+  }
+
+  .recommended-channels {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
 }

@@ -120,3 +120,24 @@ th {
   border: 0.25rem solid;
   padding: 0.5rem;
 }
+
+@media (max-width: 1500px) {
+  .page-outside {
+    width: 90%;
+  }
+}
+
+@media (max-width: 750px) {
+  .page-outside {
+    width: 100%;
+  }
+
+  .page-box {
+    width: 100%;
+    border: 0;
+  }
+
+  .page {
+    padding: 0 1.5rem;
+  }
+}
